@@ -17,10 +17,13 @@
 
 package syncthing.android.ui.session;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,10 +34,13 @@ import org.opensilk.common.ui.mortar.ActionBarOwner;
 import org.opensilk.common.ui.mortar.Screen;
 import org.opensilk.common.ui.mortarfragment.MortarFragment;
 
+import java.util.List;
+
 import syncthing.android.R;
 import syncthing.android.model.Credentials;
 import syncthing.android.ui.LauncherActivity;
 import syncthing.android.ui.LauncherActivityComponent;
+import syncthing.android.ui.common.ActivityRequestCodes;
 
 /**
  * Created by drew on 3/11/15.
@@ -147,4 +153,13 @@ public class SessionFragment extends MortarFragment implements SessionFragmentPr
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ActivityRequestCodes.DIRECTORY_PICKER) {
+            if (resultCode == Activity.RESULT_OK) {
+                String path = data.getStringExtra("folder");
+                mFragmentPresenter.setFolderPath(path);
+            }
+        }
+    }
 }

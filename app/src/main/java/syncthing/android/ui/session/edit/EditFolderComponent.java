@@ -18,6 +18,7 @@
 package syncthing.android.ui.session.edit;
 
 import dagger.Component;
+import syncthing.android.AppModule;
 import syncthing.android.ui.session.SessionComponent;
 
 /**
