@@ -426,7 +426,15 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         doOpenScreen(EditFragment.newFolderIgnoresInstance(folderId), "folderignores"+folderId);
     }
 
-    public void openPathBrowser(String folderId) {
+    public void openPathBrowser(String folderId, boolean documentTree) {
+        if (documentTree) {
+            activityResultsController.startActivityForResult(
+                    new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE),
+                    ActivityRequestCodes.DOCUMENT_PICKER,
+                    null
+            );
+            return;
+        }
         doOpenScreen(DirectoryChooserFragment.newInstance(
                 Environment.getExternalStorageDirectory()), "folderbrowser" + folderId);
     }

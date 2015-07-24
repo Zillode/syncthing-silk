@@ -38,6 +38,7 @@ import java.util.List;
 
 import syncthing.android.R;
 import syncthing.android.model.Credentials;
+import syncthing.android.service.DocumentHelper;
 import syncthing.android.ui.LauncherActivity;
 import syncthing.android.ui.LauncherActivityComponent;
 import syncthing.android.ui.common.ActivityRequestCodes;
@@ -160,6 +161,12 @@ public class SessionFragment extends MortarFragment implements SessionFragmentPr
         if (requestCode == ActivityRequestCodes.DIRECTORY_PICKER) {
             if (resultCode == Activity.RESULT_OK) {
                 String path = data.getStringExtra("folder");
+                mFragmentPresenter.setFolderPath(path);
+            }
+        }
+        if (requestCode == ActivityRequestCodes.DOCUMENT_PICKER) {
+            if (resultCode == Activity.RESULT_OK) {
+                String path = DocumentHelper.getPath(getActivity(), data.getData());
                 mFragmentPresenter.setFolderPath(path);
             }
         }

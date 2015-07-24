@@ -112,6 +112,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/browse"
                 style="@style/mtrl.ButtonBarButton.Small"/>
+
+            <Button
+                android:id="@+id/btn_browsetree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/browse_tree"
+                style="@style/mtrl.ButtonBarButton.Small"/>
         </LinearLayout>
 
 

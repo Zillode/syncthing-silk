@@ -26,4 +26,5 @@ public interface ActivityRequestCodes {
     int SCAN_QR = _BASE << 2;
     int DIRECTORY_PICKER = _BASE << 3;
     int IMPORT_CONFIG = _BASE << 4;
+    int DOCUMENT_PICKER = _BASE << 5;
 }

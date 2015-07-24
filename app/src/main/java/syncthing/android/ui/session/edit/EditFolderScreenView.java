@@ -149,7 +149,12 @@ public class EditFolderScreenView extends ScrollView {
 
     @OnClick(R.id.btn_browse)
     void doBrowse() {
-        presenter.openPathBrowser();
+        presenter.openPathBrowser(false);
+    }
+
+    @OnClick(R.id.btn_browsetree)
+    void doBrowseTree() {
+        presenter.openPathBrowser(true);;
     }
 
     @OnClick(R.id.btn_save)

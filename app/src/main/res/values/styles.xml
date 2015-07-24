@@ -186,5 +186,8 @@
         <item name="android:textColor">@color/code_text</item>
     </style>
 
+    <style name="DirectoryEntryNameFont" parent="session.edit.FieldDescription">
+        <item name="android:textColor">@color/black_text_secondary</item>
+    </style>
 
 </resources>

@@ -232,15 +232,25 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> imp
         sessionPresenter.openEditIgnoresScreen(folderId);
     }
 
-    void openPathBrowser() {
-        sessionPresenter.openPathBrowser(folderId);
+    void openPathBrowser(boolean documentTree) {
+        sessionPresenter.openPathBrowser(folderId, documentTree);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ActivityRequestCodes.DIRECTORY_PICKER) {
             if (resultCode == Activity.RESULT_OK && hasView()) {
                 String path = data.getStringExtra("folder");
+                getView().setFolderPath(path);
+                return true;
+            }
+        }
+        if (requestCode == ActivityRequestCodes.DOCUMENT_PICKER && DocumentHelper.isKitKat) {
+            if (resultCode == Activity.RESULT_OK && hasView()) {
+                Uri docUri = DocumentsContract.buildDocumentUriUsingTree(data.getData(),
+                        DocumentsContract.getTreeDocumentId(data.getData()));
+                String path = DocumentHelper.getPath(getView().getContext(), docUri);
                 getView().setFolderPath(path);
                 return true;
             }
