@@ -38,7 +38,7 @@
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_device"
+            android:text="@string/add_remote"
             style="@style/mtrl.ButtonBarButton.Small"/>
 
         <Button

@@ -82,7 +82,7 @@ public class NavigationScreenView extends LinearLayout {
         presenter.startSettingsActivity();
     }
 
-    @OnClick(R.id.manage_devices)
+    @OnClick(R.id.manage_remotes)
     void openDevicemanagement() {
         presenter.startDeviceManageActivity();
     }
