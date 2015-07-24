@@ -148,6 +148,10 @@ public class NavigationPresenter extends ViewPresenter<NavigationScreenView> imp
 
     void postOpenCurrentDevice() {
         if (currentDevice != null) {
+            // Check if current device is part of the saved credentials
+            if (!appSettings.getSavedCredentialsSorted().contains(currentDevice)) {
+                currentDevice = appSettings.getDefaultCredentials();
+            }
             // Protect fragment manager from illegal state
             final Scheduler.Worker worker = AndroidSchedulers.mainThread().createWorker();
             worker.schedule(() -> {
