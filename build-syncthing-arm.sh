@@ -7,14 +7,14 @@ ORIG=$(pwd)
 mkdir -p bin
 
 # Load submodules
-if [ ! -f "syncthing/src/github.com/syncthing/syncthing/.git" ]; then
+if [ ! -e "syncthing/src/github.com/syncthing/syncthing/.git" ]; then
         git submodule update --init --recursive
 fi
 
 # Check for GOLANG installation
 if [ -z $GOROOT ] || [[ $(go version) != go\ version\ go1.4* ]] ; then
         mkdir -p "build"
-        tmpgo='build/go-arm'
+        tmpgo='build/cgo-arm'
         if [ ! -f "$tmpgo/bin/go" ]; then
                 # Download GOLANG v1.4.1
                 wget -O go.src.tar.gz http://storage.googleapis.com/golang/go1.4.2.src.tar.gz
@@ -66,7 +66,7 @@ export PATH="$(pwd)/bin":$PATH
 
 # Setup syncthing and clean
 export ENVIRONMENT=android
-cd src/github.com/syncthing/syncthing
+pushd src/github.com/syncthing/syncthing
 $GOROOT/bin/go run build.go clean
 
 # Patch Syncthing
@@ -77,4 +77,5 @@ PATH=$ndkarm/arm-linux-androideabi/bin:$PATH CGO_ENABLED=1 GOARM=5 go run build.
 mkdir -p $ORIG/app/libs/armeabi
 mv syncthing $ORIG/app/libs/armeabi/libsyncthing.so
 $GOROOT/bin/go run build.go clean
+popd
 
