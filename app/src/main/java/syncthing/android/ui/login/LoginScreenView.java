@@ -66,17 +66,19 @@ public class LoginScreenView extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        if (!isInEditMode()) {
-            ButterKnife.inject(this);
-            userPass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                @Override
-                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                    submit();
-                    return true;
-                }
-            });
-            presenter.takeView(this);
-        }
+        if (isInEditMode())
+            return;
+        ButterKnife.inject(this);
+        userPass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                submit();
+                return true;
+            }
+        });
+        if (isInEditMode())
+            return;
+        presenter.takeView(this);
     }
 
     @Override

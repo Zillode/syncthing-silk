@@ -63,9 +63,9 @@ public class MyDeviceCardView extends ExpandableCardViewWrapper<MyDeviceCard> {
     @InjectView(R.id.uptime) TextView uptime;
     @InjectView(R.id.version) TextView version;
 
-    final SessionPresenter presenter;
-    final DecimalFormat cpuFormat;
-    final PeriodFormatter uptimeFormatter;
+    SessionPresenter presenter;
+    DecimalFormat cpuFormat;
+    PeriodFormatter uptimeFormatter;
 
     Subscription identiconSubscription;
     Subscription connectionSubscription;
@@ -73,12 +73,10 @@ public class MyDeviceCardView extends ExpandableCardViewWrapper<MyDeviceCard> {
 
     public MyDeviceCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         cpuFormat = new DecimalFormat("0.00");
-        if (isInEditMode()) {
-            presenter = null;
-        } else {
-            presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
-        }
+        presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
         uptimeFormatter = new PeriodFormatterBuilder()
                 .appendDays()
                 .appendSuffix("d ")

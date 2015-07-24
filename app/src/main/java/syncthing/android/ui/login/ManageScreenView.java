@@ -40,19 +40,23 @@ public class ManageScreenView extends RelativeLayout {
 
     @InjectView(R.id.recyclerview) CardRecyclerView list;
 
-    final ManageScreenAdapter adapter = new ManageScreenAdapter();
-    final ManagePresenter presenter;
+    ManageScreenAdapter adapter;
+    ManagePresenter presenter;
 
     public ManageScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<ManageComponent>getDaggerComponent(getContext()).presenter();
-
+        adapter = new ManageScreenAdapter();
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
+        if (isInEditMode())
+            return;
         list.setAdapter(adapter);
         list.setLayoutManager(new LinearLayoutManager(getContext()));
         presenter.takeView(this);

@@ -46,12 +46,14 @@ public class NotifCardRejFolderView extends ExpandableCardViewWrapper<NotifCardR
     @InjectView(R.id.message) TextView message;
     @InjectView(R.id.btn_add) Button btnAdd;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     boolean share;
 
     public NotifCardRejFolderView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 

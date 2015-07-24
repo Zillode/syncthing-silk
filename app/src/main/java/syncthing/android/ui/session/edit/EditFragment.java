@@ -170,20 +170,20 @@ public class EditFragment extends MortarDialogFragment implements EditFragmentPr
     }
 
     //bridge for presenters to dismiss the dialog without context
-    EditFragmentPresenter mFragmetnPresenter;
+    EditFragmentPresenter mFragmentPresenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         boolean editing = getArguments().getBoolean("editmode");
         setStyle(STYLE_NORMAL, editing ? R.style.SessionEditDialogTheme_Edit : R.style.SessionEditDialogTheme);
-        mFragmetnPresenter = DaggerService.<EditFragmentComponent>getDaggerComponent(getScope()).fragmentPresenter();
-        mFragmetnPresenter.takeView(this);
+        mFragmentPresenter = DaggerService.<EditFragmentComponent>getDaggerComponent(getScope()).fragmentPresenter();
+        mFragmentPresenter.takeView(this);
     }
 
     @Override
     public void onDestroy() {
-        mFragmetnPresenter.dropView(this);
+        mFragmentPresenter.dropView(this);
         super.onDestroy();
     }
 

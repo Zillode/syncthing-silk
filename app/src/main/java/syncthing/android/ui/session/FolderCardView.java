@@ -78,13 +78,15 @@ public class FolderCardView extends ExpandableCardViewWrapper<FolderCard> {
     @InjectView(R.id.btn_override) Button btnOverride;
     @InjectView(R.id.btn_rescan) Button btnRescan;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     Subscription modelSubscription;
     Subscription modelStateSubscription;
 
     public FolderCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 
