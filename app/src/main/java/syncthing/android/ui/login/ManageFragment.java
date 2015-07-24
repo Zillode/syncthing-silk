@@ -42,7 +42,7 @@ public class ManageFragment extends MortarFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity().setTitle(R.string.manage_devices);
+        getActivity().setTitle(R.string.manage_remotes);
     }
 
 }
