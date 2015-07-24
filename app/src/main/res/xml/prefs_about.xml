@@ -35,11 +35,11 @@
         </intent>
     </Preference>
 
-    <CheckBoxPreference
-        android:key="acra.enable"
-        android:title="@string/send_crash_reports"
-        android:summary="@string/send_crash_reports_summary"
-        android:defaultValue="true"/>
+    <!--<CheckBoxPreference-->
+        <!--android:key="acra.enable"-->
+        <!--android:title="@string/send_crash_reports"-->
+        <!--android:summary="@string/send_crash_reports_summary"-->
+        <!--android:defaultValue="false"/>-->
 
     <Preference
         android:key="app_version"

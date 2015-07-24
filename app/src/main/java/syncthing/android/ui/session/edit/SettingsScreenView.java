@@ -151,7 +151,7 @@ public class SettingsScreenView extends ScrollView {
         //ignoring password
         enableHttps.setChecked(guiConfig.useTLS);
         enableBrowser.setChecked(options.startBrowser);
-        enableUsageReporting.setChecked(options.urAccepted >= 0);
+        enableUsageReporting.setChecked(options.urAccepted > 0);
         editApiKey.setText(guiConfig.apiKey);
     }
 
