@@ -70,6 +70,7 @@ public class FragmentManagerOwner extends Presenter<FragmentManagerOwnerActivity
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public int addFragment(Fragment frag, String tag, boolean addToBackstack) {
         if (!hasView()) return -1;
+        if (getView().getSupportFragmentManager().isDestroyed()) return -1;
         FragmentTransaction ft = getView().getSupportFragmentManager().beginTransaction();
         if (VersionUtils.hasLollipop()) {
             frag.setEnterTransition(new Explode());
