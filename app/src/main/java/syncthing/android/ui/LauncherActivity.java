@@ -251,6 +251,11 @@ public class LauncherActivity extends MortarFragmentActivity implements
         finish();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mActivityResultsOwner.onActivityResult(requestCode, resultCode, data);
+    }
+
     /*
      * Battery
      */
