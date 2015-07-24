@@ -41,13 +41,15 @@ public class DeviceCardView extends LinearLayout implements BindsCard, View.OnCl
     @InjectView(R.id.identicon) ImageView identicon;
     @InjectView(R.id.device_title) TextView title;
 
-    final NavigationPresenter presenter;
+    NavigationPresenter presenter;
 
     DeviceCard item;
     Subscription identiconSubscription;
 
     public DeviceCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<NavigationComponent>getDaggerComponent(getContext()).presenter();
     }
 

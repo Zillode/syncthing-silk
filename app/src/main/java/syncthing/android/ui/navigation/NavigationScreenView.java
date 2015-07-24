@@ -40,12 +40,13 @@ public class NavigationScreenView extends LinearLayout {
 
     @InjectView(android.R.id.list) CardRecyclerView list;
 
-    final NavigationPresenter presenter;
-
-    final NavigationRecyclerAdapter adapter;
+    NavigationPresenter presenter;
+    NavigationRecyclerAdapter adapter;
 
     public NavigationScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<NavigationComponent>getDaggerComponent(getContext()).presenter();
         adapter = new NavigationRecyclerAdapter();
     }
@@ -63,12 +64,16 @@ public class NavigationScreenView extends LinearLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        if (isInEditMode())
+            return;
         presenter.takeView(this);
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        if (isInEditMode())
+            return;
         presenter.dropView(this);
     }
 

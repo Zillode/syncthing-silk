@@ -70,13 +70,15 @@ public class EditDeviceScreenView extends ScrollView {
     @InjectView(R.id.share_folders_container) ViewGroup shareFoldersContainer;
     @InjectView(R.id.btn_delete) Button btnDelete;
 
-    final EditDevicePresenter presenter;
+    EditDevicePresenter presenter;
 
     boolean isAdd;
     DeviceConfig device;
 
     public EditDeviceScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<EditDeviceComponent>getDaggerComponent(getContext()).presenter();
     }
 
@@ -84,6 +86,8 @@ public class EditDeviceScreenView extends ScrollView {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
+        if (isInEditMode())
+            return;
         groupCompression.setOnCheckedChangeListener(compressionChangedListener);
         presenter.takeView(this);
     }

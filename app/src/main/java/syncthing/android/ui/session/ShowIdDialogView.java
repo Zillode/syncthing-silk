@@ -47,7 +47,7 @@ public class ShowIdDialogView extends RelativeLayout {
     @InjectView(R.id.qr_image) ImageView qrImage;
     @InjectView(R.id.loading_progress) ProgressBar progress;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     String id;
     Subscription qrImageSubscription;
@@ -55,6 +55,8 @@ public class ShowIdDialogView extends RelativeLayout {
 
     public ShowIdDialogView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 

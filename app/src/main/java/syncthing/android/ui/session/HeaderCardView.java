@@ -35,12 +35,14 @@ public class HeaderCardView extends TextView implements BindsCard, NoDecorate {
     //@InjectView(R.id.title) TextView title;
     //@InjectView(R.id.btn_add) Button btnAdd;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     HeaderCard item;
 
     public HeaderCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 

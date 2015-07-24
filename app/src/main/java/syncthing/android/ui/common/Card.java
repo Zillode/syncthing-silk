@@ -18,7 +18,7 @@
 package syncthing.android.ui.common;
 
 /**
- * Wrapper for recycler items to abstract adapter fuctionality
+ * Wrapper for recycler items to abstract adapter functionality
  *
  * Created by drew on 3/10/15.
  */

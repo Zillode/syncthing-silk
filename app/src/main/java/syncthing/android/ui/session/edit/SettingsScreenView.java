@@ -56,7 +56,7 @@ public class SettingsScreenView extends ScrollView {
     @InjectView(R.id.check_usage_reporting) CheckBox enableUsageReporting;
     @InjectView(R.id.edit_apikey) EditText editApiKey;
 
-    final SettingsPresenter presenter;
+    SettingsPresenter presenter;
 
     DeviceConfig deviceConfig;
     GUIConfig guiConfig;
@@ -64,6 +64,8 @@ public class SettingsScreenView extends ScrollView {
 
     public SettingsScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SettingsComponent>getDaggerComponent(getContext()).presenter();
     }
 
@@ -71,6 +73,8 @@ public class SettingsScreenView extends ScrollView {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
+        if (isInEditMode())
+            return;
         presenter.takeView(this);
     }
 

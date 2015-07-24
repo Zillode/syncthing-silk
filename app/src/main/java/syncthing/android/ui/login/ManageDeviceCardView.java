@@ -50,10 +50,12 @@ public class ManageDeviceCardView extends LinearLayout implements BindsCard {
     Subscription identiconSubscription;
     ManageDeviceCard item;
 
-    final ManagePresenter presenter;
+    ManagePresenter presenter;
 
     public ManageDeviceCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<ManageComponent>getDaggerComponent(getContext()).presenter();
     }
 

@@ -64,8 +64,8 @@ public class DeviceCardView extends ExpandableCardViewWrapper<DeviceCard> {
     @InjectView(R.id.last_seen_container) ViewGroup lastSeenHider;
     @InjectView(R.id.last_seen) TextView lastSeen;
 
-    final SessionPresenter presenter;
-    final DateTime epoch;
+    SessionPresenter presenter;
+    DateTime epoch;
 
     Subscription identiconSubscription;
     Subscription connectionSubscription;
@@ -74,6 +74,8 @@ public class DeviceCardView extends ExpandableCardViewWrapper<DeviceCard> {
 
     public DeviceCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
         epoch = new DateTime(1969);
     }

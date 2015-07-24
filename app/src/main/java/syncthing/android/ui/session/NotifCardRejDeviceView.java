@@ -47,12 +47,14 @@ public class NotifCardRejDeviceView extends ExpandableCardViewWrapper<NotifCardR
     @InjectView(R.id.time) TextView time;
     @InjectView(R.id.message) TextView message;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     Subscription identiconSubscription;
 
     public NotifCardRejDeviceView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 
