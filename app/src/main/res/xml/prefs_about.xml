@@ -26,7 +26,21 @@
     </Preference>
 
     <Preference
-        android:title="@string/send_feedback">
+        android:title="@string/zillode_credits"
+        android:summary="@string/zillode_url">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="@string/zillode_url"/>
+    </Preference>
+
+    <Preference
+        android:title="@string/zillode_send_feedback"
+        android:summary="@string/zillode_url">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="@string/zillode_url"/>
+    </Preference>
+
+    <Preference
+        android:title="@string/opensilk_send_feedback">
         <intent android:action="android.intent.action.SENDTO"
                 android:data="@string/feedback_email">
             <extra
