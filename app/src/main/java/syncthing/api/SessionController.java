@@ -112,6 +112,7 @@ public class SessionController implements EventMonitor.EventListener {
 
     }
 
+    boolean isLocal;
     SystemInfo systemInfo;
     String myID;
     Config config;
@@ -143,8 +144,9 @@ public class SessionController implements EventMonitor.EventListener {
     final BehaviorSubject<ChangeEvent> changeBus = BehaviorSubject.create();
 
     @Inject
-    public SessionController(SyncthingApi restApi, @Named("longpoll") SyncthingApi longpollRestApi) {
+    public SessionController(boolean isLocal, SyncthingApi restApi, @Named("longpoll") SyncthingApi longpollRestApi) {
         Timber.i("new SessionController");
+        this.isLocal = isLocal;
         this.restApi = restApi;
         this.eventMonitor = new EventMonitor(longpollRestApi, this);
     }
@@ -184,6 +186,10 @@ public class SessionController implements EventMonitor.EventListener {
         eventMonitor.stop();
         cancelPeriodicRefresh();
         running = false;
+    }
+
+    public boolean isLocal() {
+        return isLocal;
     }
 
     public boolean isRunning() {

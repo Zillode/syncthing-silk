@@ -35,6 +35,11 @@ public class SessionModule {
     }
 
     @Provides @SessionScope
+    public boolean provideIsLocalInstance(){
+        return screen.credentials.isLocalInstance;
+    }
+
+    @Provides @SessionScope
     public Credentials provideCredentials(){
         return screen.credentials;
     }

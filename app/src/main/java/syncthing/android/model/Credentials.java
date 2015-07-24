@@ -30,6 +30,7 @@ import syncthing.api.SyncthingApi;
 public class Credentials implements Parcelable, Endpoint, RequestInterceptor {
     public static final Credentials NONE = new Credentials(null, null);
 
+    public final boolean isLocalInstance;
     public final String alias;
     public final String id;
     public final String url;
@@ -38,15 +39,20 @@ public class Credentials implements Parcelable, Endpoint, RequestInterceptor {
 
     @Deprecated
     public Credentials(String url, String apiKey) {
-        this(null, null, url, apiKey, null);
+        this(false, null, null, url, apiKey, null);
     }
 
-    public Credentials(String alias, String id, String url, String apiKey, String caCert) {
+    public Credentials(boolean isLocalInstance, String alias, String id, String url, String apiKey, String caCert) {
+        this(isLocalInstance ? "true" : "false", alias, id, url, apiKey, caCert);
+    }
+
+    public Credentials(String isLocalInstance, String alias, String id, String url, String apiKey, String caCert) {
         this.alias = alias;
         this.id = id;
         this.url = url;
         this.apiKey = apiKey;
         this.caCert = caCert;
+        this.isLocalInstance = isLocalInstance.equals("true");
     }
 
     @Override
@@ -85,6 +91,7 @@ public class Credentials implements Parcelable, Endpoint, RequestInterceptor {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(isLocalInstance ? "true" : "false");
         dest.writeString(alias);
         dest.writeString(id);
         dest.writeString(url);
@@ -96,6 +103,7 @@ public class Credentials implements Parcelable, Endpoint, RequestInterceptor {
         @Override
         public Credentials createFromParcel(Parcel source) {
             return new Credentials(
+                    source.readString(),
                     source.readString(),
                     source.readString(),
                     source.readString(),

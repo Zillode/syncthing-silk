@@ -127,6 +127,11 @@ dependencies {
 
     compile (group:'commons-io', name: 'commons-io', version: rootProject.ext.commonsIoVersion)
     compile 'org.zeroturnaround:zt-zip:1.9-SNAPSHOT'
+
+    compile 'com.turhanoz.android:reactivedirectorychooser:0.0.10@aar'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.github.shell-software:fab:1.0.5@aar'
+
     //acra
     //compile 'ch.acra:acra:4.6.2'
 

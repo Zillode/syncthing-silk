@@ -18,7 +18,9 @@
 package syncthing.android.ui.session.edit;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
 import org.opensilk.common.core.mortar.DaggerService;
@@ -45,6 +48,7 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import syncthing.android.R;
 import syncthing.android.service.SyncthingUtils;
+import syncthing.android.ui.common.ActivityRequestCodes;
 import syncthing.api.model.DeviceConfig;
 import syncthing.api.model.FolderConfig;
 import syncthing.api.model.FolderDeviceConfig;
@@ -64,6 +68,7 @@ public class EditFolderScreenView extends ScrollView {
     @InjectView(R.id.error_folder_id_blank) TextView errorFolderIdBlank;
     @InjectView(R.id.error_folder_id_invalid) TextView errorFolderIdInvalid;
     @InjectView(R.id.edit_folder_path) AutoCompleteTextView editFolderPath;
+    @InjectView(R.id.btn_browse) Button browseFolderPath;
     @InjectView(R.id.desc_folder_path) TextView descFolderPath;
     @InjectView(R.id.error_folder_path_blank) TextView errorFolderPathBlank;
     @InjectView(R.id.edit_rescan_interval) EditText editRescanIntrvl;
@@ -95,6 +100,7 @@ public class EditFolderScreenView extends ScrollView {
     @InjectView(R.id.btn_delete) Button deleteBtn;
     @InjectView(R.id.btn_ignore_ptrn) Button ignoresPattrnBtn;
 
+    Context context;
     EditFolderPresenter presenter;
     DirectoryAutoCompleteAdapter editFolderPathAdapter;
 
@@ -105,6 +111,7 @@ public class EditFolderScreenView extends ScrollView {
         super(context, attrs);
         if (isInEditMode())
             return;
+        this.context = context;
         presenter = DaggerService.<EditFolderComponent>getDaggerComponent(getContext()).presenter();
         editFolderPathAdapter = new DirectoryAutoCompleteAdapter(getContext());
     }
@@ -138,6 +145,11 @@ public class EditFolderScreenView extends ScrollView {
     @OnClick(R.id.btn_cancel)
     void doCancel() {
         presenter.dismissDialog();
+    }
+
+    @OnClick(R.id.btn_browse)
+    void doBrowse() {
+        presenter.openPathBrowser();
     }
 
     @OnClick(R.id.btn_save)
@@ -229,7 +241,7 @@ public class EditFolderScreenView extends ScrollView {
 
     }
 
-    void initialize(boolean isAdd, FolderConfig folder, List<DeviceConfig> devices, SystemInfo systemInfo, boolean fromsavedstate) {
+    void initialize(boolean isAdd, boolean isLocal, FolderConfig folder, List<DeviceConfig> devices, SystemInfo systemInfo, boolean fromsavedstate) {
         this.isAdd = isAdd;
         this.folder = folder;
         if (fromsavedstate) return;
@@ -323,6 +335,7 @@ public class EditFolderScreenView extends ScrollView {
             sharedDevicesContainer.addView(checkBox);
         }
 
+        browseFolderPath.setVisibility(isLocal ? VISIBLE : GONE);
         deleteBtn.setVisibility(isAdd ? GONE : VISIBLE);
         ignoresPattrnBtn.setVisibility(isAdd ? GONE : VISIBLE);
 
@@ -441,6 +454,10 @@ public class EditFolderScreenView extends ScrollView {
             }
         }
     };
+
+    public void setFolderPath(String path) {
+        editFolderPath.setText(path);
+    }
 
     class DirectoryAutoCompleteAdapter extends ArrayAdapter<String> {
         DirectoryAutoCompleteAdapter(Context context) {

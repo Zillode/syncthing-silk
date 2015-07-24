@@ -21,13 +21,17 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
+import android.widget.EditText;
 
 import org.opensilk.common.core.mortar.HasScope;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import mortar.Presenter;
 import mortar.bundler.BundleService;
+import syncthing.android.R;
 import syncthing.api.SessionScope;
 
 /**
@@ -57,5 +61,17 @@ public class SessionFragmentPresenter extends Presenter<SessionFragmentPresenter
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void openDialogFragment(DialogFragment fragment, String tag) {
         fragment.show(getFragmentManager(), tag);
+    }
+
+    public void setFolderPath(String path) {
+        if(!hasView()) return;
+        List<android.support.v4.app.Fragment> fragments = getFragmentManager().getFragments();
+        for (android.support.v4.app.Fragment fragment : fragments) {
+            if (fragment.getTag() != "folderedit") continue;
+            EditText text = (EditText) fragment.getView().findViewById(R.id.edit_folder_path);
+            if (text == null) continue;
+            text.setText(path);
+            return;
+        }
     }
 }

@@ -23,6 +23,7 @@ import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -42,6 +43,12 @@ import org.opensilk.common.ui.mortar.DrawerOwner;
 import org.opensilk.common.ui.mortar.DrawerOwnerActivity;
 import org.opensilk.common.ui.mortarfragment.MortarFragmentActivity;
 
+import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryCancelEvent;
+import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryChosenEvent;
+import com.turhanoz.android.reactivedirectorychooser.ui.OnDirectoryChooserFragmentInteraction;
+
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
@@ -55,13 +62,14 @@ import syncthing.android.AppComponent;
 import syncthing.android.AppSettings;
 import syncthing.android.R;
 import syncthing.android.service.SyncthingUtils;
+import syncthing.android.ui.common.ActivityRequestCodes;
 import timber.log.Timber;
 
 /**
  * Created by drew on 3/1/15.
  */
 public class LauncherActivity extends MortarFragmentActivity implements
-        DrawerOwnerActivity, ActivityResultsActivity {
+        ActivityResultsActivity, DrawerOwnerActivity, OnDirectoryChooserFragmentInteraction {
 
     @Inject ActionBarOwner mActionBarOwner;
     @Inject DrawerOwner mDrawerOwner;
@@ -201,6 +209,21 @@ public class LauncherActivity extends MortarFragmentActivity implements
     public int getContainerViewId() {
         return R.id.main;
     }
+
+    @Override
+    public void onEvent(OnDirectoryChosenEvent event) {
+        String path = event.getFile().getAbsolutePath();
+        Intent i = new Intent().putExtra("folder", path);
+        Timber.d("DirectoryChosenEvent " + path);
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+        for (Fragment fragment : fragments) {
+            fragment.onActivityResult(ActivityRequestCodes.DIRECTORY_PICKER, Activity.RESULT_OK, i);
+        }
+        super.onActivityResult(ActivityRequestCodes.DIRECTORY_PICKER, Activity.RESULT_OK, i);
+    }
+
+    @Override
+    public void onEvent(OnDirectoryCancelEvent onDirectoryCancelEvent) { }
 
     class Toggle extends ActionBarDrawerToggle {
         public Toggle(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar) {
