@@ -164,7 +164,7 @@ public class SyncthingUtils {
     }
 
     public static String getGoBinaryPath(Context context) {
-        return new File(context.getApplicationContext().getFilesDir(), "syncthing.bin").getAbsolutePath();
+        return new File(context.getApplicationInfo().dataDir, "lib/libsyncthing.so").getAbsolutePath();
     }
 
     /*
