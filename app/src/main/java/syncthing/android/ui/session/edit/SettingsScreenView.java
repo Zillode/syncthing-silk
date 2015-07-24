@@ -62,6 +62,8 @@ public class SettingsScreenView extends ScrollView {
     GUIConfig guiConfig;
     OptionsConfig options;
 
+    String hiddenPass = SyncthingUtils.hiddenString(20);
+
     public SettingsScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
         if (isInEditMode())
@@ -126,7 +128,8 @@ public class SettingsScreenView extends ScrollView {
         options.globalAnnounceServers = SyncthingUtils.rollArray(editGlobalDiscovrServr.getText().toString());
         guiConfig.address = editGuiListenAddrs.getText().toString();
         guiConfig.user = editGuiUsr.getText().toString();
-        if (!StringUtils.isEmpty(editGuiPass.getText().toString())) {
+        if (!StringUtils.isEmpty(editGuiPass.getText().toString()) &&
+                !editGuiPass.getText().toString().equals(hiddenPass)) {
             guiConfig.password = editGuiPass.getText().toString();
         }
         guiConfig.useTLS = enableHttps.isChecked();
@@ -152,7 +155,7 @@ public class SettingsScreenView extends ScrollView {
         editGlobalDiscovrServr.setText(SyncthingUtils.unrollArray(options.globalAnnounceServers));
         editGuiListenAddrs.setText(guiConfig.address);
         editGuiUsr.setText(guiConfig.user);
-        //ignoring password
+        editGuiPass.setText(hiddenPass);
         enableHttps.setChecked(guiConfig.useTLS);
         enableBrowser.setChecked(options.startBrowser);
         enableUsageReporting.setChecked(options.urAccepted > 0);
