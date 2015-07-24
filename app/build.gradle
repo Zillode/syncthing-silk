@@ -66,6 +66,13 @@ android {
         exclude 'META-INF/NOTICE.txt'
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDir file("libs/")
+        }
+    }
+
+
     if (file('../../KeyStore').exists()) {
         signingConfigs {
             release {
@@ -104,6 +111,8 @@ android {
 
 dependencies {
     provided(group: 'com.google.dagger', name:'dagger-compiler', version: rootProject.ext.dagger2Version)
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //SDK
     compile (group: 'com.android.support', name: 'cardview-v7', version: rootProject.ext.supportLibVersion)

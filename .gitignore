@@ -5,4 +5,5 @@
 /build
 *.iml
 
-/app/src/main/assets/syncthing*
+/syncthing
+/app/libs

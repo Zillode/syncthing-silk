@@ -232,38 +232,12 @@ public class SyncthingInstance extends MortarService {
 
     // From camlistore
     void ensureBinary() {
-        long myTime = getAPKModTime();
         String dstFile = SyncthingUtils.getGoBinaryPath(this);
-        File f = new File(dstFile);
-        Timber.d("My Time: %d", myTime);
-        Timber.d("Bin Time: " + f.lastModified());
-        if (f.exists() && f.lastModified() > myTime) {
-            Timber.d("Go binary modtime up-to-date.");
-            return;
-        }
-        Timber.d("Go binary missing or modtime stale. Re-copying from APK.");
-        InputStream is = null;
-        FileOutputStream fos = null;
         try {
-            is = getAssets().open("syncthing.arm");
-            fos = getApplicationContext().openFileOutput("syncthing.bin.writing", MODE_PRIVATE);
-            IOUtils.copy(is, fos);
-            fos.flush();
-
-            String writingFilePath = dstFile + ".writing";
-            Timber.d("wrote out %s", writingFilePath);
-            Runtime.getRuntime().exec("chmod 0700 " + writingFilePath);
-            Timber.d("did chmod 0700 on %s", writingFilePath);
-            Runtime.getRuntime().exec("mv " + writingFilePath + " " + dstFile);
-            Timber.d("moved %s to %s", writingFilePath, dstFile);
-            f = new File(dstFile);
-            f.setLastModified(myTime);
-            Timber.d("set modtime of %s", dstFile);
+            Runtime.getRuntime().exec("chmod 0700 " + dstFile);
+            Timber.d("did chmod 0700 on %s", dstFile);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            IOUtils.closeQuietly(is);
-            IOUtils.closeQuietly(fos);
         }
     }
 
