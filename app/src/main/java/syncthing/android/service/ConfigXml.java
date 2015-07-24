@@ -85,6 +85,22 @@ public class ConfigXml {
             }
         }
 
+        //resolve announcer
+        NodeList globalAnnounceServer = options.getElementsByTagName("globalAnnounceServer");
+        for (int i = 0; i < globalAnnounceServer.getLength(); i++) {
+            Element g = (Element) globalAnnounceServer.item(i);
+            if (g.getTextContent().equals("udp4://announce.syncthing.net:22026")) {
+                Timber.d("Replacing IPv4 globalAnnounceServer address with static ip");
+                g.setTextContent("udp4://194.126.249.5:22026");
+                changed = true;
+            }
+            if (g.getTextContent().equals("udp6://announce-v6.syncthing.net:22026")) {
+                Timber.d("Replacing IPv6 globalAnnounceServer address with static ip");
+                g.setTextContent("udp6://[2001:470:28:4d6::5]:22026");
+                changed = true;
+            }
+        }
+
         NodeList folders = mConfig.getDocumentElement().getElementsByTagName("folder");
         for (int i = 0; i < folders.getLength(); i++) {
             Element r = (Element) folders.item(i);
