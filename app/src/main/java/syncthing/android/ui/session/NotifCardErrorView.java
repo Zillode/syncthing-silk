@@ -40,10 +40,12 @@ public class NotifCardErrorView extends ExpandableCardViewWrapper<NotifCardError
     @InjectView(R.id.time) TextView time;
     @InjectView(R.id.message) TextView message;
 
-    final SessionPresenter presenter;
+    SessionPresenter presenter;
 
     public NotifCardErrorView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 

@@ -95,14 +95,16 @@ public class EditFolderScreenView extends ScrollView {
     @InjectView(R.id.btn_delete) Button deleteBtn;
     @InjectView(R.id.btn_ignore_ptrn) Button ignoresPattrnBtn;
 
-    final EditFolderPresenter presenter;
-    final DirectoryAutoCompleteAdapter editFolderPathAdapter;
+    EditFolderPresenter presenter;
+    DirectoryAutoCompleteAdapter editFolderPathAdapter;
 
     boolean isAdd = false;
     FolderConfig folder;
 
     public EditFolderScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<EditFolderComponent>getDaggerComponent(getContext()).presenter();
         editFolderPathAdapter = new DirectoryAutoCompleteAdapter(getContext());
     }
@@ -111,6 +113,8 @@ public class EditFolderScreenView extends ScrollView {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
+        if (isInEditMode())
+            return;
         rdioVerGroup.setOnCheckedChangeListener(versioningChangeListener);
         presenter.takeView(this);
     }

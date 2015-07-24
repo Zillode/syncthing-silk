@@ -42,10 +42,12 @@ public class EditIgnoresScreenView extends ScrollView {
     @InjectView(R.id.desc_filename) TextView descFilename;
     @InjectView(R.id.edit_ignores) EditText editIgnores;
 
-    final EditIgnoresPresenter presenter;
+    EditIgnoresPresenter presenter;
 
     public EditIgnoresScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         presenter = DaggerService.<EditIgnoresComponent>getDaggerComponent(context).presenter();
     }
 
@@ -53,6 +55,8 @@ public class EditIgnoresScreenView extends ScrollView {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
+        if (isInEditMode())
+            return;
         presenter.takeView(this);
     }
 

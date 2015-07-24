@@ -39,7 +39,7 @@ import syncthing.android.ui.common.ExpandableCard;
  */
 public class SessionScreenView extends RecyclerListFrame {
 
-    final SessionPresenter mPresenter;
+    SessionPresenter mPresenter;
 
     SessionRecyclerAdapter mListAdapter;
 
@@ -48,12 +48,16 @@ public class SessionScreenView extends RecyclerListFrame {
 
     public SessionScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode())
+            return;
         mPresenter = DaggerService.<SessionComponent>getDaggerComponent(getContext()).presenter();
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        if (isInEditMode())
+            return;
         mListAdapter = new SessionRecyclerAdapter();
         mListAdapter.setExpandListener((CanExpand.OnExpandListener) mList);
         mList.setAdapter(mListAdapter);

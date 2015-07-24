@@ -136,7 +136,7 @@ public class NavigationPresenter extends ViewPresenter<NavigationScreenView> imp
 
     void postOpenCurrentDevice() {
         if (currentDevice != null) {
-            //Protect fragment manager illegal state bullshit
+            // Protect fragment manager from illegal state
             final Scheduler.Worker worker = AndroidSchedulers.mainThread().createWorker();
             worker.schedule(() -> {
                 openSessionScreen(currentDevice);
