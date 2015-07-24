@@ -42,11 +42,11 @@ allprojects {
 }
 
 // Build config
-ext.compileSdkVersion = 22
+ext.compileSdkVersion = 23
 ext.buildToolsVersion  = "22.0.1"
 
 // defaultConfig
-ext.targetSdkVersion = 22
+ext.targetSdkVersion = 23
 
 ext.supportLibVersion = "22.1.1"
 ext.dagger2Version = "2.0"
