@@ -60,6 +60,7 @@ public class SyncthingInstance extends MortarService {
     @Inject AlarmManagerHelper mAlarmManagerHelper;
 
     SyncthingThread mSyncthingThread;
+    SyncthingInotifyThread mSyncthingInotifyThread;
 
     int mConnectedClients = 0;
     boolean mAnyActivityInForeground;
@@ -208,6 +209,8 @@ public class SyncthingInstance extends MortarService {
     void startSyncthing() {
         mSyncthingThread = new SyncthingThread(this);
         mSyncthingThread.start();
+        mSyncthingInotifyThread = new SyncthingInotifyThread(this);
+        mSyncthingInotifyThread.start();
     }
 
     void maybeStartSyncthing() {
@@ -221,6 +224,10 @@ public class SyncthingInstance extends MortarService {
             mSyncthingThread.kill();
             mSyncthingThread = null;
         }
+        if (mSyncthingInotifyThread != null) {
+            mSyncthingInotifyThread.kill();
+            mSyncthingInotifyThread = null;
+        }
     }
 
     /*
@@ -229,7 +236,14 @@ public class SyncthingInstance extends MortarService {
 
     // From camlistore
     void ensureBinary() {
-        String dstFile = SyncthingUtils.getGoBinaryPath(this);
+        String dstFile = SyncthingUtils.getSyncthingBinaryPath(this);
+        try {
+            Runtime.getRuntime().exec("chmod 0700 " + dstFile);
+            Timber.d("did chmod 0700 on %s", dstFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        dstFile = SyncthingUtils.getSyncthingInotifyBinaryPath(this);
         try {
             Runtime.getRuntime().exec("chmod 0700 " + dstFile);
             Timber.d("did chmod 0700 on %s", dstFile);
