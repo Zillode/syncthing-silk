@@ -99,7 +99,7 @@ public class ServiceSettings extends PreferencesWrapper {
             Timber.d("isAllowedToRun(): chargingOnly=true and not charging... rejecting");
             return false;
         }
-        if (!hasSuitableConnection()) {
+        if (!hasValidatedConnection()) {
             Timber.d("isAllowedToRun(): No suitable network... rejecting");
             return false;
         }
@@ -127,22 +127,24 @@ public class ServiceSettings extends PreferencesWrapper {
         return status != 0;
     }
 
-    boolean hasSuitableConnection() {
+    boolean hasValidatedConnection() {
         NetworkInfo info = cm.getActiveNetworkInfo();
-        if (info == null || !info.isConnectedOrConnecting()) {
-            Timber.d("Not connected to any networks");
-            return false;
-        }
         boolean wifiOnly = getPrefs().getBoolean(ONLY_WIFI, false);
-        if (wifiOnly && !isWifiOrEthernet(info.getType())) {
-            Timber.d("Connection is not wifi network and wifiOnly=true");
-            return false;
+        if (wifiOnly) {
+            if (info == null || !info.isConnectedOrConnecting()) {
+                Timber.d("Not connected to any network");
+                return false;
+            }
+            if (!isWifiOrEthernet(info.getType())) {
+                Timber.d("Connection is not wifi network and wifiOnly=true");
+                return false;
+            }
+            if (!isConnectedToWhitelistedNetwork()) {
+                Timber.d("Connected network not in whitelist wifiOnly=true");
+                return false;
+            }
         }
-        if (wifiOnly && !isConnectedToWhitelistedNetwork()) {
-            Timber.d("Connected network not in whitelist wifiOnly=true");
-            return false;
-        }
-        Timber.d("Connected network passes all preconditions");
+        Timber.d("Network status passes all preconditions");
         return true;
     }
 

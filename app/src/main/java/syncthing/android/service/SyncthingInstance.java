@@ -25,10 +25,7 @@ import org.apache.commons.io.IOUtils;
 import org.opensilk.common.core.mortar.DaggerService;
 import org.opensilk.common.core.mortar.MortarService;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import javax.inject.Inject;
 
@@ -148,7 +145,7 @@ public class SyncthingInstance extends MortarService {
             //when in foreground we only care about disabled status and
             //connection override, we will assume that since the user
             //opened the app they wish for the server to start
-            if (mSettings.isDisabled() || !mSettings.hasSuitableConnection()) {
+            if (mSettings.isDisabled() || !mSettings.hasValidatedConnection()) {
                 ensureSyncthingKilled();
             } else {
                 maybeStartSyncthing();
