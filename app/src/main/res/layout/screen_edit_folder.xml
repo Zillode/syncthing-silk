@@ -21,7 +21,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fillViewport="true">
 
     <LinearLayout
@@ -90,15 +90,31 @@
             android:text="@string/folder_path"
             style="@style/session.edit.FieldHeader"/>
 
-
-        <AutoCompleteTextView
-            android:id="@+id/edit_folder_path"
+        <LinearLayout
+            android:orientation="horizontal"
+            style="@style/mtrl.ButtonBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusDown="@+id/edit_rescan_interval"
-            style="@style/session.edit.EditText"
-            />
+            android:layout_height="match_parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_folder_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:layout_toLeftOf="@+id/btn_browse"
+                android:layout_weight="1"
+                android:nextFocusDown="@+id/edit_rescan_interval"
+                style="@style/session.edit.EditText" />
+
+            <Button
+                android:id="@+id/btn_browse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/browse"
+                style="@style/mtrl.ButtonBarButton.Small"/>
+        </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/desc_folder_path"
@@ -464,7 +480,7 @@
                 android:id="@+id/btn_ignore_ptrn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ignore_patterns"
+                android:text="@string/ignores"
                 style="@style/mtrl.ButtonBarButton.Small"/>
 
             <Button

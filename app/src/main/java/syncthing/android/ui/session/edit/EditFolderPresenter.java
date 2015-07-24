@@ -17,10 +17,27 @@
 
 package syncthing.android.ui.session.edit;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.ContentUris;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+
+import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryCancelEvent;
+import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryChosenEvent;
+import com.turhanoz.android.reactivedirectorychooser.ui.OnDirectoryChooserFragmentInteraction;
 
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.opensilk.common.ui.mortar.ActivityResultsController;
+import org.opensilk.common.ui.mortar.ActivityResultsListener;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,11 +45,15 @@ import java.util.Collections;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import mortar.MortarScope;
 import rx.Subscription;
+import syncthing.android.service.DocumentHelper;
+import syncthing.android.ui.common.ActivityRequestCodes;
 import syncthing.android.ui.session.SessionPresenter;
 import syncthing.api.SessionController;
 import syncthing.api.model.FolderConfig;
 import syncthing.api.model.FolderDeviceConfig;
+import timber.log.Timber;
 
 import static syncthing.android.ui.session.edit.EditModule.INVALID_ID;
 
@@ -40,7 +61,9 @@ import static syncthing.android.ui.session.edit.EditModule.INVALID_ID;
  * Created by drew on 3/16/15.
  */
 @EditScope
-public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> {
+public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> implements ActivityResultsListener {
+
+    final ActivityResultsController activityResultsController;
 
     FolderConfig origFolder;
 
@@ -49,6 +72,7 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> {
     @Inject
     public EditFolderPresenter(
             SessionController controller,
+            ActivityResultsController activityResultsController,
             EditFragmentPresenter editFragmentPresenter,
             SessionPresenter sessionPresenter,
             @Named("folderid") String folderId,
@@ -56,6 +80,12 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> {
             @Named("deviceid") String deviceId
     ) {
         super(controller, editFragmentPresenter, sessionPresenter, folderId, deviceId, isAdd);
+        this.activityResultsController = activityResultsController;
+    }
+
+    @Override
+    protected void onEnterScope(MortarScope scope) {
+        activityResultsController.register(scope, this);
     }
 
     @Override
@@ -84,7 +114,7 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> {
         } else {
             origFolder = (FolderConfig) savedInstanceState.getSerializable("folder");
         }
-        getView().initialize(isAdd, origFolder, controller.getRemoteDevices(), controller.getSystemInfo(), savedInstanceState != null);
+        getView().initialize(isAdd, controller.isLocal(), origFolder, controller.getRemoteDevices(), controller.getSystemInfo(), savedInstanceState != null);
     }
 
     @Override
@@ -202,4 +232,19 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> {
         sessionPresenter.openEditIgnoresScreen(folderId);
     }
 
+    void openPathBrowser() {
+        sessionPresenter.openPathBrowser(folderId);
+    }
+
+    @Override
+    public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ActivityRequestCodes.DIRECTORY_PICKER) {
+            if (resultCode == Activity.RESULT_OK && hasView()) {
+                String path = data.getStringExtra("folder");
+                getView().setFolderPath(path);
+                return true;
+            }
+        }
+        return false;
+    }
 }

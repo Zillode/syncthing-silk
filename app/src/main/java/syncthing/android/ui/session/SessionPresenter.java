@@ -20,6 +20,7 @@ package syncthing.android.ui.session;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 
@@ -27,6 +28,8 @@ import org.opensilk.common.core.dagger2.ForApplication;
 import org.opensilk.common.rx.RxBus;
 import org.opensilk.common.ui.mortar.ActivityResultsController;
 import org.opensilk.common.ui.mortarfragment.FragmentManagerOwner;
+
+import com.turhanoz.android.reactivedirectorychooser.ui.DirectoryChooserFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -423,6 +426,11 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         doOpenScreen(EditFragment.newFolderIgnoresInstance(folderId), "folderignores"+folderId);
     }
 
+    public void openPathBrowser(String folderId) {
+        doOpenScreen(DirectoryChooserFragment.newInstance(
+                Environment.getExternalStorageDirectory()), "folderbrowser" + folderId);
+    }
+
     void openSettingsScreen() {
         doOpenScreen(EditFragment.newSettingsInstance(), "settings");
     }
@@ -430,6 +438,4 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
     void doOpenScreen(DialogFragment fragment, String tag) {
         fragmentPresenter.openDialogFragment(fragment, tag);
     }
-
-
 }
