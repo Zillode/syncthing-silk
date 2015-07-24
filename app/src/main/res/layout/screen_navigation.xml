@@ -47,8 +47,8 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/manage_devices"
-            android:text="@string/manage_devices"
+            android:id="@+id/manage_remotes"
+            android:text="@string/manage_remotes"
             android:drawableLeft="@drawable/ic_computer_grey600_36dp"
             android:drawableStart="@drawable/ic_computer_grey600_36dp"
             style="@style/mtrl.SingleLineListItemTextView.Icon"/>

@@ -27,7 +27,8 @@
     <string name="no_qr_scanner_installed">You have no QR scanner installed or your scanner is not supported. Please install a scanner or enter the device ID manually.</string>
 
     <!--Buttons-->
-    <string name="manage_devices">Manage Devices</string>
+    <string name="manage_remotes">Manage Remotes</string>
+    <string name="add_remote">Add Remote</string>
     <string name="remove">Remove</string>
     <string name="make_default">Make Default</string>
     <string name="use_tls">Use TLS</string>
@@ -91,8 +92,9 @@
 
     <!--Settings about-->
     <string name="opensilk_productions">Created by OpenSilk Productions LLC</string>
-    <string name="send_feedback">Send feedback</string>
-    <string name="send_crash_reports">Send crash reports</string>
+    <string name="zillode_credits">Released and modified by Zillode</string>
+    <string name="opensilk_send_feedback">Send feedback to OpenSilk</string>
+    <string name="zillode_send_feedback">Send feedback to Maintainer</string>
     <string name="send_crash_reports_summary">Crash reports are anonymous and secure</string>
     <string name="open_source_licenses">Open source licenses</string>
 </resources>
