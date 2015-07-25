@@ -1076,7 +1076,7 @@ public class SessionController implements EventMonitor.EventListener {
             });
         }
         onNext.call(new ChangeEvent(online ? Change.ONLINE : Change.OFFLINE, null));
-        return o.subscribe(onNext);
+        return o.observeOn(AndroidSchedulers.mainThread()).subscribe(onNext);
     }
 
 }
