@@ -1,5 +1,11 @@
 ##Syncthing Silk for Android
 
+[![Build Status](http://android.syncthing.net/job/Syncthing-Silk/badge/icon)](http://android.syncthing.net/job/Syncthing-Silk/)
+
+<img src="screenshots/screen_uptodate.png" alt="Up to date" width="200" />
+<img src="screenshots/screen_sync_3.png" alt="Synchronizing" width="200" />
+<img src="screenshots/screen_side.png" alt="Remote panel" width="200" />
+
 This app aims to be a full featured [Syncthing](https://syncthing.net/) client comparable to the web ui.
 It is based on [SyncthingAndroid from OpenSilk](https://github.com/OpenSilk/SyncthingAndroid) but with a focus on user friendliness.
 This includes:
