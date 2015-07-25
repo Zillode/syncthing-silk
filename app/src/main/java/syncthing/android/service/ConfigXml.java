@@ -125,15 +125,30 @@ public class ConfigXml {
     }
 
     /**
-     * Change default address to 127.0.0.1:8385
+     * Change default GUI address to 127.0.0.1:8385
      */
-    public void changeDefaultAddress() {
+    public void changeDefaultGUIAddress() {
         Element options = (Element) mConfig.getDocumentElement()
                 .getElementsByTagName("gui").item(0);
         // Enable TLS
         options.setAttribute("tls", Boolean.toString(true));
         Element address = (Element) options.getElementsByTagName("address").item(0);
         address.setTextContent("127.0.0.1:8385");
+        saveChanges();
+    }
+
+    /**
+     * Change default listen address, localAnnouncePort and localAnnounceMCAddr
+     */
+    public void changeDefaultListenAddresses() {
+        Element options = (Element) mConfig.getDocumentElement()
+                .getElementsByTagName("options").item(0);
+        Element listenAddress = (Element) options.getElementsByTagName("listenAddress").item(0);
+        listenAddress.setTextContent("0.0.0.0:22001");
+        Element localAnnouncePort = (Element) options.getElementsByTagName("localAnnouncePort").item(0);
+        localAnnouncePort.setTextContent("21040");
+        Element localAnnounceMCAddr = (Element) options.getElementsByTagName("localAnnounceMCAddr").item(0);
+        localAnnounceMCAddr.setTextContent("[ff32::5222]:21041");
         saveChanges();
     }
 
