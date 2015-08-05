@@ -68,10 +68,27 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDir file("libs/")
+            jniLibs.srcDir file("libs")
         }
     }
 
+    productFlavors {
+        x86 {
+            versionCode Integer.parseInt("4" + defaultConfig.versionCode)
+            ndk {
+                abiFilter "x86"
+            }
+        }
+        armeabi {
+            versionCode Integer.parseInt("3" + defaultConfig.versionCode)
+            ndk {
+                abiFilter "armeabi"
+            }
+        }
+        fat {
+            versionCode Integer.parseInt("0" + defaultConfig.versionCode)
+        }
+    }
 
     if (file('../../KeyStore').exists()) {
         signingConfigs {
