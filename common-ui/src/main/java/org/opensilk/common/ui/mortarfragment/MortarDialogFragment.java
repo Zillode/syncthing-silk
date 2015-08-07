@@ -93,7 +93,12 @@ public abstract class MortarDialogFragment extends DialogFragment {
     protected MortarScope findOrMakeScope() {
         MortarScope scope = MortarScope.findChild(getActivity(), getScopeName());
         if (scope != null) {
-            Timber.d("Reusing fragment scope %s", getScopeName());
+            if (scope.isDestroyed()) {
+                Timber.d("Recreating destroyed fragment scope %s", getScopeName());
+                scope = null;
+            } else {
+                Timber.d("Reusing fragment scope %s", getScopeName());
+            }
         }
         if (scope == null) {
             ScreenScoper scoper = ScreenScoper.getService(getActivity());
