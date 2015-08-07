@@ -238,16 +238,16 @@ public class SyncthingInstance extends MortarService {
     void ensureBinary() {
         String dstFile = SyncthingUtils.getSyncthingBinaryPath(this);
         try {
-            Runtime.getRuntime().exec("chmod 0700 " + dstFile);
+            Runtime.getRuntime().exec("chmod 0700 " + dstFile).waitFor();
             Timber.d("did chmod 0700 on %s", dstFile);
-        } catch (IOException e) {
+        } catch (IOException|InterruptedException e) {
             throw new RuntimeException(e);
         }
         dstFile = SyncthingUtils.getSyncthingInotifyBinaryPath(this);
         try {
-            Runtime.getRuntime().exec("chmod 0700 " + dstFile);
+            Runtime.getRuntime().exec("chmod 0700 " + dstFile).waitFor();
             Timber.d("did chmod 0700 on %s", dstFile);
-        } catch (IOException e) {
+        } catch (IOException|InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
