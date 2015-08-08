@@ -166,23 +166,10 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
         tmpCreds.alias = alias;
         tmpCreds.url = uri;
         endpoint.setUrl(uri);
-        subscription = syncthingApi.config().zipWith(syncthingApi.system(),
-                (config, system) -> {
-                    TempCredStorage tmp = new TempCredStorage();
-                    tmp.key = config.gui.apiKey;
-                    tmp.deviceId = system.myID;
-                    for (DeviceConfig d : config.devices) {
-                        if (StringUtils.equals(d.deviceID, system.myID)) {
-                            tmp.alias = SyncthingUtils.getDisplayName(d);
-                        }
-                    }
-                    interceptor.setApiKey(tmp.key);
-                    Timber.d(ReflectionToStringBuilder.reflectionToString(tmp));
-                    return new Pair<>(config, tmp);
-                })
+        subscription = syncthingApi.config()
                 .retryWhen(
                         attempts -> {
-                            final int retries = 180; // Wait up to 30 minutes
+                            final int retries = 1; // Wait up to 30 minutes
                             return attempts
                                     .zipWith(Observable.range(1, retries + 1),
                                             (n, i) -> new Pair<Throwable, Integer>(n, i))
@@ -193,17 +180,30 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
                                                     if (msg != null &&
                                                             !msg.contains("EOFException") &&
                                                             !msg.contains("timeout") &&
-                                                            !msg.contains("Connection reset by peer")){
+                                                            !msg.contains("Connection reset by peer")) {
                                                         // Another service running, propagate error and show to user
                                                         return Observable.error(pair.first);
                                                     }
                                                 }
                                                 if (pair.second > retries)
-                                                    return Observable.just(null);
+                                                    return Observable.error(new Exception("Timeout generating keys"));
                                                 return Observable.timer((long) 10, TimeUnit.SECONDS);
                                             });
                         })
-                .filter(pair -> pair != null)
+                .zipWith(syncthingApi.system(),
+                        (config, system) -> {
+                            TempCredStorage tmp = new TempCredStorage();
+                            tmp.key = config.gui.apiKey;
+                            tmp.deviceId = system.myID;
+                            for (DeviceConfig d : config.devices) {
+                                if (StringUtils.equals(d.deviceID, system.myID)) {
+                                    tmp.alias = SyncthingUtils.getDisplayName(d);
+                                }
+                            }
+                            interceptor.setApiKey(tmp.key);
+                            Timber.d(ReflectionToStringBuilder.reflectionToString(tmp));
+                            return new Pair<>(config, tmp);
+                        })
                 .flatMap( // Set username and password
                         (Pair<Config, TempCredStorage> pair) -> {
                             String username = SyncthingUtils.generateUsername();
