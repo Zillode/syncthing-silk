@@ -158,6 +158,29 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
         getView().hideSplash();
     }
 
+    public static Observable<?> retryObservable(Observable<?> attempts) {
+        final int retries = 1; // Wait up to 30 minutes
+        return attempts
+                .zipWith(Observable.range(1, retries + 1),
+                        (n, i) -> new Pair<Throwable, Integer>((Throwable)n, i))
+                .flatMap(
+                        pair -> {
+                            if (pair.first != null) {
+                                String msg = pair.first.getMessage();
+                                if (msg != null &&
+                                        !msg.contains("EOFException") &&
+                                        !msg.contains("timeout") &&
+                                        !msg.contains("Connection reset by peer")) {
+                                    // Another service running, propagate error and show to user
+                                    return Observable.error(pair.first);
+                                }
+                            }
+                            if (pair.second > retries)
+                                return Observable.error(new Exception("Timeout generating keys"));
+                            return Observable.timer((long) 10, TimeUnit.SECONDS);
+                        });
+    }
+
     void waitForInitialisation() {
         String alias = SyncthingUtils.generateDeviceName(false);
         String url = "127.0.0.1";
@@ -166,44 +189,23 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
         tmpCreds.alias = alias;
         tmpCreds.url = uri;
         endpoint.setUrl(uri);
-        subscription = syncthingApi.config().zipWith(syncthingApi.system(),
-                (config, system) -> {
-                    TempCredStorage tmp = new TempCredStorage();
-                    tmp.key = config.gui.apiKey;
-                    tmp.deviceId = system.myID;
-                    for (DeviceConfig d : config.devices) {
-                        if (StringUtils.equals(d.deviceID, system.myID)) {
-                            tmp.alias = SyncthingUtils.getDisplayName(d);
-                        }
-                    }
-                    interceptor.setApiKey(tmp.key);
-                    Timber.d(ReflectionToStringBuilder.reflectionToString(tmp));
-                    return new Pair<>(config, tmp);
-                })
-                .retryWhen(
-                        attempts -> {
-                            final int retries = 180; // Wait up to 30 minutes
-                            return attempts
-                                    .zipWith(Observable.range(1, retries + 1),
-                                            (n, i) -> new Pair<Throwable, Integer>(n, i))
-                                    .flatMap(
-                                            pair -> {
-                                                if (pair.first != null) {
-                                                    String msg = pair.first.getMessage();
-                                                    if (msg != null &&
-                                                            !msg.contains("EOFException") &&
-                                                            !msg.contains("timeout") &&
-                                                            !msg.contains("Connection reset by peer")){
-                                                        // Another service running, propagate error and show to user
-                                                        return Observable.error(pair.first);
-                                                    }
-                                                }
-                                                if (pair.second > retries)
-                                                    return Observable.just(null);
-                                                return Observable.timer((long) 10, TimeUnit.SECONDS);
-                                            });
+        subscription = syncthingApi.config()
+                .retryWhen(WelcomePresenter::retryObservable)
+                .zipWith(syncthingApi.system(),
+                        (config, system) -> {
+                            TempCredStorage tmp = new TempCredStorage();
+                            tmp.key = config.gui.apiKey;
+                            tmp.deviceId = system.myID;
+                            for (DeviceConfig d : config.devices) {
+                                if (StringUtils.equals(d.deviceID, system.myID)) {
+                                    tmp.alias = SyncthingUtils.getDisplayName(d);
+                                }
+                            }
+                            interceptor.setApiKey(tmp.key);
+                            Timber.d(ReflectionToStringBuilder.reflectionToString(tmp));
+                            return new Pair<>(config, tmp);
                         })
-                .filter(pair -> pair != null)
+                .retryWhen(WelcomePresenter::retryObservable)
                 .flatMap( // Set username and password
                         (Pair<Config, TempCredStorage> pair) -> {
                             String username = SyncthingUtils.generateUsername();
@@ -213,6 +215,7 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
                             config.gui.user = username;
                             config.gui.password = password;
                             return syncthingApi.updateConfig(config)
+                                    .retryWhen(WelcomePresenter::retryObservable)
                                     .zipWith(Observable.just(pair.second),
                                             (Config c, TempCredStorage t) -> t);
                         })
@@ -227,6 +230,7 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
                                     tmpCreds.alias, tmpCreds.deviceId,
                                     tmpCreds.url, tmpCreds.key, SyncthingUtils.getSyncthingCACert(context));
                             appSettings.saveCredentials(newCredentials);
+                            appSettings.setDefaultCredentials(newCredentials);
                             Timber.d(ReflectionToStringBuilder.reflectionToString(newCredentials));
                             Timber.i("Restarting Syncthing");
                             return syncthingApi.restart();
@@ -261,9 +265,12 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
     void processError(Throwable t) {
         if (appSettings.getSavedCredentials().size() > 0) {
             finish(null);
-        } else if (t.getMessage().contains("Unauthorized") || t.getMessage().contains("Forbidden")) {
+        } else if (t.getMessage().contains("Unauthorized") || t.getMessage().contains("Forbidden") || t.getMessage().contains("Untrusted Certificate")) {
             ConfigXml configXml = ConfigXml.get(context);
             interceptor.setApiKey(configXml.getApiKey());
+            okClient.setSslSocketFactory(
+                    SyncthingSSLSocketFactory.createSyncthingSSLSocketFactory(
+                            SyncthingUtils.getSyncthingCACert(context)));
             waitForInitialisation();
         } else {
             notifyError(t);
