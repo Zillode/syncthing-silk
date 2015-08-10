@@ -36,9 +36,11 @@ import com.turhanoz.android.reactivedirectorychooser.ui.OnDirectoryChooserFragme
 
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.opensilk.common.core.dagger2.ForApplication;
 import org.opensilk.common.ui.mortar.ActivityResultsController;
 import org.opensilk.common.ui.mortar.ActivityResultsListener;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -248,9 +250,19 @@ public class EditFolderPresenter extends EditPresenter<EditFolderScreenView> imp
         }
         if (requestCode == ActivityRequestCodes.DOCUMENT_PICKER && DocumentHelper.isKitKat) {
             if (resultCode == Activity.RESULT_OK && hasView()) {
+
+                getView().context.grantUriPermission(getView().context.getPackageName(),
+                        data.getData(), Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                final int flags = Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+                getView().context.getContentResolver().takePersistableUriPermission(data.getData(), flags);
                 Uri docUri = DocumentsContract.buildDocumentUriUsingTree(data.getData(),
                         DocumentsContract.getTreeDocumentId(data.getData()));
                 String path = DocumentHelper.getPath(getView().getContext(), docUri);
+                File[] files = getView().context.getExternalFilesDirs(null);
+                for (File file : files) {
+                    Timber.d(file.getAbsolutePath());
+                    path = file.getAbsolutePath();
+                }
                 getView().setFolderPath(path);
                 return true;
             }

@@ -429,7 +429,8 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
     public void openPathBrowser(String folderId, boolean documentTree) {
         if (documentTree) {
             activityResultsController.startActivityForResult(
-                    new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE),
+                    new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
+                            .addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION),
                     ActivityRequestCodes.DOCUMENT_PICKER,
                     null
             );

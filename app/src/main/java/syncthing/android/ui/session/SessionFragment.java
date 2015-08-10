@@ -17,10 +17,12 @@
 
 package syncthing.android.ui.session;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -156,6 +158,7 @@ public class SessionFragment extends MortarFragment implements SessionFragmentPr
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ActivityRequestCodes.DIRECTORY_PICKER) {
@@ -166,6 +169,9 @@ public class SessionFragment extends MortarFragment implements SessionFragmentPr
         }
         if (requestCode == ActivityRequestCodes.DOCUMENT_PICKER) {
             if (resultCode == Activity.RESULT_OK) {
+                getActivity().getContentResolver().takePersistableUriPermission(data.getData(),
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION |
+                                Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 String path = DocumentHelper.getPath(getActivity(), data.getData());
                 mFragmentPresenter.setFolderPath(path);
             }
