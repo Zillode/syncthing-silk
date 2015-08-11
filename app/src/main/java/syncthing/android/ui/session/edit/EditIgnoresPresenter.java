@@ -29,6 +29,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import syncthing.android.R;
 import syncthing.android.ui.session.SessionPresenter;
 import syncthing.api.SessionController;
