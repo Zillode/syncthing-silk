@@ -1007,28 +1007,28 @@ public class SessionController implements EventMonitor.EventListener {
     }
 
     public Subscription overrideChanges(String id, Action1<Throwable> onError) {
-        return restApi.override(id).subscribe(
+        return restApi.override(id).observeOn(AndroidSchedulers.mainThread()).subscribe(
                 (v) -> {},
                 onError
         );
     }
 
     public Subscription scanFolder(String id, Action1<Throwable> onError) {
-        return restApi.scan(id).subscribe(
+        return restApi.scan(id).observeOn(AndroidSchedulers.mainThread()).subscribe(
                 (v) -> {},
                 onError
         );
     }
 
     public Subscription getIgnores(String id, Action1<Ignores> onNext, Action1<Throwable> onError) {
-        return restApi.ignores(id).subscribe(
+        return restApi.ignores(id).observeOn(AndroidSchedulers.mainThread()).subscribe(
                 onNext,
                 onError
         );
     }
 
     public Subscription editIgnores(String id, Ignores ignores, Action1<Ignores> onNext, Action1<Throwable> onError, Action0 onComplete) {
-        return restApi.updateIgnores(id, ignores).subscribe(
+        return restApi.updateIgnores(id, ignores).observeOn(AndroidSchedulers.mainThread()).subscribe(
                 onNext,
                 onError,
                 onComplete
@@ -1038,6 +1038,7 @@ public class SessionController implements EventMonitor.EventListener {
     void setupPeriodicRefresh() {
         cancelPeriodicRefresh();
         periodicRefreshSubscription = Observable.interval(30, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(ii -> {
                     refreshSystem();
                     refreshConnections(true);
