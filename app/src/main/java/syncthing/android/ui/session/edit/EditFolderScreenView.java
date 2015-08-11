@@ -46,6 +46,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
+import rx.android.schedulers.AndroidSchedulers;
 import syncthing.android.R;
 import syncthing.android.service.SyncthingUtils;
 import syncthing.android.ui.common.ActivityRequestCodes;
@@ -473,7 +474,7 @@ public class EditFolderScreenView extends ScrollView {
                     try {
                         List<String> results = presenter.controller
                                 .getAutoCompleteDirectoryList(constraint.toString())
-                                .toBlocking().first();
+                                .observeOn(AndroidSchedulers.mainThread()).toBlocking().first();
                         FilterResults fr = new FilterResults();
                         fr.values = results;
                         fr.count = results.size();
