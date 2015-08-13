@@ -25,6 +25,7 @@ import android.support.annotation.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -83,6 +84,7 @@ public class SessionController implements EventMonitor.EventListener {
         FAILURE,
         MODEL,
         MODEL_STATE,
+        FILE_DOWNLOADED,
         COMPLETION,
         FOLDER_STATS,
         DEVICE_STATS,
@@ -104,10 +106,12 @@ public class SessionController implements EventMonitor.EventListener {
         // Id or name of object being effected
         // mostly useful for model updates
         public final String id;
+        public final String id2;
 
-        public ChangeEvent(Change change, String id) {
+        public ChangeEvent(Change change, String id, String id2) {
             this.change = change;
             this.id = id == null ? NONE : id;
+            this.id2 = id2 == null ? NONE : id2;
         }
 
     }
@@ -247,6 +251,11 @@ public class SessionController implements EventMonitor.EventListener {
             } case DOWNLOAD_PROGRESS: {
                 //TODO
                 break;
+            } case ITEM_FINISHED: {
+                if (folders.containsKey(e.data.folder)) {
+                    postChange(Change.FILE_DOWNLOADED, folders.get(e.data.folder).path, e.data.item);
+                }
+                break;
             } case FOLDER_SUMMARY: {
                 updateModel(e.data.folder, e.data.summary);
                 postChange(Change.MODEL, e.data.folder);
@@ -340,15 +349,19 @@ public class SessionController implements EventMonitor.EventListener {
     }
 
     void postChange(Change change, String id) {
+        postChange(change, id, null);
+    }
+
+    void postChange(Change change, String id, String id2) {
         switch (change) {
             case OFFLINE:
             case NEED_LOGIN:
             case FAILURE:
-                sendChangeEvent(new ChangeEvent(change, id));
+                sendChangeEvent(new ChangeEvent(change, id, id2));
                 return;
             default:
                 if (isOnline()) {
-                    sendChangeEvent(new ChangeEvent(change, id));
+                    sendChangeEvent(new ChangeEvent(change, id, id2));
                 } else {
                     Timber.w("Dropping change %s while offline", change.toString());
                 }
@@ -1064,6 +1077,10 @@ public class SessionController implements EventMonitor.EventListener {
 //        }
     }
 
+    public <T> Observable<ChangeEvent> getChangesObservable() {
+        return changeBus.asObservable();
+    }
+
     public Subscription subscribeChanges(Action1<ChangeEvent> onNext, Change... changes) {
         Observable<ChangeEvent> o;
         if (changes.length == 0) {
@@ -1076,7 +1093,7 @@ public class SessionController implements EventMonitor.EventListener {
                 return false;
             });
         }
-        onNext.call(new ChangeEvent(online ? Change.ONLINE : Change.OFFLINE, null));
+        onNext.call(new ChangeEvent(online ? Change.ONLINE : Change.OFFLINE, null, null));
         return o.observeOn(AndroidSchedulers.mainThread()).subscribe(onNext);
     }
 

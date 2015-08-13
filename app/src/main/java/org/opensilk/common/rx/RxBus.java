@@ -4,6 +4,7 @@ import org.opensilk.common.core.dagger2.ActivityScope;
 
 import javax.inject.Inject;
 
+import rx.Observable;
 import rx.Subscription;
 import rx.functions.Action1;
 import rx.subjects.BehaviorSubject;
@@ -29,6 +30,10 @@ public class RxBus {
 
     public <T> Subscription  subscribe(Action1<T> onNext, Class<T> type) {
         return monitorSubject.asObservable().ofType(type).subscribe(onNext);
+    }
+
+    public <T> Observable<T> asObservable(Class<T> type) {
+        return monitorSubject.asObservable().ofType(type);
     }
 
 }

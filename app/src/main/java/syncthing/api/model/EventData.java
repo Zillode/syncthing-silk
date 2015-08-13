@@ -39,7 +39,9 @@ public class EventData {
     public String id;
     //DEVICE_DISCONNECTED
     //ITEM_FINISHED
-    //public String error; //TODO Itemfinished is an object
+    public String error;
+    public String type;
+    public String action;
     //LOCAL_INDEX_UPDATED
     //REMOTE_INDEX_UPDATED
     //ITEM_STARTED

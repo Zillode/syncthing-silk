@@ -84,5 +84,15 @@ public class Update {
     }
 
 
+    public static class FileDownloaded {
+        public final String folderPath;
+        public final String filename;
+
+        public FileDownloaded(String folderPath, String filename) {
+            this.folderPath = folderPath;
+            this.filename = filename;
+        }
+    }
+
 
 }

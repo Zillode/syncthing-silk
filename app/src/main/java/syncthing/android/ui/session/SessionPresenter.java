@@ -47,6 +47,7 @@ import syncthing.android.ui.common.ActivityRequestCodes;
 import syncthing.android.ui.common.ExpandableCard;
 import syncthing.android.ui.login.LoginActivity;
 import syncthing.android.ui.session.edit.EditFragment;
+import syncthing.api.MediaScanner;
 import syncthing.api.SessionController;
 import syncthing.api.SessionScope;
 import syncthing.api.model.ConnectionInfo;
@@ -71,6 +72,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
     final IdenticonGenerator identiconGenerator;
     final ActivityResultsController activityResultsController;
     final SessionFragmentPresenter fragmentPresenter;
+    final MediaScanner mediaScannerMonitor;
 
     final RxBus bus = new RxBus();
 
@@ -93,6 +95,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         this.identiconGenerator = identiconGenerator;
         this.activityResultsController = activityResultsController;
         this.fragmentPresenter = fragmentPresenter;
+        this.mediaScannerMonitor = new MediaScanner(appContext);
     }
 
     @Override
@@ -100,6 +103,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         Timber.d("onEnterScope");
         super.onEnterScope(scope);
         changeSubscription = controller.subscribeChanges(this::onChange);
+        mediaScannerMonitor.subscribeUpdates(controller.getChangesObservable());
     }
 
     @Override
@@ -109,6 +113,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         if (changeSubscription != null) {
             changeSubscription.unsubscribe();
         }
+        mediaScannerMonitor.unsubscribeUpdates();
         controller.kill();
     }
 
@@ -199,6 +204,8 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
             case MODEL_STATE:
                 postModelStateUpdate(e.id);
                 break;
+            case FILE_DOWNLOADED:
+                postFileDownloaded(e.id, e.id2);
             case FOLDER_STATS:
                 Timber.w("Ignoring FOLDER_STATS update");
                 //TODO pretty sure not needed
@@ -337,6 +344,9 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         if (m != null) {
             bus.post(new Update.ModelState(id, m));
         }
+    }
+    void postFileDownloaded(String folderPath, String filename) {
+        bus.post(new Update.FileDownloaded(folderPath, filename));
     }
 
     public void showSavingDialog() {
