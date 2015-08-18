@@ -18,6 +18,8 @@ import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -164,6 +166,16 @@ public class ConfigXml {
             }
         }
         saveChanges();
+    }
+
+    /**
+     * Retrieve URL
+     */
+    public String getURL() {
+        Element options = (Element) mConfig.getDocumentElement()
+                .getElementsByTagName("gui").item(0);
+        Element address = (Element) options.getElementsByTagName("address").item(0);
+        return address.getTextContent();
     }
 
     /**

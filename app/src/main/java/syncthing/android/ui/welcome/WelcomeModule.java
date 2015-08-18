@@ -19,6 +19,8 @@ package syncthing.android.ui.welcome;
 
 import android.support.v4.app.FragmentManager;
 
+import com.squareup.okhttp.OkHttpClient;
+
 import java.util.concurrent.Executor;
 
 import dagger.Module;
@@ -28,6 +30,8 @@ import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.client.Client;
 import retrofit.converter.Converter;
+import syncthing.android.ui.login.LoginScreenScope;
+import syncthing.api.OkClient;
 import syncthing.api.SyncthingApi;
 
 @Module
@@ -69,5 +73,10 @@ public class WelcomeModule {
     @Provides @WelcomeScreenScope
     public RequestInterceptor provideRequestInterceptor(MovingRequestInterceptor interceptor) {
         return interceptor;
+    }
+
+    @Provides @WelcomeScreenScope
+    public OkClient provideOkClient(Client client) {
+        return (OkClient)client;
     }
 }

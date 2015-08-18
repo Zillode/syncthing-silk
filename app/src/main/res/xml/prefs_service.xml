@@ -78,6 +78,12 @@
             android:title="@string/import_config"
             android:persistent="false"/>
 
+        <Preference
+            android:key="import_syncthing_android"
+            android:title="@string/import_config_syncthing_android"
+            android:persistent="false"/>
+
+
     </PreferenceCategory>
 
 </PreferenceScreen>

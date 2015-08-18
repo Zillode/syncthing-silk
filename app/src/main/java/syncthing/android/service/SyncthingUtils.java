@@ -32,12 +32,15 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.widget.Toast;
 
+import com.google.common.io.Files;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 import org.joda.time.format.ISODateTimeFormat;
+import org.opensilk.common.ui.mortar.ActivityResultsController;
 import org.zeroturnaround.zip.ZipUtil;
 
 import java.io.BufferedReader;
@@ -50,7 +53,12 @@ import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.WeakHashMap;
 
+import syncthing.android.AppSettings;
 import syncthing.android.R;
+import syncthing.android.model.Credentials;
+import syncthing.android.ui.common.ActivityRequestCodes;
+import syncthing.android.ui.login.LoginActivity;
+import syncthing.api.GsonModule;
 import syncthing.api.model.DeviceConfig;
 import timber.log.Timber;
 
@@ -410,13 +418,81 @@ public class SyncthingUtils {
                 Runtime.getRuntime().exec("chmod 0600 " + f.getAbsolutePath()).waitFor();
                 Timber.d("chmod 0600 on %s", f.getAbsolutePath());
             }
+            updateLocalCredentials(context);
             Toast.makeText(context, R.string.config_imported, Toast.LENGTH_LONG).show();
+            int pid = android.os.Process.myPid();
+            android.os.Process.killProcess(pid);
         } catch (Exception e) {
             FileUtils.deleteQuietly(configDir);
             Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show();
         } finally {
             IOUtils.closeQuietly(is);
         }
+    }
+
+    public static boolean importConfigSyncthingAndroid(Context context, boolean force) {
+        File importDir = new File(Environment.getExternalStorageDirectory(), "backups/syncthing");
+        if (!importDir.exists()) {
+            new AlertDialog.Builder(context)
+                    .setTitle(R.string.import_syncthing_android_not_found)
+                    .setMessage(R.string.import_syncthing_android_not_found_summary)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+            return false;
+        }
+        // Asynchronous dialog, so shutdown Syncthing here and reevaluate on cancelled/confirmed
+        context.startService(new Intent(context, SyncthingInstance.class).setAction(SyncthingInstance.SHUTDOWN));
+        File configDir = getConfigDirectory(context);
+        if (configDir.exists()) {
+            if (!force) {
+                new AlertDialog.Builder(context)
+                        .setTitle(R.string.overwrite)
+                        .setMessage(R.string.overwrite_current_config)
+                        .setNegativeButton(android.R.string.cancel, (dialog, which) ->
+                                context.startService(new Intent(context, SyncthingInstance.class).setAction(SyncthingInstance.REEVALUATE)))
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                                importConfigSyncthingAndroid(context, true);
+                                context.startService(new Intent(context, SyncthingInstance.class).setAction(SyncthingInstance.REEVALUATE));})
+                        .show();
+                return false;
+            } else {
+                try {
+                    FileUtils.cleanDirectory(configDir);
+                } catch (IOException e) {
+                    Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show();
+                    Timber.e("Failed to import", e);
+                    return false;
+                }
+            }
+        }
+        InputStream is = null;
+        try {
+            FileUtils.copyDirectory(importDir, configDir);
+            File files[] = configDir.listFiles();
+            for (File f : files) {
+                Runtime.getRuntime().exec("chmod 0600 " + f.getAbsolutePath()).waitFor();
+                Timber.d("chmod 0600 on %s", f.getAbsolutePath());
+            }
+            updateLocalCredentials(context);
+            context.startService(new Intent(context, SyncthingInstance.class).setAction(SyncthingInstance.REEVALUATE));
+            Toast.makeText(context, R.string.config_imported, Toast.LENGTH_LONG).show();
+            return true;
+        } catch (Exception e) {
+            FileUtils.deleteQuietly(configDir);
+            Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show();
+        } finally {
+            IOUtils.closeQuietly(is);
+        }
+        return false;
+    }
+
+    private static void updateLocalCredentials(Context context) {
+        AppSettings appSettings = new AppSettings(new GsonModule().provideGson(), context);
+        ConfigXml config = ConfigXml.get(context);
+        Credentials newCredentials = new Credentials(true,
+                SyncthingUtils.generateDeviceName(false), "Unknown",
+                config.getURL(), config.getApiKey(), SyncthingUtils.getSyncthingCACert(context));
+        appSettings.updateLocalCredentials(newCredentials);
     }
 
     public static void copyToClipboard(Context context, CharSequence label, String id) {

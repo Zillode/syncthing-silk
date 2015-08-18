@@ -76,7 +76,7 @@ public class LoginModule {
     }
 
     @Provides @LoginScreenScope
-    public OkClient provideOKHttpClient(Client client) {
-        return (OkClient) client;
+    public OkClient provideOkClient(Client client) {
+        return (OkClient)client;
     }
 }

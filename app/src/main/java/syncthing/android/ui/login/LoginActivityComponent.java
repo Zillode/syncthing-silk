@@ -25,6 +25,7 @@ import org.opensilk.common.ui.mortarfragment.MortarFragmentActivityComponent;
 
 import rx.functions.Func1;
 import syncthing.android.AppComponent;
+import syncthing.api.OkClient;
 
 /**
 * Created by drew on 3/11/15.

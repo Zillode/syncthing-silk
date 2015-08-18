@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 
+import javax.net.ssl.SSLHandshakeException;
+
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import rx.Observable;
@@ -45,6 +47,7 @@ public class EventMonitor {
 
     public static enum Error {
         UNAUTHORIZED,
+        UNTRUSTED,
         STOPPING,
         DISCONNECTED,
         UNKNOWN,
@@ -142,6 +145,9 @@ public class EventMonitor {
                                                 start(1200);
                                             }
                                             return;
+                                        } else if (cause instanceof SSLHandshakeException) {
+                                            Timber.w("Untrusted credentials: %s", cause.getMessage());
+                                            listener.onError(Error.UNTRUSTED);
                                         } else {
                                             Timber.e(cause, "Unhandled network error");
                                             listener.onError(Error.DISCONNECTED);

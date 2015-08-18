@@ -36,6 +36,7 @@
     <string name="input_error">Input Error</string>
     <string name="saving_config_dots">Saving config…</string>
     <string name="config_saved">Config saved</string>
+    <string name="please_restart">Please restart the application</string>
     <string name="are_you_sure_you_want_to_shutdown_syncthing">Are you sure you want to shutdown Syncthing?</string>
     <string name="no_qr_scanner_installed">You have no QR scanner installed or your scanner is not supported. Please install a scanner or enter the device ID manually.</string>
     <string name="instance_remove_error">Cannot remove local instance credentials</string>
@@ -92,12 +93,15 @@
     <string name="miscellaneous">Miscellaneous</string>
     <string name="export_config">Export configuration</string>
     <string name="import_config">Import configuration</string>
+    <string name="import_config_syncthing_android">Import backup configuration from Syncthing-Android</string>
+    <string name="import_syncthing_android_not_found">Syncthing-Android backup configuration not found</string>
+    <string name="import_syncthing_android_not_found_summary">Please export your configuration in the Syncthing-Android application</string>
     <string name="no_file_picker_found">No file picker found. Please install \'OI File Manager\'.</string>
     <string name="archive_created">Archive created</string>
     <string name="archive_at_location">Archive at:\n%1$s</string>
     <string name="overwrite">Overwrite?</string>
     <string name="overwrite_current_config">Overwrite current config?</string>
-    <string name="config_imported">Config imported</string>
+    <string name="config_imported">Config imported, please restart the application</string>
     <string name="no_config_found">No config directory found</string>
 
     <!--Settings ui-->

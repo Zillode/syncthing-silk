@@ -134,6 +134,30 @@ public class AppSettings extends PreferencesWrapper {
         return null;
     }
 
+    public boolean updateLocalCredentials(Credentials newLocalCreds) {
+        Set<Credentials> creds = getSavedCredentials();
+        Credentials local = null;
+        for (Credentials cred : creds) {
+            if (cred.isLocalInstance) {
+                local = cred;
+                break;
+            }
+        }
+        if (local == null) {
+            return false;
+        }
+        creds.remove(local);
+        creds.add(newLocalCreds);
+        putString(SAVED_CREDENTIALS, gson.toJson(creds,
+                new TypeToken<Set<Credentials>>() {
+                }.getType()));
+        //update default
+        if (local.equals(getDefaultCredentials())) {
+            setDefaultCredentials(newLocalCreds);
+        }
+        return true;
+    }
+
     public void setDefaultCredentials(Credentials credentials) {
         putString(DEFAULT_CREDENTIALS, gson.toJson(credentials));
     }

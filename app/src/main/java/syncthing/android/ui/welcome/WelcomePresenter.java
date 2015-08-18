@@ -27,6 +27,8 @@ import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.util.Pair;
 
+import com.squareup.okhttp.OkHttpClient;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.opensilk.common.core.dagger2.ForApplication;
@@ -51,7 +53,9 @@ import syncthing.android.service.ServiceSettings;
 import syncthing.android.service.SyncthingUtils;
 import syncthing.android.ui.login.LoginActivity;
 import syncthing.android.ui.login.LoginUtils;
+import syncthing.api.OkClient;
 import syncthing.api.SyncthingApi;
+import syncthing.api.SyncthingSSLSocketFactory;
 import syncthing.api.model.Config;
 import syncthing.api.model.DeviceConfig;
 import syncthing.api.model.Ok;
@@ -67,6 +71,7 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
     final SyncthingApi syncthingApi;
     final MovingEndpoint endpoint;
     final MovingRequestInterceptor interceptor;
+    final OkClient okClient;
 
     int page;
 
@@ -94,6 +99,7 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
             SyncthingApi syncthingApi,
             MovingEndpoint endpoint,
             MovingRequestInterceptor interceptor,
+            OkClient okClient,
             FragmentManager fragmentManager
     ) {
         this.context = context;
@@ -102,9 +108,16 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
         this.syncthingApi = syncthingApi;
         this.endpoint = endpoint;
         this.interceptor = interceptor;
+        this.okClient = okClient;
         this.fragmentManager = fragmentManager;
         this.page = 0;
-        this.skipTutorial = appSettings.getSavedCredentials().size() > 0;
+        this.skipTutorial = false;
+        for (Credentials cred : appSettings.getSavedCredentials()) {
+            if (cred.isLocalInstance) {
+                this.skipTutorial = true;
+                break;
+            }
+        }
         if (!this.skipTutorial) {
             this.generating = true;
             waitForInitialisation();

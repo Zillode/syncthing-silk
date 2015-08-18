@@ -44,6 +44,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import syncthing.android.R;
+import syncthing.android.service.ConfigXml;
 import syncthing.android.service.ReceiverHelper;
 import syncthing.android.service.ServiceSettings;
 import syncthing.android.service.SyncthingInstance;
@@ -68,6 +69,7 @@ public class ServiceSettingsFragment extends PreferenceFragment implements
 
     Preference exportConfig;
     Preference importConfig;
+    Preference importConfigSyncthingAndroid;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,8 @@ public class ServiceSettingsFragment extends PreferenceFragment implements
         exportConfig.setOnPreferenceClickListener(this);
         importConfig = findPreference("import");
         importConfig.setOnPreferenceClickListener(this);
+        importConfigSyncthingAndroid = findPreference("import_syncthing_android");
+        importConfigSyncthingAndroid.setOnPreferenceClickListener(this);
     }
 
     @Override
@@ -152,6 +156,9 @@ public class ServiceSettingsFragment extends PreferenceFragment implements
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(getActivity(), R.string.no_file_picker_found, Toast.LENGTH_LONG).show();
             }
+            return true;
+        } else if (preference == importConfigSyncthingAndroid) {
+            SyncthingUtils.importConfigSyncthingAndroid(getActivity(), false);
             return true;
         }
         return false;

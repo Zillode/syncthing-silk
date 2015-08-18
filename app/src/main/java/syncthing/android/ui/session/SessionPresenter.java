@@ -23,7 +23,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.NavUtils;
+import android.support.v4.app.TaskStackBuilder;
+import android.widget.Toast;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.opensilk.common.core.dagger2.ForApplication;
 import org.opensilk.common.rx.RxBus;
 import org.opensilk.common.ui.mortar.ActivityResultsController;
@@ -40,9 +44,12 @@ import javax.inject.Inject;
 import mortar.MortarScope;
 import mortar.ViewPresenter;
 import rx.Subscription;
+import syncthing.android.AppSettings;
 import syncthing.android.R;
 import syncthing.android.identicon.IdenticonGenerator;
 import syncthing.android.model.Credentials;
+import syncthing.android.service.ConfigXml;
+import syncthing.android.service.SyncthingUtils;
 import syncthing.android.ui.common.ActivityRequestCodes;
 import syncthing.android.ui.common.ExpandableCard;
 import syncthing.android.ui.login.LoginActivity;
@@ -65,6 +72,7 @@ import timber.log.Timber;
 public class SessionPresenter extends ViewPresenter<SessionScreenView> {
 
     final Context appContext;
+    final AppSettings appSettings;
     final Credentials credentials;
     final SessionController controller;
     final FragmentManagerOwner fragmentManagerOwner;
@@ -79,6 +87,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
     @Inject
     public SessionPresenter(
             @ForApplication Context appContext,
+            AppSettings appSettings,
             Credentials credentials,
             SessionController controller,
             FragmentManagerOwner fragmentManagerOwner,
@@ -87,6 +96,7 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
             SessionFragmentPresenter fragmentPresenter
     ) {
         this.appContext = appContext;
+        this.appSettings = appSettings;
         this.credentials = credentials;
         this.controller = controller;
         this.fragmentManagerOwner = fragmentManagerOwner;
@@ -175,7 +185,12 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
                 }
                 break;
             case NEED_LOGIN:
-                openLoginScreen();
+                if (credentials.isLocalInstance) {
+                    // Reload credentials (might have imported new config)
+                    openWelcomeScreen();
+                } else {
+                    openLoginScreen();
+                }
                 break;
             case COMPLETION:
                 postCompletionUpdate();
@@ -397,6 +412,15 @@ public class SessionPresenter extends ViewPresenter<SessionScreenView> {
         activityResultsController.startActivityForResult(
                 new Intent(appContext, LoginActivity.class)
                         .putExtra(LoginActivity.EXTRA_CREDENTIALS, (Parcelable) credentials),
+                ActivityRequestCodes.LOGIN_ACTIVITY,
+                null
+        );
+    }
+
+    void openWelcomeScreen() {
+        activityResultsController.startActivityForResult(
+                new Intent(appContext, LoginActivity.class)
+                        .setAction(LoginActivity.ACTION_WELCOME),
                 ActivityRequestCodes.LOGIN_ACTIVITY,
                 null
         );

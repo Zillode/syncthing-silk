@@ -268,6 +268,7 @@ public class SessionController implements EventMonitor.EventListener {
     public void onError(EventMonitor.Error e) {
         Timber.w("onError %s", e.toString());
         switch (e) {
+            case UNTRUSTED:
             case UNAUTHORIZED:
                 updateState(false);
                 postChange(Change.NEED_LOGIN);
