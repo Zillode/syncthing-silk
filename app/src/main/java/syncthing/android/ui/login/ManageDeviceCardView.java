@@ -17,6 +17,7 @@
 
 package syncthing.android.ui.login;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MenuItem;
@@ -46,6 +47,7 @@ public class ManageDeviceCardView extends LinearLayout implements BindsCard {
     @InjectView(R.id.name) TextView name;
     @InjectView(R.id.check) View check;
 
+    Context context;
     Credentials credentials;
     Subscription identiconSubscription;
     ManageDeviceCard item;
@@ -56,6 +58,7 @@ public class ManageDeviceCardView extends LinearLayout implements BindsCard {
         super(context, attrs);
         if (isInEditMode())
             return;
+        this.context = context;
         presenter = DaggerService.<ManageComponent>getDaggerComponent(getContext()).presenter();
     }
 
@@ -91,7 +94,15 @@ public class ManageDeviceCardView extends LinearLayout implements BindsCard {
                         return true;
                     case R.id.remove:
                         if (credentials != null) {
-                            presenter.removeDevice(credentials);
+                            if (credentials.isLocalInstance) {
+                                new AlertDialog.Builder(context)
+                                        .setTitle(R.string.remove)
+                                        .setMessage(R.string.instance_remove_error)
+                                        .setPositiveButton(android.R.string.ok, null)
+                                        .show();
+                            } else {
+                                presenter.removeDevice(credentials);
+                            }
                         }
                         return true;
                 }
