@@ -126,7 +126,7 @@ public class WelcomePresenter extends ViewPresenter<WelcomeScreenView>{
     void reload() {
         if (!hasView())
             return;
-        getView().setPage(page);
+        getView().setPage(page, true);
     }
 
     boolean isSuccess() {

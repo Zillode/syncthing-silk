@@ -80,10 +80,12 @@ public class WelcomeScreenPagerView extends ViewPager {
         adapter.reload();
     }
 
-    public void setPage(int page) {
-        if (getCurrentItem() == page)
-            return;
-        setCurrentItem(page);
+    public void setPage(int page, boolean reload) {
+        if (getCurrentItem() == page) {
+            adapter.reload();
+        } else {
+            setCurrentItem(page);
+        }
     }
 
     public void hideSplash() {

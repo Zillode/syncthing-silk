@@ -89,8 +89,8 @@ public class WelcomeScreenView extends RelativeLayout {
         }
     }
 
-    public void setPage(int page) {
-        pageView.setPage(page);
+    public void setPage(int page, boolean reload) {
+        pageView.setPage(page, reload);
     }
 
     public void hideSplash() {
