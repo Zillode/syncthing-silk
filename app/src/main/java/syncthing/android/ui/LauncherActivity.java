@@ -43,6 +43,7 @@ import org.opensilk.common.ui.mortar.DrawerOwner;
 import org.opensilk.common.ui.mortar.DrawerOwnerActivity;
 import org.opensilk.common.ui.mortarfragment.MortarFragmentActivity;
 
+import com.trello.rxlifecycle.RxLifecycle;
 import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryCancelEvent;
 import com.turhanoz.android.reactivedirectorychooser.event.OnDirectoryChosenEvent;
 import com.turhanoz.android.reactivedirectorychooser.ui.OnDirectoryChooserFragmentInteraction;
@@ -262,7 +263,7 @@ public class LauncherActivity extends MortarFragmentActivity implements
 
     void subscribeChargingState() {
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        mChargingSubscription = AndroidObservable.bindActivity(this,AndroidObservable.fromBroadcast(this, filter))
+        mChargingSubscription = RxLifecycle.bindUntilActivityEvent(this, AppObservable.fromBroadcast(this, filter))
                 .subscribe(new Action1<Intent>() {
                                @Override
                                public void call(Intent intent) {

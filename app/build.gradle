@@ -136,6 +136,12 @@ dependencies {
 
     //rest api deps
     compile (group:'io.reactivex', name: 'rxandroid', version: rootProject.ext.rxAndroidVersion)
+    compile 'com.trello:rxlifecycle:0.2.0'
+    compile 'com.trello:rxlifecycle-components:0.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-design:0.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.2.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
     compile (group: 'com.google.code.gson', name: 'gson', version: rootProject.ext.gsonVersion)
