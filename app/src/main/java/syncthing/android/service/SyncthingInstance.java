@@ -21,7 +21,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
 
-import org.apache.commons.io.IOUtils;
+import com.squareup.okhttp.OkHttpClient;
+
 import org.opensilk.common.core.mortar.DaggerService;
 import org.opensilk.common.core.mortar.MortarService;
 
@@ -31,6 +32,8 @@ import javax.inject.Inject;
 
 import mortar.MortarScope;
 import syncthing.android.BuildConfig;
+import syncthing.android.ui.welcome.MovingRequestInterceptor;
+import syncthing.api.SyncthingSSLSocketFactory;
 import timber.log.Timber;
 
 /**
@@ -106,6 +109,7 @@ public class SyncthingInstance extends MortarService {
         Timber.d("onStartCommand %s", intent);
         if (intent != null) {
             String action = intent.getAction();
+            boolean doNotSync = true;
 
             if (intent.hasExtra(EXTRA_NOW_IN_FOREGROUND)) {
                 mAnyActivityInForeground = intent.getBooleanExtra(EXTRA_NOW_IN_FOREGROUND, false);
@@ -119,12 +123,16 @@ public class SyncthingInstance extends MortarService {
                 return START_NOT_STICKY;
             }
 
+            if (mSettings.hasValidatedConnection()) {
+                doNotSync = false;
+            }
+
             switch (action) {
                 case BINARY_WAS_SHUTDOWN:
                     doOrderlyShutdown();
                     break;
                 case BINARY_NEED_RESTART:
-                    safeStartSyncthing();
+                    safeStartSyncthing(doNotSync);
                     updateForegroundState();
                     break;
                 case REEVALUATE:
@@ -143,19 +151,19 @@ public class SyncthingInstance extends MortarService {
 
     void reevaluate() {
         if (mAnyActivityInForeground) {
-            //when in foreground we only care about disabled status and
-            //connection override, we will assume that since the user
-            //opened the app they wish for the server to start
-            if (mSettings.isDisabled() || !mSettings.hasValidatedConnection()) {
+            //when in foreground we only care about disabled status.
+            //we will assume that since the user opened the app,
+            //they wish for the server to start
+            if (mSettings.isDisabled()) {
                 ensureSyncthingKilled();
             } else {
-                maybeStartSyncthing();
+                maybeStartSyncthing(mSettings.isAllowedToRun());
                 mAlarmManagerHelper.cancelDelayedShutdown();
             }
         } else {
             //in background
             if (mSettings.isAllowedToRun()) {
-                maybeStartSyncthing(); //as you were
+                maybeStartSyncthing(true); //as you were
                 if (mSettings.isOnSchedule()) {
                     mAlarmManagerHelper.scheduleDelayedShutdown();
                 } else /*always run*/ {
@@ -201,22 +209,36 @@ public class SyncthingInstance extends MortarService {
         return mSyncthingThread != null && mSyncthingThread.isAlive();
     }
 
-    void safeStartSyncthing() {
+    void safeStartSyncthing(boolean doNotSync) {
         ensureSyncthingKilled();
-        startSyncthing();
+        startSyncthing(doNotSync);
     }
 
-    void startSyncthing() {
-        mSyncthingThread = new SyncthingThread(this);
+    void startSyncthing(boolean canSync) {
+        mSyncthingThread = new SyncthingThread(this, canSync);
         mSyncthingThread.start();
         mSyncthingInotifyThread = new SyncthingInotifyThread(this);
         mSyncthingInotifyThread.start();
     }
 
-    void maybeStartSyncthing() {
+    void maybeStartSyncthing(boolean canSync) {
         if (!isSyncthingRunning()) {
-            safeStartSyncthing();
+            safeStartSyncthing(canSync);
+        } else {
+            // TODO update canSync
+            updateCanSync();
         }
+    }
+
+    void updateCanSync() {
+        OkHttpClient okClient = new OkHttpClient();
+        ConfigXml configXml = ConfigXml.get(this);
+        okClient.setSslSocketFactory(
+                SyncthingSSLSocketFactory.createSyncthingSSLSocketFactory(
+                        SyncthingUtils.getSyncthingCACert(this)));
+        MovingRequestInterceptor interceptor = new MovingRequestInterceptor();
+        interceptor.setApiKey(configXml.getApiKey());
+        okClient.
     }
 
     void ensureSyncthingKilled() {

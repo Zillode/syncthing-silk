@@ -39,9 +39,11 @@ public class SyncthingThread extends Thread {
 
     final AtomicReference<Process> goProcess = new AtomicReference<>();
     final SyncthingInstance mService;
+    final boolean canSync;
 
-    public SyncthingThread(SyncthingInstance mService) {
+    public SyncthingThread(SyncthingInstance mService, boolean canSync) {
         this.mService = mService;
+        this.canSync = canSync;
     }
 
     @Override
@@ -77,13 +79,15 @@ public class SyncthingThread extends Thread {
                         "-home", SyncthingUtils.getConfigDirectory(mService).getAbsolutePath(),
                         "-generate", SyncthingUtils.getConfigDirectory(mService).getAbsolutePath(),
                         "-no-restart",
-                        "-no-browser"
+                        "-no-browser",
+                        "-paused"
                 );
             } else {
                 b.command(SyncthingUtils.getSyncthingBinaryPath(mService),
                         "-home", SyncthingUtils.getConfigDirectory(mService).getAbsolutePath(),
                         "-no-restart",
-                        "-no-browser"
+                        "-no-browser",
+                        !canSync ? "-paused" : ""
                 );
             }
             Process p = b.start();
