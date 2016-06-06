@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Apparaat-ID reeds toegevoegd.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Een negatief aantal dagen is niet logisch.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Een nieuwe major version is misschien niet compatibel met eerdere versies.</string>
     <string name="about">Over</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Apparaat toevoegen</string>
     <string name="add_folder">Map toevoegen</string>
     <string name="add_new_folder">Voeg nieuwe map toe?</string>
+    <string name="add_remote_device">Voeg extern apparaat toe</string>
     <string name="address">Adres</string>
     <string name="addresses">Adressen</string>
     <string name="advanced">Geavanceerd</string>
     <string name="advanced_configuration">Geavanceerde configuratie</string>
+    <string name="advanced_settings">Geavanceerde instellingen</string>
     <string name="all_data">Alle gegevens</string>
     <string name="allow_anonymous_usage_reporting">Versturen van anonieme gebruikersstatistieken toestaan?</string>
     <string name="alphabetic">Alfabetisch</string>
@@ -30,11 +33,13 @@
     <string name="comment_when_used_at_the_start_of_a_line">Reageer indien gebruikt aan het begin van een lijn.</string>
     <string name="compression">Compressie</string>
     <string name="connection_error">Verbindingsfout</string>
+    <string name="connection_type">Soort verbinding</string>
     <string name="copied_from_elsewhere">Gekopieerd vanaf elders</string>
     <string name="copied_from_original">Gekopieerd van het origineel</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 voor de volgende contributanten:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 de volgende Bijdragers:</string>
     <string name="cpu_utilization">CPU-gebruik</string>
-    <string name="danger">Gevaar!</string>
+    <string name="danger">Let op!</string>
     <string name="days">dagen</string>
     <string name="delete">Verwijderen</string>
     <string name="deleted">Verwijderd</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Apparaat-ID</string>
     <string name="device_identification">Apparaat-identificatie</string>
     <string name="device_name">Naam apparaat</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Apparaat \"%1$s\" (%2$s at %3$s) wil verbinden. Wil je dit toestaan?</string>
     <string name="device_wants_to_share_folder_folder">%1$s wil de map \"%2$s\" delen.</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s wil de map \"%2$s\" (%3$s) delen.</string>
     <string name="devices">Apparaten</string>
     <string name="disconnected">Niet verbonden</string>
     <string name="discovery">Zoeken</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Bewerk apparaat</string>
     <string name="edit_folder">Bewerk map</string>
     <string name="editing">Bezig met bewerken</string>
+    <string name="enable_nat_traversal">Activeer NAT traversal</string>
+    <string name="enable_relaying">Activeer doorsturen</string>
     <string name="enable_upnp">UPnP gebruiken</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Voer door komma\'s gescheiden (\"tcp://ip:port\", \"tcp://host:port\") adressen in of voer \"dynamisch\" in om automatische ontdekking van het adres uit te voeren.</string>
     <string name="enter_ignore_patterns_one_per_line">Voer negeerpatronen in, één per regel.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Bestanden zijn beschermt tegen aanpassingen die gemaakt zijn door andere apparaten, maar aanpassingen op dit apparaat worden doorgestuurd naar de rest van het cluster.</string>
     <string name="folder">Map</string>
     <string name="folder_id">Map-ID</string>
+    <string name="folder_label">Map label</string>
     <string name="folder_master">Hoofdmap</string>
     <string name="folder_path">Maplocatie</string>
+    <string name="folder_type">Soort map</string>
     <string name="folders">Mappen</string>
     <string name="full_documentation">volledige documentatie</string>
     <string name="generate">Genereer</string>
     <string name="global_discovery">Globaal zoeken</string>
     <string name="global_discovery_server">Globale zoekserver</string>
+    <string name="global_discovery_servers">Globale zoekservers</string>
     <string name="global_state">Globale status</string>
     <string name="gui">GUI</string>
     <string name="gui_authentication_password">GUI-wachtwoord</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Laatst ontvangen bestand</string>
     <string name="last_seen">Laatst gezien op</string>
     <string name="later">Later</string>
+    <string name="listeners">Luisteraars</string>
     <string name="local_discovery">Lokaal zoeken</string>
     <string name="local_state">Lokale status</string>
     <string name="local_state_total">Lokale status (totaal)</string>
     <string name="major_upgrade">Grote update</string>
+    <string name="master">Master</string>
     <string name="maximum_age">Maximum leeftijd</string>
     <string name="metadata_only">Alleen metadata</string>
     <string name="minimum_free_disk_space">Minimale vrije schijfruimte</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Nieuwste eerst</string>
     <string name="no">Nee</string>
     <string name="no_file_versioning">Geen versiebeheer</string>
+    <string name="normal">Normaal</string>
     <string name="notice">Mededeling</string>
     <string name="off">Uit</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Oudste eerst</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Optioneel label met een beschrijving voor de map. Kan verschillend zijn op elk apparaat.</string>
     <string name="options">Opties</string>
     <string name="out_of_sync">Niet gesynchroniseerd</string>
     <string name="out_of_sync_items">Niet-gesynchroniseerde items</string>
@@ -131,10 +147,13 @@
     <string name="quick_guide_to_supported_patterns">Snelgids voor ondersteunde patronen</string>
     <string name="ram_utilization">Geheugengebruik</string>
     <string name="random">Willekeurig</string>
+    <string name="relay_servers">Doorstuurservers</string>
     <string name="relayed_via">Doorgestuurd via</string>
     <string name="relays">Relais</string>
     <string name="release_notes">Release notes</string>
+    <string name="remote_devices">Externe apparaten</string>
     <string name="remove">Verwijderen</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">De identifier voor de map is verplicht. Dit moet hetzelfde zijn op alle apparaten in het cluster. </string>
     <string name="rescan">Opnieuw scannen</string>
     <string name="rescan_all">Scan alles opnieuw</string>
     <string name="rescan_interval">Scanfrequentie</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Gedeeld met</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Korte aanduiding voor deze map. Moet dezelfde zijn op alle apparaten in het cluster.</string>
     <string name="show_id">Toon ID</string>
+    <string name="show_qr">QR tonen</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Wordt i.p.v. het apparaat-ID getoond in de clusterstatus. Deze naam wordt aan andere apparaten voorgesteld als optionele standaard naam.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Wordt in plaats van het apparaat-ID in de cluster status getoond. Zal geupdate worden naar de naam die het apparaat uitzend. </string>
     <string name="shutdown">Sluit af</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Syncthing is aan het upgraden.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing lijkt afgesloten te zijn, of er is een verbindingsprobleem met het internet. Nieuwe poging....</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing lijkt een probleem te ondervinden met het verwerken van je verzoek. Refresh de pagina of herstart Syncthing als de problemen zich blijven voordoen. </string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">De geaggregeerde statistieken zijn publiek beschikbaar op de onderstaande URL.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">The verzamelde statistieken zijn publiek beschikbaar op %1$s</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">De configuratie is opslagen maar nog niet actief. Syncthing moet opnieuw opgestart worden om de nieuwe configuratie te activeren.</string>
     <string name="the_device_id_cannot_be_blank">Het apparaat-ID mag niet leeg zijn.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Het apparaat ID om hier in te vullen kan gevonden worden in het \"Actions > Show ID\" venster op de andere apparaten. Spaties en gedachtestreepjes zijn optioneel (en worden genegeerd). </string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Het in te vullen apparaat-ID kan gevonden worden in het \"Aanpassen > Toon ID\" scherm op het andere apparaat. Spaties en streepjes zijn optioneel (worden genegeerd).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Het versleutelde gebruiksrapport wordt dagelijks gestuurd en wordt gebruikt om de verschillende platformen, mappengrootte en versies op te volgen. Als de reeks gegevens wijzigt zal dit scherm opnieuw worden getoond.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Dit apparaat-ID lijkt ongeldig. Het apparaat-ID bestaat uit 52 of 56 letters en cijfers, spaties en streepjes zijn optioneel.</string>
@@ -204,6 +226,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Syncthing\'s beheerdersinterface is ingesteld om externe toegang zonder wachtwoord toe te staan.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Het wordt automatisch opnieuw geprobeerd. Bestanden worden gesynchroniseerd als de fout is hersteld.</string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Dit kan kwaadwilligen eenvoudig toegang geven tot het lezen en wijzigen van bestanden op jouw computer.</string>
+    <string name="this_device">Dit apparaat</string>
     <string name="this_is_a_major_version_upgrade">Dit is een grote update.</string>
     <string name="trash_can_file_versioning">Versiebeheer bestanden prullenbak</string>
     <string name="unknown">Onbekend</string>
@@ -220,6 +243,7 @@
     <string name="version">Versie</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Versies worden automatisch verwijderd als deze ouder zijn dan de maximale leeftijd of als ze het maximaal aantal toegestane bestanden per interval overschrijden. </string>
     <string name="versions_path">Bestandspad versies</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Let op, dit bestandspad is een submap van een bestaande map \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Wanneer een nieuw toestel wordt toegevoegd, houd er dan rekening mee dat dit toestel ook aan de andere kant moet worden toegevoegd.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Houd er bij het toevoegen van nieuwe mappen rekening mee dat het map-ID gebruikt wordt om mappen tussen apparaten te verbinden. Dit ID is hoofdlettergevoelig en moet identiek zijn op andere apparaten.</string>
     <string name="yes">Ja</string>

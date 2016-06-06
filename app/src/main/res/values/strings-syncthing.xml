@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">A device with that ID is already added.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">A negative number of days doesn\'t make sense.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">A new major version may not be compatible with previous versions.</string>
     <string name="about">About</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Add Device</string>
     <string name="add_folder">Add Folder</string>
     <string name="add_new_folder">Add new folder?</string>
+    <string name="add_remote_device">Add Remote Device</string>
     <string name="address">Address</string>
     <string name="addresses">Addresses</string>
     <string name="advanced">Advanced</string>
     <string name="advanced_configuration">Advanced Configuration</string>
+    <string name="advanced_settings">Advanced settings</string>
     <string name="all_data">All Data</string>
     <string name="allow_anonymous_usage_reporting">Allow Anonymous Usage Reporting?</string>
     <string name="alphabetic">Alphabetic</string>
@@ -30,8 +33,10 @@
     <string name="comment_when_used_at_the_start_of_a_line">Comment, when used at the start of a line</string>
     <string name="compression">Compression</string>
     <string name="connection_error">Connection Error</string>
+    <string name="connection_type">Connection Type</string>
     <string name="copied_from_elsewhere">Copied from elsewhere</string>
     <string name="copied_from_original">Copied from original</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 the following Contributors:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 the following Contributors:</string>
     <string name="cpu_utilization">CPU Utilization</string>
     <string name="danger">Danger!</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Device ID</string>
     <string name="device_identification">Device Identification</string>
     <string name="device_name">Device Name</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Device \"%1$s\" (%2$s at %3$s) wants to connect. Add new device?</string>
     <string name="device_wants_to_share_folder_folder">%1$s wants to share folder \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s wants to share folder \"%2$s\" (%3$s).</string>
     <string name="devices">Devices</string>
     <string name="disconnected">Disconnected</string>
     <string name="discovery">Discovery</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Edit Device</string>
     <string name="edit_folder">Edit Folder</string>
     <string name="editing">Editing</string>
+    <string name="enable_nat_traversal">Enable NAT traversal</string>
+    <string name="enable_relaying">Enable Relaying</string>
     <string name="enable_upnp">Enable UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Enter comma separated  (\"tcp://ip:port\", \"tcp://host:port\") addresses or \"dynamic\" to perform automatic discovery of the address.</string>
     <string name="enter_ignore_patterns_one_per_line">Enter ignore patterns, one per line.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Files are protected from changes made on other devices, but changes made on this device will be sent to the rest of the cluster.</string>
     <string name="folder">Folder</string>
     <string name="folder_id">Folder ID</string>
+    <string name="folder_label">Folder Label</string>
     <string name="folder_master">Folder Master</string>
     <string name="folder_path">Folder Path</string>
+    <string name="folder_type">Folder Type</string>
     <string name="folders">Folders</string>
     <string name="full_documentation">full documentation</string>
     <string name="generate">Generate</string>
     <string name="global_discovery">Global Discovery</string>
     <string name="global_discovery_server">Global Discovery Server</string>
+    <string name="global_discovery_servers">Global Discovery Servers</string>
     <string name="global_state">Global State</string>
     <string name="gui">GUI</string>
     <string name="gui_authentication_password">GUI Authentication Password</string>
@@ -93,12 +105,15 @@
     <string name="keep_versions">Keep Versions</string>
     <string name="largest_first">Largest First</string>
     <string name="last_file_received">Last File Received</string>
+    <string name="last_scan">Last Scan</string>
     <string name="last_seen">Last seen</string>
     <string name="later">Later</string>
+    <string name="listeners">Listeners</string>
     <string name="local_discovery">Local Discovery</string>
     <string name="local_state">Local State</string>
     <string name="local_state_total">Local State (Total)</string>
     <string name="major_upgrade">Major Upgrade</string>
+    <string name="master">Master</string>
     <string name="maximum_age">Maximum Age</string>
     <string name="metadata_only">Metadata Only</string>
     <string name="minimum_free_disk_space">Minimum Free Disk Space</string>
@@ -110,10 +125,12 @@
     <string name="newest_first">Newest First</string>
     <string name="no">No</string>
     <string name="no_file_versioning">No File Versioning</string>
+    <string name="normal">Normal</string>
     <string name="notice">Notice</string>
     <string name="off">Off</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Oldest First</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Optional descriptive label for the folder. Can be different on each device.</string>
     <string name="options">Options</string>
     <string name="out_of_sync">Out of Sync</string>
     <string name="out_of_sync_items">Out of Sync Items</string>
@@ -131,10 +148,13 @@
     <string name="quick_guide_to_supported_patterns">Quick guide to supported patterns</string>
     <string name="ram_utilization">RAM Utilization</string>
     <string name="random">Random</string>
+    <string name="relay_servers">Relay Servers</string>
     <string name="relayed_via">Relayed via</string>
     <string name="relays">Relays</string>
     <string name="release_notes">Release Notes</string>
+    <string name="remote_devices">Remote Devices</string>
     <string name="remove">Remove</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Required identifier for the folder. Must be the same on all cluster devices.</string>
     <string name="rescan">Rescan</string>
     <string name="rescan_all">Rescan All</string>
     <string name="rescan_interval">Rescan Interval</string>
@@ -157,6 +177,7 @@
     <string name="shared_with">Shared With</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Short identifier for the folder. Must be the same on all cluster devices.</string>
     <string name="show_id">Show ID</string>
+    <string name="show_qr">Show QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Shown instead of Device ID in the cluster status. Will be advertised to other devices as an optional default name.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Shown instead of Device ID in the cluster status. Will be updated to the name the device advertises if left empty.</string>
     <string name="shutdown">Shutdown</string>
@@ -178,9 +199,11 @@
     <string name="syncthing_is_upgrading">Syncthing is upgrading.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing seems to be down, or there is a problem with your Internet connection. Retrying…</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing seems to be experiencing a problem processing your request. Please refresh the page or restart Syncthing if the problem persists.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">The aggregated statistics are publicly available at %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">The configuration has been saved but not activated. Syncthing must restart to activate the new configuration.</string>
     <string name="the_device_id_cannot_be_blank">The device ID cannot be blank.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">The device ID to enter here can be found in the \"Actions > Show ID\" dialog on the other device. Spaces and dashes are optional (ignored).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">The device ID to enter here can be found in the \"Edit > Show ID\" dialog on the other device. Spaces and dashes are optional (ignored).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">The encrypted usage report is sent daily. It is used to track common platforms, folder sizes and app versions. If the reported data set is changed you will be prompted with this dialog again.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">The entered device ID does not look valid. It should be a 52 or 56 character string consisting of letters and numbers, with spaces and dashes being optional.</string>
@@ -204,6 +227,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">The Syncthing admin interface is configured to allow remote access without a password.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">They are retried automatically and will be synced when the error is resolved.</string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">This can easily give hackers access to read and change any files on your computer.</string>
+    <string name="this_device">This Device</string>
     <string name="this_is_a_major_version_upgrade">This is a major version upgrade.</string>
     <string name="trash_can_file_versioning">Trash Can File Versioning</string>
     <string name="unknown">Unknown</string>
@@ -220,6 +244,7 @@
     <string name="version">Version</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Versions are automatically deleted if they are older than the maximum age or exceed the number of files allowed in an interval.</string>
     <string name="versions_path">Versions Path</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Warning, this path is a subdirectory of an existing folder \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">When adding a new device, keep in mind that this device must be added on the other side too.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">When adding a new folder, keep in mind that the Folder ID is used to tie folders together between devices. They are case sensitive and must match exactly between all devices.</string>
     <string name="yes">Yes</string>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Устройство с това ID е вече добавено.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Няма логика в задаването на отрицателен брой дни.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Нова основна версия, която може да не е съвмеситима с предишни версии.</string>
     <string name="about">За програмата</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Добави устройство</string>
     <string name="add_folder">Добави папка</string>
     <string name="add_new_folder">Добави нова папка?</string>
+    <string name="add_remote_device">Добави отдалечено устройство</string>
     <string name="address">Адрес</string>
     <string name="addresses">Адреси</string>
     <string name="advanced">Допълнителни</string>
     <string name="advanced_configuration">Допълнителни настройки</string>
+    <string name="advanced_settings">Допълнителни настройки</string>
     <string name="all_data">Всички данни</string>
     <string name="allow_anonymous_usage_reporting">Разреши анонимно докладване за употребата на програмата?</string>
     <string name="alphabetic">Азбучен ред</string>
@@ -30,8 +33,10 @@
     <string name="comment_when_used_at_the_start_of_a_line">Коментар, използван в началото на реда</string>
     <string name="compression">Компресиране</string>
     <string name="connection_error">Грешка при свързването</string>
+    <string name="connection_type">Вид връзка</string>
     <string name="copied_from_elsewhere">Копиране от някъде другаде</string>
     <string name="copied_from_original">Копиран от оригинала</string>
+    <string name="copyright_20142016_the_following_contributors">Всички правата запазени © 2014-2016 Сътрудници:</string>
     <string name="copyright_2015_the_following_contributors">Всички правата запазени © 2015 Сътрудници:</string>
     <string name="cpu_utilization">Процесор в употреба</string>
     <string name="danger">Опасност!</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Идентификатор на устройство</string>
     <string name="device_identification">Идентификатор на устройство</string>
     <string name="device_name">Име на устройство</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Устройство \"%1$s\" (%2$s) на %3$s желае да се свърже. Добави ново устройство?</string>
     <string name="device_wants_to_share_folder_folder">%1$s желае да сподели папка \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s желае да сподели папка \"%2$s\" (%3$s).</string>
     <string name="devices">Устройства</string>
     <string name="disconnected">Не е свързано</string>
     <string name="discovery">Откриване</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Промени устройство</string>
     <string name="edit_folder">Промени папка</string>
     <string name="editing">Променяне</string>
+    <string name="enable_nat_traversal">Разреши NAT traversal</string>
+    <string name="enable_relaying">Разреши препращане</string>
     <string name="enable_upnp">Включи UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Въведете адреси разделени със запетая (\"tcp://ip:port\", \"tcp://host:port\") или \"dynamic\", за да автоматично откриване на наличните адреси.</string>
     <string name="enter_ignore_patterns_one_per_line">Добави шаблони за игнориране, по един на ред.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Защитава файловете от промени направени на други устройства, но промените направени на това устройство ще бъдат синхронизирани с останалите устройства.</string>
     <string name="folder">Папка</string>
     <string name="folder_id">Идентификатор на папката</string>
+    <string name="folder_label">Етикет на папката</string>
     <string name="folder_master">Главна папка</string>
     <string name="folder_path">Път до папката</string>
+    <string name="folder_type">Вид папка</string>
     <string name="folders">Папки</string>
     <string name="full_documentation">пълна документация</string>
     <string name="generate">Генерирай</string>
     <string name="global_discovery">Глобално откриване</string>
     <string name="global_discovery_server">Сървър за глобално откриване</string>
+    <string name="global_discovery_servers">Сървъри за глобално откриване</string>
     <string name="global_state">Глобално състояние</string>
     <string name="gui">Потребителски интерфейс</string>
     <string name="gui_authentication_password">Парола за потребителския интерфейс</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Последния получен файл</string>
     <string name="last_seen">Последно видян</string>
     <string name="later">По-късно</string>
+    <string name="listeners">Слушащи</string>
     <string name="local_discovery">Локално откриване</string>
     <string name="local_state">Локално състояние</string>
     <string name="local_state_total">Локално състояние (Общо)</string>
     <string name="major_upgrade">Основно Обновяване</string>
+    <string name="master">Главен</string>
     <string name="maximum_age">Максимална възраст</string>
     <string name="metadata_only">Само мета информация</string>
     <string name="minimum_free_disk_space">Минимално свободно дисково пространство</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Първо най-новите</string>
     <string name="no">Не</string>
     <string name="no_file_versioning">Без версии</string>
+    <string name="normal">Нормален</string>
     <string name="notice">Известие</string>
     <string name="off">Изключено</string>
     <string name="ok">ОК</string>
     <string name="oldest_first">Първо най-старите</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Допълнително разяснеие за етикета на папката. Може да бъде различно всяко устройство.</string>
     <string name="options">Настройки</string>
     <string name="out_of_sync">Несинхронизирано</string>
     <string name="out_of_sync_items">Несинхронизирани елементи</string>
@@ -131,10 +147,13 @@
     <string name="quick_guide_to_supported_patterns">Бърз наръчник към поддържаните шаблони</string>
     <string name="ram_utilization">RAM в употреба</string>
     <string name="random">Произволен</string>
+    <string name="relay_servers">Препращащи сървъри</string>
     <string name="relayed_via">Препратено през</string>
     <string name="relays">Препращачи</string>
     <string name="release_notes">Бележки по обновяването</string>
+    <string name="remote_devices">Отделечени устройства</string>
     <string name="remove">Премахни</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Задължителен идентификатор за тази папка. Трябва да бъде един и същ на всички устройства.</string>
     <string name="rescan">Сканирай повторно</string>
     <string name="rescan_all">Сканирай повторно всички</string>
     <string name="rescan_interval">Интервал за повторно сканиране</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Споделена с</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Идентификаторът на папката трябва да бъде еднакъв на всички устройства.</string>
     <string name="show_id">Покажи идентификатора</string>
+    <string name="show_qr">Покажи QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Покажи вместо идентификатор на устройството в статус на клъстъра. Ще бъде предлагано на други комютри като име по подразбиране.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Покажи вместо идентификатор на устройството в статус на клъстъра. Ще бъде обновено с името по подразбиране изпратено от другия компютър.</string>
     <string name="shutdown">Спри програмата</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Syncthing се обновява.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing изглежда не е включен, или има проблем с интерент връзката. Повторен опит...</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing има проблем при обработването на заявката. Моля, презаредете браузъра или рестартирайте Syncthing ако проблемът продължи.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">Сумарната статистика е публично достъпна на посочения по-долу адрес.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Сумарната статистика е публично достъпна на %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">Конфигурацията е запазена, но не е активирана. Syncthing трябва да рестартира, за да се активира новата конфигурация.</string>
     <string name="the_device_id_cannot_be_blank">Полето идентификатор на устройство не може да бъде празно.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Идентификатор на устройство за въвеждане тук, може да бъде намерен в \"Промени > Покажи идентификатора\" на другото устройство. Интервалите и тиретата са пожелание (биват прескачани).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Идентификатор на устройство за въвеждане тук, може да бъде намерен в \"Промени > Покажи идентификатора\". Интервалите и тиретата са пожелание (биват прескачани).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Криптираният доклад се изпраща ежедневно. Използва се, за отичане на ползваните платформи, размер на папки и версии на приложението. Ако събираните данни се променят, ще бъдете информиран с подобен на този диалог.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Въведеният идентификатор на устройство не е валиден. Трябва да бъде 52 или 56 символа и да се състои от букви и цифри, като интервалите и тиретата са пожелание.</string>
@@ -204,6 +226,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Администраторския панел на Syncthing е настроен да приема дистанционни връзки без парола.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Ще бъдат спрени и автоматично синхронизирани, когато грешката бъде оправена.</string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Това дава лесен достъп на хакери да разглеждат и променят всякакви файлове на компютъра Ви.</string>
+    <string name="this_device">Това устройство</string>
     <string name="this_is_a_major_version_upgrade">Това е нова основна версия.</string>
     <string name="trash_can_file_versioning">Само на файловете в кошчето</string>
     <string name="unknown">Неясно</string>
@@ -220,6 +243,7 @@
     <string name="version">Версия</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Версиите биват изтривани автоматично, когато са по-стари от максималната възраст или надминават броя файлове разрешени в даден интервал.</string>
     <string name="versions_path">Път до версиите</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Внимание, това е вътрешна папка на вече съществуваща папка \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Когато добавяш ново устройство помни, че твоето устройство също трябва да бъде добавено от другата страна.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Когато добавяш нов идентификатор на папка помни, че той се използва за свързване на папките на различни устройства. Главни/малки букви са от значение и трябва да са еднакви на всички устройства.</string>
     <string name="yes">Да</string>

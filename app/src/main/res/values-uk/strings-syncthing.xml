@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Пристрій з таким ID вже додано раніше.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Від\'ємна кількість днів немає сенсу.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Нова мажорна версія може бути несумісною із попередніми версіями.</string>
     <string name="about">Про програму</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Додати пристрій</string>
     <string name="add_folder">Додати директорію</string>
     <string name="add_new_folder">Додати нову директорію?</string>
+    <string name="add_remote_device">Додати віддалений пристрій</string>
     <string name="address">Адреса</string>
     <string name="addresses">Адреси</string>
     <string name="advanced">Розширені</string>
     <string name="advanced_configuration">Розширена конфігурація</string>
+    <string name="advanced_settings">Розширені налаштування</string>
     <string name="all_data">Усі дані</string>
     <string name="allow_anonymous_usage_reporting">Дозволити програмі збирати анонімну статистику використання?</string>
     <string name="alphabetic">За алфавітом</string>
@@ -30,8 +33,10 @@
     <string name="comment_when_used_at_the_start_of_a_line">Коментар, якщо використовується на початку рядка</string>
     <string name="compression">Стиснення</string>
     <string name="connection_error">Помилка з’єднання</string>
+    <string name="connection_type">Тип з*єднання</string>
     <string name="copied_from_elsewhere">Скопійовано з іншого місця</string>
     <string name="copied_from_original">Скопійовано з оригіналу</string>
+    <string name="copyright_20142016_the_following_contributors">© 2014-2016 Всі права застережено, вклад внесли:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 наступних контриб’юторів:</string>
     <string name="cpu_utilization">Навантаження CPU</string>
     <string name="danger">Небезпечно!</string>
@@ -42,18 +47,22 @@
     <string name="device_id">ID пристрою</string>
     <string name="device_identification">Ідентифікатор пристрою</string>
     <string name="device_name">Назва пристрою</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Пристрій \"%1$s\" (%2$s за адресою %3$s) намагається під’єднатися. Додати новий пристрій?</string>
     <string name="device_wants_to_share_folder_folder">%1$s хоче поділитися директорією \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s хоче поділитися директорією \"%2$s\" (%3$s).</string>
     <string name="devices">Пристрої</string>
     <string name="disconnected">З’єднання відсутнє</string>
-    <string name="discovery">Виявлення</string>
+    <string name="discovery">Сервери координації NAT</string>
     <string name="documentation">Документація</string>
     <string name="download_rate">Швидкість завантаження</string>
     <string name="downloaded">Завантажено</string>
     <string name="downloading">Завантаження</string>
     <string name="edit">Редагувати</string>
-    <string name="edit_device">Редагувати пристрій</string>
-    <string name="edit_folder">Редагувати директорію</string>
+    <string name="edit_device">Налаштування пристрою</string>
+    <string name="edit_folder">Налаштування директорії</string>
     <string name="editing">Редагування</string>
+    <string name="enable_nat_traversal">Увімкнути NAT traversal</string>
+    <string name="enable_relaying">Увімкнути ретрансляцію (relaying)</string>
     <string name="enable_upnp">Увімкнути UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Введіть розділені комою (\"tcp://ip:port\", \"tcp://host:port\") адреси або \"dynamic\" для автоматичного визначення адреси.</string>
     <string name="enter_ignore_patterns_one_per_line">Введіть шаблони ігнорування, по одному на рядок.</string>
@@ -65,16 +74,20 @@
     <string name="file_versioning">Керування версіями</string>
     <string name="files_are_moved_to_date_stamped_versions_in_a_stversions_folder_when_replaced_or_deleted_by_syncthing">Файли будуть поміщатися у директорію .stversions із відповідною позначкою часу, коли вони будуть замінятися або видалятися програмою.</string>
     <string name="files_are_moved_to_stversions_folder_when_replaced_or_deleted_by_syncthing">Файли, що замінюються або видаляються Syncthing, переміщуються у директорію .stversions. </string>
-    <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Файли захищено від змін зроблених на інших пристроях, але зміни зроблені на цьому пристрої будуть надіслані решті кластеру.</string>
+    <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Вміст папки захищено від змін, зроблених на інших пристроях, але зміни зроблені на цьому пристрої можна розіслати решті пристроїв кластеру.</string>
     <string name="folder">Директорія</string>
     <string name="folder_id">ID директорії</string>
-    <string name="folder_master">Центральна директорія</string>
+    <string name="folder_label">Мітка директорії</string>
+    <string name="folder_master">Вважати за оригінал</string>
     <string name="folder_path">Шлях до директорії</string>
+    <string name="folder_type">Тип директорії</string>
     <string name="folders">Директорії</string>
     <string name="full_documentation">повна документація</string>
     <string name="generate">Згенерувати</string>
-    <string name="global_discovery">Глобальне виявлення</string>
+    <string name="global_discovery">Глобальне виявлення (internet)</string>
     <string name="global_discovery_server">Сервер для глобального виявлення</string>
+    <string name="global_discovery_servers">Сервери глобального виявлення 
+(координації NAT)</string>
     <string name="global_state">Глобальний статус</string>
     <string name="gui">Графічний інтерфейс</string>
     <string name="gui_authentication_password">Пароль для доступу до панелі управління</string>
@@ -83,7 +96,7 @@
     <string name="help">Допомога</string>
     <string name="home_page">Домашня сторінка</string>
     <string name="ignore">Ігнорувати</string>
-    <string name="ignore_patterns">Ігнорувати шаблони</string>
+    <string name="ignore_patterns">Шаблони винятків</string>
     <string name="ignore_permissions">Ігнорувати права доступу до файлів</string>
     <string name="incoming_rate_limit_kibs">Ліміт швидкості завантаження (КіБ/с)</string>
     <string name="incorrect_configuration_may_damage_your_folder_contents_and_render_syncthing_inoperable">Невірна конфігурація може пошкодити вміст вашої директорії та зробити Syncthing недієздатним.</string>
@@ -95,10 +108,12 @@
     <string name="last_file_received">Останній завантажений файл</string>
     <string name="last_seen">З’являвся останній раз</string>
     <string name="later">Пізніше</string>
-    <string name="local_discovery">Локальне виявлення</string>
+    <string name="listeners">Приймачі (TCP &amp; Relay)</string>
+    <string name="local_discovery">Локальне виявлення (LAN)</string>
     <string name="local_state">Локальний статус</string>
     <string name="local_state_total">Локальний статус (загалом)</string>
     <string name="major_upgrade">Мажорне оновлення</string>
+    <string name="master">Головний</string>
     <string name="maximum_age">Максимальний вік</string>
     <string name="metadata_only">Тільки метадані</string>
     <string name="minimum_free_disk_space">Мінімальний вільний простір на диску</string>
@@ -110,15 +125,17 @@
     <string name="newest_first">Спершу новіші</string>
     <string name="no">Ні</string>
     <string name="no_file_versioning">Версіонування вимкнено</string>
+    <string name="normal">Нормальний</string>
     <string name="notice">Повідомлення</string>
     <string name="off">Вимкнути</string>
     <string name="ok">Гаразд</string>
     <string name="oldest_first">Спершу старіші</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Необов\'язкова косметична назва директорії. Не передається іншим пристроям.</string>
     <string name="options">Опції</string>
     <string name="out_of_sync">Не синхронізовано</string>
     <string name="out_of_sync_items">Не синхронізовані елементи</string>
     <string name="outgoing_rate_limit_kibs">Ліміт швидкості віддачі (КіБ/с)</string>
-    <string name="override_changes">Перезаписати зміни</string>
+    <string name="override_changes">Розіслати мою версію</string>
     <string name="path_to_the_folder_on_the_local_computer_will_be_created_if_it_does_not_exist_the_tilde_character_can_be_used_as_a_shortcut_for">Шлях до директорії на локальному комп’ютері. Буде створений, якщо такий не існує. Символ тильди (~) може бути використаний як ярлик для</string>
     <string name="path_where_versions_should_be_stored_leave_empty_for_the_default_stversions_folder_in_the_folder">Шлях, де повинні зберігатися версії (залиште порожнім для зберігання в .stversions в середині директорії)</string>
     <string name="pause">Пауза</string>
@@ -131,10 +148,13 @@
     <string name="quick_guide_to_supported_patterns">Швидкий посібник по шаблонам, що підтримуються</string>
     <string name="ram_utilization">Використання RAM</string>
     <string name="random">Випадково</string>
+    <string name="relay_servers">Сервери ретрансляції</string>
     <string name="relayed_via">Ретранслювати через</string>
-    <string name="relays">Ретрансляція</string>
+    <string name="relays">Ретранслятори</string>
     <string name="release_notes">Примітки до випуску</string>
+    <string name="remote_devices">Віддалені пристрої</string>
     <string name="remove">Видалити</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Обов\'язковий унікальний ідентифікатор директорії. Має бути однаковим на усіх пристроях кластеру.</string>
     <string name="rescan">Пересканувати</string>
     <string name="rescan_all">Пересканувати усе</string>
     <string name="rescan_interval">Інтервал для повторного сканування</string>
@@ -157,6 +177,7 @@
     <string name="shared_with">Доступно для</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Короткий ідентифікатор для директорії. Має бути однаковим на усіх  пристроях кластеру.</string>
     <string name="show_id">Показати ID</string>
+    <string name="show_qr">Показати QR-код</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Показується замість ID пристрою в статусі кластера. Буде розголошено іншим вузлам як опціональне типове ім’я.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Показується замість ID пристрою в статусі кластера. Буде оновлено ім’ям, яке розголошене пристроєм, якщо залишити порожнім.</string>
     <string name="shutdown">Вимкнути</string>
@@ -170,7 +191,7 @@
     <string name="statistics">Статистика</string>
     <string name="stopped">Зупинено</string>
     <string name="support">Підтримка</string>
-    <string name="sync_protocol_listen_addresses">Адреса панелі управління</string>
+    <string name="sync_protocol_listen_addresses">Адреса і вхідний порт протоколу синхронізації</string>
     <string name="syncing">Синхронізація</string>
     <string name="syncthing_has_been_shut_down">Syncthing вимкнено (закрито).</string>
     <string name="syncthing_includes_the_following_software_or_portions_thereof">Syncthing містить наступне програмне забезпечення (або його частини):</string>
@@ -178,10 +199,12 @@
     <string name="syncthing_is_upgrading">Syncthing оновлюється.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Схоже на те, що Syncthing закритий, або виникла проблема із Інтернет-з’єднанням. Проводиться повторна спроба з’єднання…</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Схоже на те, що Syncthing стикнувся з проблемою оброблюючи ваш запит. Будь ласка перезавантажте сторінку в браузері або перезапустіть Syncthing.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">Зібрана статистика публічно доступна за наступним посиланням.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Зібрана статистика публічно доступна за посиланням %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">Конфігурацію збережено, але не активовано. Необхідно перезапустити Syncthing для того, щоби активувати нову конфігурацію.</string>
     <string name="the_device_id_cannot_be_blank">ID пристрою не може бути порожнім.</string>
-    <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">ID пристрою, який необхідно додати. Може бути знайдений у вікні \"Редагувати > Показати ID\" на іншому пристрої. Пробіли та тире опціональні (вони ігноруються програмою).</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">ID пристрою, який необхідно додати. Може бути знайдений у вікні \"Дії > Показати ID\" в меню іншого пристрою. Пробіли та тире необов\'язкові (будуть проігноровні).</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">ID пристрою, який необхідно додати. Може бути знайдений у вікні \"Редагувати > Показати ID\" в меню іншого пристрою. Пробіли та тире необов\'язкові (будуть проігноровні).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Зашифрована статистика використання відсилається щоденно. Вона використовується для того, щоб розробники розуміли, на яких платформах працює програма, розміри директорій та версії програми. Якщо набір даних, що збирається зазнає змін, ви обов’язково будете повідомлені через це діалогове вікно.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Введений ID пристрою невалідний. Ідентифікатор має вигляд строки довжиною 52 або 56 символів, що містить цифри та літери, із опціональними пробілами та тире.</string>
     <string name="the_first_command_line_parameter_is_the_folder_path_and_the_second_parameter_is_the_relative_path_in_the_folder">Перший параметр командного рядка це шлях до директорії, другий - відносний шлях у директорії.</string>
@@ -204,6 +227,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Інтерфейс адміністрування Syncthing налаштовано на дозвіл віддаленого доступу без пароля.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Вони будуть автоматично повторно синхронізовані, коли помилку буде усунено. </string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Це легко може дати хакерам доступ до читання та зміни будь-яких файлів на вашому комп\'ютері.</string>
+    <string name="this_device">Локальний пристрій</string>
     <string name="this_is_a_major_version_upgrade">Це оновлення мажорної версії</string>
     <string name="trash_can_file_versioning">Версіонування файлів у кошику </string>
     <string name="unknown">Невідомо</string>
@@ -220,8 +244,9 @@
     <string name="version">Версія</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Версії автоматично видаляються, якщо вони старше, ніж максимальний вік, або перевищують допустиму кількість файлів за інтервал.</string>
     <string name="versions_path">Шлях до версій</string>
-    <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Коли додаєте новий пристрій, пам’ятайте, що цей пристрій повинен бути доданий і на іншій стороні.</string>
-    <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Коли додаєте нову директорію, пам’ятайте, що ID цієї директорії використовується для того, щоб зв’язувати директорії разом між вузлами. Назви є чутливими до регістра та повинні співпадати точно між усіма вузлами.</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Увага, цей шлях є підпапкою директорії \"%1$s\", що й так синхронізується .</string>
+    <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Коли додаєте новий вузол, пам’ятайте, що цей вузол повинен бути доданий і на іншій стороні.</string>
+    <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Коли додаєте нову директорію, пам’ятайте, що ID цієї директорії використовується для того, щоб зв’язувати директорії разом між пристроями. Назви повинні точно співпадати між усіма пристроями, регістр символів має значення.</string>
     <string name="yes">Так</string>
     <string name="you_must_keep_at_least_one_version">Ви повинні зберігати щонайменше одну версію.</string>
 </resources>
