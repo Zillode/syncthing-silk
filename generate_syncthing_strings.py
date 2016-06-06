@@ -8,7 +8,7 @@ import re
 import string
 
 base_path = "syncthing/src/github.com/syncthing/syncthing"
-langdir = "gui/assets/lang"
+langdir = "gui/default/assets/lang"
 resdir = "app/src/main/res"
 resfile = "strings-syncthing.xml"
 
