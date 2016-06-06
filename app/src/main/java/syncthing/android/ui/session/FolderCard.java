@@ -35,6 +35,7 @@ import syncthing.api.model.DeviceConfig;
 import syncthing.api.model.FolderConfig;
 import syncthing.api.model.FolderDeviceConfig;
 import syncthing.api.model.FolderStats;
+import syncthing.api.model.FolderType;
 import syncthing.api.model.LastFile;
 import syncthing.api.model.Model;
 import syncthing.api.model.ModelState;
@@ -197,7 +198,7 @@ public class FolderCard extends ExpandableCard {
 
     @Bindable
     public boolean getReadOnly() {
-        return folder.readOnly;
+        return folder.type == FolderType.READONLY;
     }
 
     @Bindable

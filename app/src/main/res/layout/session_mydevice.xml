@@ -191,21 +191,20 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/relays_container"
+                    android:id="@+id/listeners_container"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="@{card.relaysEnabled ? View.VISIBLE : View.GONE}">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/relays_title"
-                        android:text="@string/relays"
+                        android:id="@+id/listeners_title"
+                        android:text="@string/listeners"
                         style="@style/session.RecyclerTextLeftColumn"
                         />
 
                     <TextView
-                        android:id="@+id/relays"
-                        android:text="@{@string/announce_failures((card.relaysTotal - card.relaysFailures), card.relaysTotal)}"
-                        android:textColor="@{(card.relaysTotal - card.relaysFailures) == 0 ? @color/announce_fail : @color/announce_ok}"
+                        android:id="@+id/listeners"
+                        android:text="@{@string/announce_failures((card.listenersTotal - card.listenersFailures), card.listenersTotal)}"
+                        android:textColor="@{(card.listenersTotal - card.listenersFailures) == 0 ? @color/announce_fail : @color/announce_ok}"
                         style="@style/session.RecyclerTextRightColumn"
                         tools:text="OK"/>
 

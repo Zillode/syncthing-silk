@@ -102,9 +102,6 @@ public class EventDeserializer implements JsonDeserializer<Event> {
             case STATE_CHANGED: {
                 return new StateChanged(id, time, type, context.deserialize(data, StateChanged.Data.class));
             }
-            case RELAY_STATE_CHANGED: {
-                return new RelayStateChanged(id, time, type, context.deserialize(data, RelayStateChanged.Data.class));
-            }
             default: {
                 return new UnknownEvent(id, time, obj.toString());
             }

@@ -32,9 +32,7 @@ public class SystemInfo {
     public boolean discoveryEnabled;
     public int discoveryMethods;
     public Map<String, String> discoveryErrors = Collections.emptyMap();
-    public boolean relaysEnabled;
-    public Map<String, Boolean> relayClientStatus = Collections.emptyMap();
-    public Map<String, Integer> relayClientLatency = Collections.emptyMap();
+    public Map<String, ConnectionServiceStatus> connectionServiceStatus = Collections.emptyMap();
 
     @Override
     public String toString() {

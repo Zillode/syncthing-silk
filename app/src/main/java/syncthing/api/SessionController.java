@@ -384,9 +384,6 @@ public class SessionController implements EventMonitor.EventListener {
                 break;
             } case ITEM_STARTED: {
                 break;
-            } case RELAY_STATE_CHANGED: {
-                refreshSystem();
-                break;
             } case PING: {
                 refreshSystem();
                 refreshConnections(true);

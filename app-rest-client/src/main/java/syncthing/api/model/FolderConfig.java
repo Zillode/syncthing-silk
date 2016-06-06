@@ -20,12 +20,14 @@ import java.util.List;
 public class FolderConfig implements Serializable, Cloneable {
     private static final long serialVersionUID = 4211699699166691007L;
     public String id;
+    public String label;
     public String path;
+    public FolderType type;
     public List<FolderDeviceConfig> devices = Collections.emptyList();
-    public boolean readOnly;
     public int rescanIntervalS;
     public boolean ignorePerms;
     public boolean autoNormalize;
+    public int minDiskFreePct;
     public Versioning versioning;
     public int copiers;
     public int pullers;
@@ -37,12 +39,13 @@ public class FolderConfig implements Serializable, Cloneable {
     public int pullerPauseS;
     public int maxConflicts;
     public boolean disableSparseFiles;
+    public boolean disableTempIndexes;
     public String invalid;
 
     public static FolderConfig withDefaults() {
         FolderConfig f = new FolderConfig();
         f.devices = new ArrayList<>();
-        f.readOnly = false;
+        f.type = FolderType.READWRITE;
         f.rescanIntervalS = 86400;
         f.autoNormalize = true;
         f.versioning = new VersioningNone(VersioningType.NONE);

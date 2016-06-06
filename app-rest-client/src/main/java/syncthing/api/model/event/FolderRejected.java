@@ -22,5 +22,6 @@ public class FolderRejected extends Event<FolderRejected.Data> {
     public static class Data {
         public String device;
         public String folder;
+        public String folderLabel;
     }
 }

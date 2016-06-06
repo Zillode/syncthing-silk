@@ -63,6 +63,7 @@ import syncthing.api.SessionManager;
 import syncthing.api.model.DeviceConfig;
 import syncthing.api.model.FolderConfig;
 import syncthing.api.model.FolderDeviceConfig;
+import syncthing.api.model.FolderType;
 import syncthing.api.model.PullOrder;
 import syncthing.api.model.SystemInfo;
 import syncthing.api.model.Version;
@@ -355,18 +356,22 @@ public class EditFolderPresenter extends EditPresenter<CoordinatorLayout>
     }
 
     @Bindable
-    public boolean isReadOnly() {
-        return origFolder.readOnly;
+    public boolean getReadOnly() {
+        return origFolder.type == FolderType.READONLY;
     }
 
-    public void setReadOnly(boolean readOnly) {
-        origFolder.readOnly = readOnly;
+    public void setFolderType(FolderType type) {
+        origFolder.type = type;
     }
 
     public final Action1<Boolean> actionSetReadOnly = new Action1<Boolean>() {
         @Override
-        public void call(Boolean aBoolean) {
-            setReadOnly(aBoolean);
+        public void call(Boolean isReadOnly) {
+            if (isReadOnly) {
+                setFolderType(FolderType.READONLY);
+            } else {
+                setFolderType(FolderType.READWRITE);
+            }
         }
     };
 

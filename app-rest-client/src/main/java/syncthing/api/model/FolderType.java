@@ -9,14 +9,13 @@
 
 package syncthing.api.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
-* Created by drew on 3/17/15.
-*/
-public class JsonDBFileInfo {
-    public String name;
-    public int flags;
-    public long modified;
-    public String[] version;
-    public int localVersion;
-    public long size;
+ * Created by drew on 11/6/15.
+ */
+public enum FolderType {
+    @SerializedName("readwrite") READWRITE,
+    @SerializedName("readonly") READONLY,
+    UNKNOWN
 }
