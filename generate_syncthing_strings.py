@@ -35,6 +35,7 @@ def fixup(lst):
         for s in rep:
             val = val.replace(s,'%'+str(ii)+'$s')
             ii+=1
+        val = val.replace("&","&amp;")
         val = val.replace("'","\\'")
         val = val.replace('"','\\"')
         #print(val)
