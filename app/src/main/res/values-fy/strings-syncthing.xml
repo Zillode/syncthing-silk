@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">In apparaat mei dat ID is al taheakke.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">In negatyf tal dagen soe healwiis wêze.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">In nije, wichtige ferzje koe wol ris net te kombinearjen wêze mei foargeande ferzjes.</string>
     <string name="about">Oer</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Apparaat taheakje</string>
     <string name="add_folder">Map taheakje</string>
     <string name="add_new_folder">Nije map taheakje?</string>
+    <string name="add_remote_device">Apparaat op Ofstân Taheakje</string>
     <string name="address">Adres</string>
     <string name="addresses">Adressen</string>
     <string name="advanced">Avansearre</string>
     <string name="advanced_configuration">Avansearre konfiguraasje</string>
+    <string name="advanced_settings">Avansearre ynstellings</string>
     <string name="all_data">Alle data</string>
     <string name="allow_anonymous_usage_reporting">Anonime brûkensrapportaazje tastean?</string>
     <string name="alphabetic">Alfabetysk</string>
@@ -30,8 +33,10 @@
     <string name="comment_when_used_at_the_start_of_a_line">Kommentaar, wannear as brûkt by it begjin fan in rige</string>
     <string name="compression">Kompresje</string>
     <string name="connection_error">Ferbiningsflater</string>
+    <string name="connection_type">Ferbiningstype</string>
     <string name="copied_from_elsewhere">Oernommen fan earne oars</string>
     <string name="copied_from_original">Oernommen fan orizjineel</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 de folgende bydragers:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 de folgende bydragers:</string>
     <string name="cpu_utilization">CPU-brûken</string>
     <string name="danger">Gefaar!</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Apparaat-ID</string>
     <string name="device_identification">Apparaatidentifikaasje</string>
     <string name="device_name">Apparaatnamme</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Apparaat \"%1$s\" %2$s op (%3$s) wol ferbining meitsje. Nij apparaat taheakje?</string>
     <string name="device_wants_to_share_folder_folder">%1$s wol map \"%2$s\" diele.</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s wol map \"%2$s\" (%3$s) diele.</string>
     <string name="devices">Apparaten</string>
     <string name="disconnected">Ferbining ferbrutsen</string>
     <string name="discovery">Untdekking</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Apparaat bewurkje</string>
     <string name="edit_folder">Map bewurkje</string>
     <string name="editing">Bewurkjen</string>
+    <string name="enable_nat_traversal">NAT-trochkruse ynskeakelje</string>
+    <string name="enable_relaying">Trochjaan tastean</string>
     <string name="enable_upnp">UPnP oansette</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Fier troch komma\'s skieden (\"tcp://ip:port\", \"tcp://host:port\") adressen yn of \"dynamic\" om automatyske ûntdekking fan it adres út te fieren.</string>
     <string name="enter_ignore_patterns_one_per_line">Fier negearpatroanen yn, ien per rigel.</string>
@@ -65,21 +74,24 @@
     <string name="file_versioning">Triemferzjebehear</string>
     <string name="files_are_moved_to_date_stamped_versions_in_a_stversions_folder_when_replaced_or_deleted_by_syncthing">Triemen wurde ferset nei in mei datum stimpele ferzjes yn in .stversions map wannear troch Syncthing ferfangen of fuortsmiten.</string>
     <string name="files_are_moved_to_stversions_folder_when_replaced_or_deleted_by_syncthing">Triemen wurde ferset nei map .stversions wannear\'t troch Syncthing ferfangen of fuortsmiten.</string>
-    <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Triemen binne ymmún foar feroarings makke troch oare apparaten, mar feroarings makke op dit apparaat wurde nei de rest ferstjoerd.</string>
+    <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Triemen binne ymmún foar feroarings makke troch oare apparaten, mar feroarings makke op dit apparaat wurde nei de rest fan \'e bondel ferstjoerd.</string>
     <string name="folder">Map</string>
     <string name="folder_id">Map-ID</string>
+    <string name="folder_label">Map-opskrift</string>
     <string name="folder_master">Map-master</string>
     <string name="folder_path">Map-paad</string>
+    <string name="folder_type">Maptype</string>
     <string name="folders">Mappen</string>
     <string name="full_documentation">komplete dokumintaasje</string>
     <string name="generate">Generearje</string>
     <string name="global_discovery">Wrâldwide ûntdekking</string>
     <string name="global_discovery_server">Wrâldwide ûntdekkingstsjinner</string>
+    <string name="global_discovery_servers">Wrâldwide ûntdekkingstsjinners</string>
     <string name="global_state">Wrâldwide tastân</string>
     <string name="gui">GUI</string>
-    <string name="gui_authentication_password">GUI-wachtwurd foar ferifikaasje</string>
-    <string name="gui_authentication_user">GUI-brûker foar ferifikaasje</string>
-    <string name="gui_listen_addresses">GUI-harkadres</string>
+    <string name="gui_authentication_password">Wachtwurd foar ferifikaasje yn GUI</string>
+    <string name="gui_authentication_user">Brûkers-ID foar ferifikaasje yn GUI</string>
+    <string name="gui_listen_addresses">Harkadres foar GUI</string>
     <string name="help">Help</string>
     <string name="home_page">Hiemstee</string>
     <string name="ignore">Negearje</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Leste triem ûntfongen</string>
     <string name="last_seen">Lêst sjoen</string>
     <string name="later">Letter</string>
+    <string name="listeners">Harkers</string>
     <string name="local_discovery">Lokale ûntdekking</string>
     <string name="local_state">Lokale tastân</string>
     <string name="local_state_total">Lokale tastân (Folledich)</string>
     <string name="major_upgrade">Wichtige fernijing</string>
+    <string name="master">Master</string>
     <string name="maximum_age">Maksimale âldens</string>
     <string name="metadata_only">Allinnich metadata</string>
     <string name="minimum_free_disk_space">Minimale frije skiifromte</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Nijste earst</string>
     <string name="no">Nee</string>
     <string name="no_file_versioning">Gjin triemferzjebehear</string>
+    <string name="normal">Normaal</string>
     <string name="notice">Notysje</string>
     <string name="off">Ut</string>
     <string name="ok">Okee</string>
     <string name="oldest_first">Aldste earst</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Opsjoneel beskriuwend opskrift foar de map. Mei op ider apparaat oars wêze.</string>
     <string name="options">Opsjes</string>
     <string name="out_of_sync">Net syngronisearre</string>
     <string name="out_of_sync_items">Net syngronisearre items</string>
@@ -131,10 +147,13 @@
     <string name="quick_guide_to_supported_patterns">Fluch-paadwizer foar stipe patroanen</string>
     <string name="ram_utilization">RAM-brûken</string>
     <string name="random">Willekeurich</string>
+    <string name="relay_servers">Trochjoutsjinners</string>
     <string name="relayed_via">Trochjûn fia</string>
     <string name="relays">Trochjouers</string>
     <string name="release_notes">Utjeftenotysjes</string>
+    <string name="remote_devices">Apparaten op Ofstân</string>
     <string name="remove">Fuortsmite</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Ferplicht ID foar de map. Moat op alle bondelapparaten itselde wêze.</string>
     <string name="rescan">Sken opnij</string>
     <string name="rescan_all">Sken alles opnij</string>
     <string name="rescan_interval">Wersken ynterval</string>
@@ -155,10 +174,11 @@
     <string name="share_this_folder">Dizze map diele?</string>
     <string name="share_with_devices">Diele mei apparaten</string>
     <string name="shared_with">Dielt mei</string>
-    <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Koart opskrift foar de map. Moat op alle apparaten itselde wêze.</string>
+    <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Koarte ID foar de map. Moat op alle bondelapparaten itselde wêze.</string>
     <string name="show_id">ID sjen litte</string>
+    <string name="show_qr">QR sjen litte</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Wurd ynstee fan apparaat-ID sjen litten by de bondeltastân. Wurd nei oare apparaten advertearre as in mooglike standertnamme.</string>
-    <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Wurd ynstee fan apparaat-ID sjen litten by de bondeltastân. As it leech litten wurd, wurd it fernijt nei de namme die it apparaat advertearret.</string>
+    <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Wurd yn de bondeltastân sjen litten ynstee fan apparaat-ID. Wannear\'t leech litten wurd, wurd it fernijt nei de namme die it apparaat útstjoert.</string>
     <string name="shutdown">Ofslute</string>
     <string name="shutdown_complete">Ofsluten klear</string>
     <string name="simple_file_versioning">Ienfâldich triemferzjebehear</string>
@@ -166,11 +186,11 @@
     <string name="smallest_first">Lytste earst</string>
     <string name="source_code">Boarnekoade</string>
     <string name="staggered_file_versioning">Sprieden triemferzjebehear</string>
-    <string name="start_browser">Browser starte</string>
+    <string name="start_browser">Browser iepenje wannear\'t Syncthing start</string>
     <string name="statistics">Statistiken</string>
     <string name="stopped">Stoppe</string>
     <string name="support">Understeuning</string>
-    <string name="sync_protocol_listen_addresses">Sync-protokol harkadres</string>
+    <string name="sync_protocol_listen_addresses">Sync-protokolharkadressen</string>
     <string name="syncing">Oan it Syncen</string>
     <string name="syncthing_has_been_shut_down">Syncthing is útsetten</string>
     <string name="syncthing_includes_the_following_software_or_portions_thereof">Syncthing befettet de folgende sêftguod of parten dêrfan:</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Syncthing is oan it fernijen.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">It liket dêrop dat Syncthing op dit stuit net rint, of der is in swierrichheid mei jo ynternetferbining. Wurd no opnij besocht...</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">It liket dêrop dat Syncthing swierrichheden ûnderfynt mei it ferwurkjen fan jo fersyk. Graach de stee ferfarskje of Syncthing werstarte as it probleem der bliuwt.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">De fersammele statistiken binnen yn it publyk beskikber fia ûndersteande keppeling.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">De fersammele statistiken binnen yn it publyk beskikber op %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">De konfiguraasje is bewarre mar noch net aktivearre.  Syncthing moat werstarte om de nije konfiguraasje te aktivearren.</string>
     <string name="the_device_id_cannot_be_blank">It apparaat-ID kin net leech wêze.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">It apparaat-ID dat hjir ynfierd wurde kin, kin fûn wurde yn in it \"Askjes > ID sjen litte\" dialooch op de oare apparaten. Spaasjes en streepkes binne mooglik (wurde negeard).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">It apparaat-ID dat hjir ynfierd wurde kin, kin fûn wurde yn in it \"Bewurkje > ID sjen litte\" dialooch op de oare apparaten. Spaasjes en streepkes binne mooglik (wurde negeard).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">It ferkaaide brûkensrapport wurd eltse dei ferstjoerd. It wurd brûkt om algemiene platfoarmen, mapgruttens en app-ferzjes by te hâlden. As de rapportearre dataset feroaret, krije jo dit dialooch wer te sjen.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Dit ynfierde apparaat-ID liket ûnjildich. It moat in tekenrige (string) wêze mei in lingte fan 52 of 56 karakters besteande út letters en nûmers, mei spaasjes en streepkes mooglik.</string>
@@ -204,6 +226,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">De Syncthing haadbrûker-ynterfaasje is sa ynstelt dat tagong fan ôfstân sûnder wachtwurd tastean is.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Sy wurde automatysk opnij probearre en sille syngronisearre wurde wannear at de flater oplost is.</string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Dit kin samar ynkringers (hackers) tagong jaan om elke triem op jo kompjûter te besjen en te feroarjen.</string>
+    <string name="this_device">Dit Apparaat</string>
     <string name="this_is_a_major_version_upgrade">Dit is in wichtige ferzjefernijing.</string>
     <string name="trash_can_file_versioning">Jiskefet-triemferzjebehear</string>
     <string name="unknown">Unbekend</string>
@@ -220,6 +243,7 @@
     <string name="version">Ferzje</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Ferzjes wurde automatysk fuortsmiten wannear\'t se âlder binne dan de maksimale âldens of wannear it tal fan triemen yn in ynterval grutter is dan tastean.</string>
     <string name="versions_path">Ferzjes-paad</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Warskôging, dit paad is in ûnderlizzende triemtafel fan in besteande map \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Hâld by it taheakjen fan in nij apparaat yn de holle dat it apparaat oan de oare kant ek taheakke wurde moat. </string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Hâld by it taheakjen fan in nije map yn de holle dat de map-ID brûkt wurd om de mappen tusken apparaten mei-inoar te ferbinen. Se binne haadlettergefoelich en moatte oer alle apparaten eksakt oerienkomme.</string>
     <string name="yes">Ja</string>

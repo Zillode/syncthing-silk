@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
-    <string name="a_negative_number_of_days_doesnt_make_sense">Un número negativo no tiene sentido</string>
-    <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Una versión mayor nueva puede ser incompatible con versiones anteriores.</string>
+    <string name="a_device_with_that_id_is_already_added">Ya se ha agregado un dispositivo con esa ID.</string>
+    <string name="a_negative_number_of_days_doesnt_make_sense">Un número negativo de días no tiene sentido.</string>
+    <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Una versión más reciente puede no ser compatible con las versiones anteriores.</string>
     <string name="about">Acerca de</string>
     <string name="actions">Acciones</string>
     <string name="add">Agregar</string>
     <string name="add_device">Agregar Dispositivo</string>
     <string name="add_folder">Agregar Repositorio</string>
     <string name="add_new_folder">¿Agregar nueva carpeta?</string>
+    <string name="add_remote_device">Agregar Dispositivo Remoto</string>
     <string name="address">Dirección</string>
     <string name="addresses">Direcciones</string>
     <string name="advanced">Avanzada</string>
     <string name="advanced_configuration">Configuración avanzada</string>
+    <string name="advanced_settings">Configuración avanzada</string>
     <string name="all_data">Todos los datos</string>
     <string name="allow_anonymous_usage_reporting">Permitir reporte anónimo de uso?</string>
     <string name="alphabetic">Alfabético</string>
@@ -30,11 +33,13 @@
     <string name="comment_when_used_at_the_start_of_a_line">Comentario, cuando es utilizado al inicio de una línea.</string>
     <string name="compression">Compresión</string>
     <string name="connection_error">Error de conexión</string>
+    <string name="connection_type">Connection Type</string>
     <string name="copied_from_elsewhere">Copiado desde otra parte.</string>
     <string name="copied_from_original">Copiado del original</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 los siguientes contribuidores:</string>
     <string name="copyright_2015_the_following_contributors">Derechos de autor © 2015 los siguientes colaboradores:</string>
     <string name="cpu_utilization">Uso de CPU</string>
-    <string name="danger">Danger!</string>
+    <string name="danger">Peligro!</string>
     <string name="days">días</string>
     <string name="delete">Suprimir</string>
     <string name="deleted">Suprimido</string>
@@ -42,7 +47,9 @@
     <string name="device_id">ID del dispositivo</string>
     <string name="device_identification">Identificación del dispositivo</string>
     <string name="device_name">Nombre del dispositivo</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Device \"%1$s\" (%2$s at %3$s) wants to connect. Add new device?</string>
     <string name="device_wants_to_share_folder_folder">%1$s quiere compartir repositorio \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s wants to share folder \"%2$s\" (%3$s).</string>
     <string name="devices">Dispositivos</string>
     <string name="disconnected">Desconectado</string>
     <string name="discovery">Búsqueda</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Editar dispositivo</string>
     <string name="edit_folder">Editar repositorio</string>
     <string name="editing">Editando</string>
+    <string name="enable_nat_traversal">Enable NAT traversal</string>
+    <string name="enable_relaying">Enable Relaying</string>
     <string name="enable_upnp">Permitir UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Enter comma separated  (\"tcp://ip:port\", \"tcp://host:port\") addresses or \"dynamic\" to perform automatic discovery of the address.</string>
     <string name="enter_ignore_patterns_one_per_line">Añadir patrones de exclusión, uno por línea.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Los archivos están protegidos frente a los cambios realizados en otros dispositivos, peros los cambios realizados en este dispositivo serán envíados al resto del grupo</string>
     <string name="folder">Carpeta</string>
     <string name="folder_id">ID del repositorio</string>
+    <string name="folder_label">Folder Label</string>
     <string name="folder_master">Repositorio maestro</string>
     <string name="folder_path">Ruta del repositorio</string>
+    <string name="folder_type">Folder Type</string>
     <string name="folders">Repositorios</string>
     <string name="full_documentation">documentación completa</string>
     <string name="generate">Generar</string>
     <string name="global_discovery">Búsqueda en internet</string>
     <string name="global_discovery_server">Servidor global de identificación</string>
+    <string name="global_discovery_servers">Global Discovery Servers</string>
     <string name="global_state">Estado global</string>
     <string name="gui">GUI</string>
     <string name="gui_authentication_password">Contraseña de autenticación de la GUI</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Último archivo recibido</string>
     <string name="last_seen">Visto por ultima vez</string>
     <string name="later">Más tarde</string>
+    <string name="listeners">Listeners</string>
     <string name="local_discovery">Búsqueda en red local</string>
     <string name="local_state">Estado local</string>
     <string name="local_state_total">Estado local (total)</string>
     <string name="major_upgrade">Actualización mayor</string>
+    <string name="master">Master</string>
     <string name="maximum_age">Edad máxima</string>
     <string name="metadata_only">Sólo metadatos</string>
     <string name="minimum_free_disk_space">Espacio mínimo libre en disco</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Nuevo primero</string>
     <string name="no">No</string>
     <string name="no_file_versioning">Sin control de versiones de archivos</string>
+    <string name="normal">Normal</string>
     <string name="notice">Aviso</string>
     <string name="off">Apagado</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Antiguo primero</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Optional descriptive label for the folder. Can be different on each device.</string>
     <string name="options">Opciones</string>
     <string name="out_of_sync">Fuera de sincronización</string>
     <string name="out_of_sync_items">Ítems no sincronizados</string>
@@ -131,10 +147,13 @@
     <string name="quick_guide_to_supported_patterns">Guía rápida sobre los patrones soportados</string>
     <string name="ram_utilization">Utilización de RAM</string>
     <string name="random">Aleatorio</string>
+    <string name="relay_servers">Relay Servers</string>
     <string name="relayed_via">retransmitida vía</string>
     <string name="relays">Retransmisores</string>
     <string name="release_notes">Notas de lanzamiento</string>
+    <string name="remote_devices">Dispositivos Remotos</string>
     <string name="remove">Eliminar</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Required identifier for the folder. Must be the same on all cluster devices.</string>
     <string name="rescan">Reescanear</string>
     <string name="rescan_all">Reescanear todo</string>
     <string name="rescan_interval">Intervalo de reescaneo</string>
@@ -144,7 +163,7 @@
     <string name="resume">Reanudar</string>
     <string name="reused">Reutilizado</string>
     <string name="save">Guardar</string>
-    <string name="scan_time_remaining">Scan Time Remaining</string>
+    <string name="scan_time_remaining">Tiempo de Escaneo Restante</string>
     <string name="scanning">Actualización</string>
     <string name="select_the_devices_to_share_this_folder_with">Seleccione los dispositivos con los cuales compartir este repositorio.</string>
     <string name="select_the_folders_to_share_with_this_device">Seleccione los repositorios para compartir con este dispositivo.</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Compartido con</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Identificador corto para el repositorio. Debe ser el mismo en todos los dispositivos del grupo.</string>
     <string name="show_id">Mostrar ID</string>
+    <string name="show_qr">Mostrar QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Mostrado en lugar de la ID del dispositivo en el estado del grupo. Será sugerido a otros dispositivos como nombre predeterminado opcional.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Mostrado en lugar de la ID del dispositivo en el estado del grupo. Si se deja en blanco, será usado el nombre sugerido por el dispositivo.</string>
     <string name="shutdown">Apagar</string>
@@ -178,10 +198,12 @@
     <string name="syncthing_is_upgrading">Syncthing se está actualizando.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing parece estar apagado, o hay un problema con su conexión de Internet. Reintentando...</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing parece estar experimentando un problema al procesar su solicitud. Por favor, recargue el navegador o reinicie Syncthing si el problema persiste.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Las estadísticas acumuladas están disponibles públicamente en %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">La configuración ha sido guardada pero no activada.
 Syncthing debe reiniciarse para activar la nueva configuración.</string>
     <string name="the_device_id_cannot_be_blank">La ID del dispositivo no puede estar en blanco.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">The device ID to enter here can be found in the \"Actions > Show ID\" dialog on the other device. Spaces and dashes are optional (ignored).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">La ID del dispositivo a introducir se puede encontrar en la opción de menú \"Edición > Mostrar ID\" en el otro dispositivo. Espacios y guiones son opcionales (ignorados).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">El informe de uso se envía encriptado diariamente. Se utiliza para hacer un seguimiento de plataformas comunes, tamaño de repositorios y versiones de la aplicación. Si el conjunto de datos cambia será notificado mediante este dialogo nuevamente.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">La ID del dispositivo introducida no es válida. Debe ser una cadena de 52 o 56 caracteres consistente en letras y números, con espacios y guiones opcionales.</string>
@@ -200,11 +222,12 @@ Syncthing debe reiniciarse para activar la nueva configuración.</string>
     <string name="the_number_of_old_versions_to_keep_per_file">El numero de versiones anteriores a conservar, por archivo.</string>
     <string name="the_number_of_versions_must_be_a_number_and_cannot_be_blank">El número de versiones debe ser un número y no puede estar vacío.</string>
     <string name="the_path_cannot_be_blank">La ruta no puede estar vacía.</string>
-    <string name="the_rate_limit_must_be_a_nonnegative_number_0_no_limit">The rate limit must be a non-negative number (0: no limit)</string>
+    <string name="the_rate_limit_must_be_a_nonnegative_number_0_no_limit">El intervalo de reescaneo debe ser un número no negativo de segundos.  (0: no limit)</string>
     <string name="the_rescan_interval_must_be_a_nonnegative_number_of_seconds">El intervalo de reescaneo debe ser un número no negativo de segundos.</string>
-    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">The Syncthing admin interface is configured to allow remote access without a password.</string>
-    <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">They are retried automatically and will be synced when the error is resolved.</string>
-    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">This can easily give hackers access to read and change any files on your computer.</string>
+    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">La interfaz administrativa del Syncthing está configurada para permitir acceso remoto sin una contraseña.</string>
+    <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Los archivos se sincronizan automáticamente cuando el error se resuelve.</string>
+    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Esto puede darle permiso a los hackers, podrán acceder a cualquier archivo, pudiéndolos leer y editar.</string>
+    <string name="this_device">Este Dispositivo</string>
     <string name="this_is_a_major_version_upgrade">Esta es una actualización de version mayor.</string>
     <string name="trash_can_file_versioning">Versiones como cubo de basura</string>
     <string name="unknown">Desconocido</string>
@@ -221,6 +244,7 @@ Syncthing debe reiniciarse para activar la nueva configuración.</string>
     <string name="version">Versión</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Las versiones se eliminan automáticamente si son mayores de la edad máxima o mayor que el número de archivos permitidos en un intervalo.</string>
     <string name="versions_path">Ruta de versiones</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Atención, esta dirección es un subdirectorio de un directorio existente \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Al agregar un nuevo dispositivo, tenga en cuenta que este dispositivo se debe agregar en el otro lado también.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Al agregar un nuevo repositorio, tenga en cuenta que la ID del repositorio se utiliza para conectar los repositorios entre dispositivos. Se distingue entre mayúsculas y minúsculas y debe ser exactamente igual en todos los dispositivos.</string>
     <string name="yes">Sí</string>

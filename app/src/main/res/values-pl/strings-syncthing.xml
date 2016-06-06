@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Urządzenie o tym ID jest już dodane.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Ujemna ilość dni nie ma sensu.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Nowa wersja może być niekompatybilna z poprzednimi wersjami.</string>
     <string name="about">O Syncthing</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Dodaj urządzenie</string>
     <string name="add_folder">Dodaj folder</string>
     <string name="add_new_folder">Dodać nowy folder?</string>
+    <string name="add_remote_device">Dodaj urządzenie zdalne</string>
     <string name="address">Adres</string>
     <string name="addresses">Adresy</string>
     <string name="advanced">Zaawansowane</string>
     <string name="advanced_configuration">Konfiguracja zaawansowana</string>
+    <string name="advanced_settings">Ustawienia zaawansowane</string>
     <string name="all_data">Wszystkie dane</string>
     <string name="allow_anonymous_usage_reporting">Zezwalaj na anonimowe statystyki użycia?</string>
     <string name="alphabetic">Alfabetycznie</string>
@@ -30,11 +33,13 @@
     <string name="comment_when_used_at_the_start_of_a_line">Komentarz, jeżeli użyty na początku linii</string>
     <string name="compression">Kompresja</string>
     <string name="connection_error">Błąd połączenia</string>
+    <string name="connection_type">Rodzaj połączenia</string>
     <string name="copied_from_elsewhere">Skopiowane z innego miejsca </string>
     <string name="copied_from_original">Skopiowane z oryginału</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016: </string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015: </string>
     <string name="cpu_utilization">Użycie CPU</string>
-    <string name="danger">Danger!</string>
+    <string name="danger">Niebezpieczne!</string>
     <string name="days">dni</string>
     <string name="delete">Usuń</string>
     <string name="deleted">Usunięto</string>
@@ -42,7 +47,9 @@
     <string name="device_id">ID urządzenia</string>
     <string name="device_identification">Identyfikator urządzenia</string>
     <string name="device_name">Nazwa urządzenia</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Urządzenie \"%1$s\" %2$s (%3$s) chce się połączyć. Dodać urządzenie?</string>
     <string name="device_wants_to_share_folder_folder">%1$s chce udostępnić folder \"%2$s\"</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s chce udostępnić folder \"%2$s\" (%3$s).</string>
     <string name="devices">Urządzenia</string>
     <string name="disconnected">Rozłączony</string>
     <string name="discovery">Odnajdywanie</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Edytuj urządzenie</string>
     <string name="edit_folder">Edytuj folder</string>
     <string name="editing">Edytowanie</string>
+    <string name="enable_nat_traversal">Enable NAT traversal</string>
+    <string name="enable_relaying">Włącz przekazywanie</string>
     <string name="enable_upnp">Włącz UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Wpisz oddzielone przecinkiem adresy (\"tcp://ip:port\", \"tcp://host:port\") lub \"dynamic\" by przeprowadzić automatyczne odnalezienie adresu.</string>
     <string name="enter_ignore_patterns_one_per_line">Wprowadź wzorce ignorowania, jeden w każdej linii.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Pliki są zabezpieczone przed zmianami na innym urządzeniu, jednak zmiany w tym urządzeniu będą wysłane do reszty.</string>
     <string name="folder">Folder</string>
     <string name="folder_id">ID folderu</string>
+    <string name="folder_label">Etykieta folderu</string>
     <string name="folder_master">Główny folder</string>
     <string name="folder_path">Ścieżka folderu</string>
+    <string name="folder_type">Rodzaj folderu</string>
     <string name="folders">Foldery</string>
     <string name="full_documentation">pełna dokumentacja</string>
     <string name="generate">Generuj</string>
     <string name="global_discovery">Globalne odnajdywanie</string>
     <string name="global_discovery_server">Globalny serwer rozgłoszeniowy</string>
+    <string name="global_discovery_servers">Globalne serwery odkrywania</string>
     <string name="global_state">Status globalny</string>
     <string name="gui">GUI</string>
     <string name="gui_authentication_password">Hasło</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Ostatni otrzymany plik</string>
     <string name="last_seen">Ostatnio widziany</string>
     <string name="later">Później</string>
+    <string name="listeners">Nasłuchujący</string>
     <string name="local_discovery">Lokalne odnajdywanie</string>
     <string name="local_state">Status lokalny</string>
     <string name="local_state_total">Status lokalny (suma)</string>
     <string name="major_upgrade">Ważna aktualizacja</string>
+    <string name="master">Mistrz</string>
     <string name="maximum_age">Maksymalny wiek</string>
     <string name="metadata_only">Tylko metadane</string>
     <string name="minimum_free_disk_space">Minimum wolnego miejsca na dysku</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Najnowsze na początku</string>
     <string name="no">Nie</string>
     <string name="no_file_versioning">Bez wersjonowania pliku</string>
+    <string name="normal">Zwykły</string>
     <string name="notice">Wskazówka</string>
     <string name="off">Wyłącz</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Najstarsze na początku</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Opcjonalna opisowa etykieta dla folderu. Może być różna na każdym urządzeniu.</string>
     <string name="options">Opcje</string>
     <string name="out_of_sync">Niezsynchronizowane</string>
     <string name="out_of_sync_items">Niezsynchronizowane pliki</string>
@@ -125,17 +141,20 @@ Znak tyldy (~) może zostać użyty jako skrót do</string>
     <string name="pause">Zatrzymaj</string>
     <string name="paused">Zatrzymany</string>
     <string name="please_consult_the_release_notes_before_performing_a_major_upgrade">Zaleca się przeanalizowanie \"release notes\" przed przeprowadzeniem znaczącej aktualizacji.</string>
-    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Please set a GUI Authentication User and Password in the Settings dialog.</string>
+    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Ustaw proszę użytkownika i hasło dostępowe do GUI w Ustawieniach</string>
     <string name="please_wait">Proszę czekać</string>
     <string name="preview">Podgląd</string>
     <string name="preview_usage_report">Podgląd raportu użycia.</string>
     <string name="quick_guide_to_supported_patterns">Krótki przewodnik po obsługiwanych wzorcach</string>
     <string name="ram_utilization">Użycie pamięci RAM</string>
     <string name="random">Losowo</string>
+    <string name="relay_servers">Serwery przekazywania</string>
     <string name="relayed_via">Przekazane przez</string>
     <string name="relays">Przekaźniki</string>
     <string name="release_notes">Informacje o wydaniu</string>
+    <string name="remote_devices">Urządzenia zdalne</string>
     <string name="remove">Usuń</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Wymagany identyfikator dla folderu. Musi być taki sam dla wszystkich urządzeń.</string>
     <string name="rescan">Skanuj ponownie</string>
     <string name="rescan_all">Skanuj wszystko ponownie</string>
     <string name="rescan_interval">Interwał skanowania</string>
@@ -145,7 +164,7 @@ Znak tyldy (~) może zostać użyty jako skrót do</string>
     <string name="resume">Wznów</string>
     <string name="reused">Ponownie użyte</string>
     <string name="save">Zapisz</string>
-    <string name="scan_time_remaining">Scan Time Remaining</string>
+    <string name="scan_time_remaining">Pozostały czas skanowania</string>
     <string name="scanning">Skanowanie</string>
     <string name="select_the_devices_to_share_this_folder_with">Wybierz urządzenie, któremu udostępnić folder.</string>
     <string name="select_the_folders_to_share_with_this_device">Wybierz foldery do współdzielenia z tym urządzeniem.</string>
@@ -158,6 +177,7 @@ Znak tyldy (~) może zostać użyty jako skrót do</string>
     <string name="shared_with">Współdzielony z</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Krótki identyfikator folderu. Musi być taki sam na wszystkich urządzeniach.</string>
     <string name="show_id">Pokaż ID</string>
+    <string name="show_qr">Pokaż kod QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Pokazane w statusie zamiast ID urządzenia.Zostanie wysłane do innych urządzeń jako opcjonalna domyślna nazwa.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Pokazane w statusie zamiast ID urządzenia. Zostanie zaktualizowane do nazwy urządzenia jeżeli pozostanie puste.</string>
     <string name="shutdown">Wyłącz</string>
@@ -179,9 +199,11 @@ Znak tyldy (~) może zostać użyty jako skrót do</string>
     <string name="syncthing_is_upgrading">Aktualizowanie Syncthing</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing wydaje się być wyłączony lub jest problem z twoim połączeniem internetowym. Próbuje ponownie...</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing nie może przetworzyć twojego zapytania. Proszę przeładuj stronę lub zrestartuj Syncthing, jeśli problem pozostanie.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Zebrane statystyki są publicznie dostępne pod adresem %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">Konfiguracja została zapisana lecz nie jest aktywna. Syncthing musi zostać zrestartowany aby aktywować nową konfiguracje.</string>
     <string name="the_device_id_cannot_be_blank">ID urządzenia nie może być puste.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">ID urządzenia może być znalezione w \"Akcja > Pokaż ID\" na innym urządzeniu. Spacje i myślniki są opcjonalne (są one ignorowane).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">ID urządzenia można znaleźć w \"Edytuj -> Pokaż ID\" na zdalnym urządzeniu.
 Odstępy i myślniki są opcjonalne (ignorowane)</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Zaszyfrowane raporty użycia są wysyłane codziennie. Są one używane w celach statystycznych platform, rozmiarów katalogów i wersji programu. Jeżeli zgłaszane dane ulegną zmianie, ponownie wyświetli się ta informacja.</string>
@@ -203,9 +225,10 @@ Odstępy i myślniki są opcjonalne (ignorowane)</string>
     <string name="the_path_cannot_be_blank">Ścieżka nie może być pusta.</string>
     <string name="the_rate_limit_must_be_a_nonnegative_number_0_no_limit">Ograniczenie prędkości powinno być nieujemną liczbą całkowitą (0: brak ograniczeń)</string>
     <string name="the_rescan_interval_must_be_a_nonnegative_number_of_seconds">Interwał skanowania musi być niezerową liczbą sekund.</string>
-    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">The Syncthing admin interface is configured to allow remote access without a password.</string>
+    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Interfejs administracyjny Syncthing jest skonfigurowany w sposób pozwalający na zdalny dostęp bez hasła.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Ponowne próby zachodzą automatycznie, synchronizacja nastąpi po usunięciu usterki.</string>
-    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">This can easily give hackers access to read and change any files on your computer.</string>
+    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Może to umożliwić osobom trzecim dostęp do odczytu i zmian dowolnych plików na urządzeniu.</string>
+    <string name="this_device">To urządzenie</string>
     <string name="this_is_a_major_version_upgrade">To jest ważna aktualizacja</string>
     <string name="trash_can_file_versioning">Kontrola werjsi plików w koszu</string>
     <string name="unknown">Nieznany</string>
@@ -222,6 +245,7 @@ Odstępy i myślniki są opcjonalne (ignorowane)</string>
     <string name="version">Wersja</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Wersje zostają automatycznie usunięte jeżeli są starsze niż maksymalny wiek lub przekraczają liczbę dopuszczalnych wersji.</string>
     <string name="versions_path">Ścieżka wersji</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Ostrzerzenie, ta ścieżka to podkatalog istniejącego folderu \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Gdy dodajesz nowe urządzenie, pamiętaj że urządzenie musi zostać dodane także po drugiej stronie.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Przy dodawaniu nowego folderu, pamiętaj, że ID użyte jest do łączenia folderów pomiędzy urządzeniami. Wielkość liter ciągu ma znaczenie musi zgadzać się na wszystkich urządzeniach.</string>
     <string name="yes">Tak</string>

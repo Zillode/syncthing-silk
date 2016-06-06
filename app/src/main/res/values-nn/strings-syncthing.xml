@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Ein eining med den ID er allerede lagt til.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Eit negativt tal dagar har ikkje meining.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Ein ny hovudversjon er ikkje nødvendigvis kompatibel med eldre versjonar. </string>
     <string name="about">Om</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Legg Til Eining</string>
     <string name="add_folder">Legg Til Mappe</string>
     <string name="add_new_folder">Leggja til ny mappe?</string>
+    <string name="add_remote_device">Add Remote Device</string>
     <string name="address">Adresse</string>
     <string name="addresses">Adresser</string>
     <string name="advanced">Avansert</string>
     <string name="advanced_configuration">Avansert konfigurasjon</string>
+    <string name="advanced_settings">Advanced settings</string>
     <string name="all_data">Alle data</string>
     <string name="allow_anonymous_usage_reporting">Tillata anonymisert bruksrapportering?</string>
     <string name="alphabetic">Alfabetisk</string>
@@ -30,11 +33,13 @@
     <string name="comment_when_used_at_the_start_of_a_line">Kommentar, når brukt i starten av linja</string>
     <string name="compression">Komprimering</string>
     <string name="connection_error">Tilkoplingsfeil</string>
+    <string name="connection_type">Connection Type</string>
     <string name="copied_from_elsewhere">Kopiert frå ein annan stad</string>
     <string name="copied_from_original">Kopiert frå originalen</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 the following Contributors:</string>
     <string name="copyright_2015_the_following_contributors">Opphavsrett © 2015 og desse bidragsytarane:</string>
     <string name="cpu_utilization">CPU-utnytting</string>
-    <string name="danger">Danger!</string>
+    <string name="danger">Fare!</string>
     <string name="days">dagar</string>
     <string name="delete">Slett</string>
     <string name="deleted">Sletta</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Eining ID</string>
     <string name="device_identification">Einingskjennemerke</string>
     <string name="device_name">Namn På Eining</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Device \"%1$s\" (%2$s at %3$s) wants to connect. Add new device?</string>
     <string name="device_wants_to_share_folder_folder">%1$s ønskjer å dela mappa \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s wants to share folder \"%2$s\" (%3$s).</string>
     <string name="devices">Einingar</string>
     <string name="disconnected">Fråkopla</string>
     <string name="discovery">Oppdaging</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Rediger Eining</string>
     <string name="edit_folder">Rediger Mappe</string>
     <string name="editing">Redigerer</string>
+    <string name="enable_nat_traversal">Enable NAT traversal</string>
+    <string name="enable_relaying">Aktiver Reléer</string>
     <string name="enable_upnp">Aktiver UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Skriv inn adresser med komma mellom kvar adresse (\"tcp://ip:port\", \"tcp://host:port\"), eller \"dynamic\" for å automatisk søkja opp adressa.</string>
     <string name="enter_ignore_patterns_one_per_line">Skriv inn mønster som skal utelatast, eitt per linje.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Filer er beskytta mot endringar gjort på andre einingar, men endringar gjort på denne eininga vert sende til resten av klyngja.</string>
     <string name="folder">Mappe</string>
     <string name="folder_id">Mappe ID</string>
+    <string name="folder_label">Folder Label</string>
     <string name="folder_master">Styrande Mappe</string>
     <string name="folder_path">Mappeplassering</string>
+    <string name="folder_type">Folder Type</string>
     <string name="folders">Mapper</string>
     <string name="full_documentation">all dokumentasjon</string>
     <string name="generate">Generer</string>
     <string name="global_discovery">Global søking</string>
     <string name="global_discovery_server">Global søkjetenar</string>
+    <string name="global_discovery_servers">Globalsøkjetenarar</string>
     <string name="global_state">Global Tilstand</string>
     <string name="gui">grafisk brukargrensesnitt</string>
     <string name="gui_authentication_password">GUI Passord</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Siste mottatte fila</string>
     <string name="last_seen">Sist sett</string>
     <string name="later">Seinare</string>
+    <string name="listeners">Listeners</string>
     <string name="local_discovery">Lokal oppdaging</string>
     <string name="local_state">Lokal Tilstand</string>
     <string name="local_state_total">Lokal tilstand (total)</string>
     <string name="major_upgrade">Hovudoppgradering</string>
+    <string name="master">Master</string>
     <string name="maximum_age">Maksimal Levetid</string>
     <string name="metadata_only">Berre metadata</string>
     <string name="minimum_free_disk_space">Naudsynt ledig diskplass</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Nyaste fyrst</string>
     <string name="no">Nei</string>
     <string name="no_file_versioning">Ingen filutgåvehandtering</string>
+    <string name="normal">Normal</string>
     <string name="notice">Merknad</string>
     <string name="off">Av</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Elste fyrst</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Optional descriptive label for the folder. Can be different on each device.</string>
     <string name="options">Val</string>
     <string name="out_of_sync">Ikkje synkronisert</string>
     <string name="out_of_sync_items">Ikkje-synkroniserte element</string>
@@ -124,17 +140,20 @@
     <string name="pause">Stans</string>
     <string name="paused">Stansa</string>
     <string name="please_consult_the_release_notes_before_performing_a_major_upgrade">Sjå \"release notes\" før ei hovudoppgradering vert utført.</string>
-    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Please set a GUI Authentication User and Password in the Settings dialog.</string>
+    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Ver vennleg å set ein GUI brukar og passord i Innstillingar-dialogen.</string>
     <string name="please_wait">Gjer vel og vent</string>
     <string name="preview">Førehandsvisning</string>
     <string name="preview_usage_report">Førehandsvis bruksrapporten</string>
     <string name="quick_guide_to_supported_patterns">Kjapp innføring i godkjente mønster</string>
     <string name="ram_utilization">Minnebruk</string>
     <string name="random">Tilfeldig</string>
+    <string name="relay_servers">Relétenarar</string>
     <string name="relayed_via">Relé via</string>
     <string name="relays">Reléer</string>
     <string name="release_notes">Utgivingsnotat</string>
+    <string name="remote_devices">Remote Devices</string>
     <string name="remove">Fjern</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Required identifier for the folder. Must be the same on all cluster devices.</string>
     <string name="rescan">Skann På Ny</string>
     <string name="rescan_all">Skann alle på nytt</string>
     <string name="rescan_interval">Skanneintervall</string>
@@ -144,7 +163,7 @@
     <string name="resume">Start</string>
     <string name="reused">Gjenbrukt</string>
     <string name="save">Lagre</string>
-    <string name="scan_time_remaining">Scan Time Remaining</string>
+    <string name="scan_time_remaining">Gjenståande Skannetid</string>
     <string name="scanning">Skannar</string>
     <string name="select_the_devices_to_share_this_folder_with">Vel einingane du vil dela denne mappa med.</string>
     <string name="select_the_folders_to_share_with_this_device">Vel mappene du vil dela med denne eininga.</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Delt Med</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Kort kjennemerke på mappa. Må vera det same på alle einingane i klyngja.</string>
     <string name="show_id">Vis ID</string>
+    <string name="show_qr">Vis QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Vist i staden for einings-ID-en i klyngjestatusen. Vil verta kringkasta til dei andre einingane som eit valfritt standardnamn.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Vist i staden for mappe-ID-en i klyngjestatuses. Vil verta oppdatert til namnet eininga kringkastar dersom tomt.</string>
     <string name="shutdown">Slå Av</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Syncthing oppgraderer.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing ser ut til å vera nede, eller så er det eit problem med nettilkoplinga di. Prøvar på ny …</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing ser ut til å ha støtt på eit problem under behandling av din førespurnad. Vær vennleg å oppfrisk nettlesaren eller start Syncthing på nytt om problemet vedvarer.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Samla statistikk er opent tilgjengeleg på %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">Instillingane har blitt lagra men ikkje aktivert. Syncthing må starta på ny for å aktivera dei nye instillingane.</string>
     <string name="the_device_id_cannot_be_blank">Eining ID kan ikkje vera tom.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">The device ID to enter here can be found in the \"Actions > Show ID\" dialog on the other device. Spaces and dashes are optional (ignored).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Einings-ID-en du skal nytta her finn du i meldingsvindauget \"Rediger > Vis ID\" på den andre eininga. Mellomrom og bindestrek er valfrie (vert ignorert).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Den krypterte bruksrapporten vert send dagleg. Han vert nytta til å spora vanlege plattformer, mappestorleikar og programutgåvene. Om datasettet endrar seg, vil dette meldingsvindauget dukka opp att og du vil verta beden om å godkjenna det.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Einings-ID-en er ikkje gyldig. Han må vera på 52 eller 56 teikn og vera samansett av bokstavar og tal med valfrie mellomrom og bindestrekar.</string>
@@ -201,9 +223,10 @@
     <string name="the_path_cannot_be_blank">Bana kan ikkje vera tom.</string>
     <string name="the_rate_limit_must_be_a_nonnegative_number_0_no_limit">Hastigheitsgrensa må ver eit positivt tall (0: ingen grensa)</string>
     <string name="the_rescan_interval_must_be_a_nonnegative_number_of_seconds">Talet på sekund i skanneintervallet kan ikkje vera negativt.</string>
-    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">The Syncthing admin interface is configured to allow remote access without a password.</string>
+    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Syncthing sitt administreringsgrensesnitt er sett opp til å tillate ekstern tilgang uten passord.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Desse vil bli prøvd på nytt automatisk og vil bli synkronisert når feilen har blitt utbetra.</string>
-    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">This can easily give hackers access to read and change any files on your computer.</string>
+    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Dette kan lett gje dataekspertar tilgang til å lese og endre vilkårlege filer på denne maskina.</string>
+    <string name="this_device">This Device</string>
     <string name="this_is_a_major_version_upgrade">Dette er ei hovudoppgradering</string>
     <string name="trash_can_file_versioning">Papirkorg filutgåvehandtering</string>
     <string name="unknown">Ukjent</string>
@@ -220,6 +243,7 @@
     <string name="version">Versjon</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Utgåver vert automatisk sletta når maksimal levetid er nådd eller når det høgaste tillate talet på filer innan eit intervall vert overskride.</string>
     <string name="versions_path">Utgåvebane</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Warning, this path is a subdirectory of an existing folder \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Hugs at når ei ny eining vert lagt til må ho òg leggjast til på andre sida.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Hugs at når ei ny mappe vert lagt til, vert mappe-ID-en brukt til å binda saman mappene mellom einingane. Det er skilnad på store og små bokstavar, så ID-ane må vera identiske på alle einingane.</string>
     <string name="yes">Ja</string>

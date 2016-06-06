@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">Un dispositivo con questo ID è già stato aggiunto.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Un numero di giorni negativo non ha alcun senso.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">Una nuova versione principale potrebbe non essere compatibile con le versioni precedenti.</string>
     <string name="about">Informazioni</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Aggiungi Dispositivo</string>
     <string name="add_folder">Aggiungi Cartella</string>
     <string name="add_new_folder">Aggiungere una nuova cartella?</string>
+    <string name="add_remote_device">Aggiungi Dispositivo Remoto</string>
     <string name="address">Indirizzo</string>
     <string name="addresses">Indirizzi</string>
     <string name="advanced">Avanzato</string>
     <string name="advanced_configuration">Configurazione avanzata</string>
+    <string name="advanced_settings">Impostazioni avanzate</string>
     <string name="all_data">Tutti i Dati</string>
     <string name="allow_anonymous_usage_reporting">Abilitare Statistiche Anonime di Utilizzo?</string>
     <string name="alphabetic">Alfabetico</string>
@@ -30,8 +33,10 @@
     <string name="comment_when_used_at_the_start_of_a_line">Per commentare, va inserito all\'inizio di una riga</string>
     <string name="compression">Compressione</string>
     <string name="connection_error">Errore di Connessione</string>
+    <string name="connection_type">Tipo di Connessione</string>
     <string name="copied_from_elsewhere">Copiato da qualche altra parte</string>
     <string name="copied_from_original">Copiato dall\'originale</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 i seguenti Collaboratori:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 i seguenti Collaboratori:</string>
     <string name="cpu_utilization">Utilizzo CPU</string>
     <string name="danger">Pericolo!</string>
@@ -42,7 +47,9 @@
     <string name="device_id">ID Dispositivo</string>
     <string name="device_identification">Identificazione Dispositivo</string>
     <string name="device_name">Nome Dispositivo</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Il dispositivo \"%1$s\" (%2$s - %3$s) chiede di connettersi. Aggiungere il nuovo dispositivo?</string>
     <string name="device_wants_to_share_folder_folder">%1$s vuole condividere la cartella \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s vuole condividere la cartella \"%2$s\" (%3$s).</string>
     <string name="devices">Dispositivi</string>
     <string name="disconnected">Disconnesso</string>
     <string name="discovery">Individuazione</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Modifica Dispositivo</string>
     <string name="edit_folder">Modifica Cartella</string>
     <string name="editing">Modifica di</string>
+    <string name="enable_nat_traversal">Abilita NAT trasversale</string>
+    <string name="enable_relaying">Abilita relaying</string>
     <string name="enable_upnp">Attiva UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Inserisci indirizzi separati da virgola (\"tcp://ip:porta\", \"tcp://host:porta\")  oppure \"dynamic\" per effettuare il rilevamento automatico dell\'indirizzo.</string>
     <string name="enter_ignore_patterns_one_per_line">Inserisci gli schemi di esclusione, uno per riga.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">I file sono protetti dalle modifiche effettuate negli altri dispositivi, ma le modifiche effettuate in questo dispositivo verranno inviate anche al resto del cluster.</string>
     <string name="folder">Cartella</string>
     <string name="folder_id">ID Cartella</string>
+    <string name="folder_label">Etichetta per la cartella</string>
     <string name="folder_master">Cartella Principale</string>
     <string name="folder_path">Percorso Cartella</string>
+    <string name="folder_type">Tipo di Cartella</string>
     <string name="folders">Cartelle</string>
     <string name="full_documentation">documentazione completa</string>
     <string name="generate">Genera</string>
     <string name="global_discovery">Individuazione Globale</string>
-    <string name="global_discovery_server">Server di Ricerca Globale</string>
+    <string name="global_discovery_server">Server di Individuazione Globale</string>
+    <string name="global_discovery_servers">Servers di Individuazione Globale</string>
     <string name="global_state">Stato Globale</string>
     <string name="gui">Interfaccia grafica utente</string>
     <string name="gui_authentication_password">Password di Autenticazione dell\'Utente</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Ultimo File Ricevuto</string>
     <string name="last_seen">Ultima connessione</string>
     <string name="later">Più Tardi</string>
+    <string name="listeners">In ascolto</string>
     <string name="local_discovery">Individuazione Locale</string>
     <string name="local_state">Stato Locale</string>
     <string name="local_state_total">Stato Locale (Totale)</string>
     <string name="major_upgrade">Aggiornamento principale</string>
+    <string name="master">Principale</string>
     <string name="maximum_age">Durata Massima</string>
     <string name="metadata_only">Solo i Metadati</string>
     <string name="minimum_free_disk_space">Minimo spazio libero su disco</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Prima il più recente</string>
     <string name="no">No</string>
     <string name="no_file_versioning">Nessun Controllo Versione</string>
+    <string name="normal">Normale</string>
     <string name="notice">Avviso</string>
     <string name="off">Disattiva</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Prima il meno recente</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Etichetta descrittiva facoltativa della cartella. Può essere diversa su ogni dispositivo.</string>
     <string name="options">Opzioni</string>
     <string name="out_of_sync">Non sincronizzato</string>
     <string name="out_of_sync_items">Elementi Non Sincronizzati</string>
@@ -131,10 +147,13 @@
     <string name="quick_guide_to_supported_patterns">Guida veloce agli schemi supportati</string>
     <string name="ram_utilization">Utilizzo RAM</string>
     <string name="random">Casuale</string>
+    <string name="relay_servers">Servers di relay</string>
     <string name="relayed_via">Reindirizzato tramite</string>
     <string name="relays">Servers di reindirizzamento</string>
     <string name="release_notes">Note di rilascio</string>
+    <string name="remote_devices">Dispositivi Remoti</string>
     <string name="remove">Rimuovi</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Identificatore obbligatorio della cartella. Deve essere lo stesso su tutti i dispositivi del cluster.</string>
     <string name="rescan">Riscansiona</string>
     <string name="rescan_all">Riscansiona Tutto</string>
     <string name="rescan_interval">Intervallo Scansione</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Condiviso Con</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Breve identificatore della cartella. Deve essere lo stesso su tutti i dispositivi del cluster.</string>
     <string name="show_id">Mostra ID</string>
+    <string name="show_qr">Mostra QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Visibile al posto dell\'ID Dispositivo nello stato del cluster. Negli altri dispositivi verrà presentato come nome predefinito opzionale.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Visibile al posto dell\'ID Dispositivo nello stato del cluster. Se viene lasciato vuoto, verrà utilizzato il nome proposto dal dispositivo.</string>
     <string name="shutdown">Arresta</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Aggiornamento di Syncthing in corso.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing sembra inattivo, oppure c\'è un problema con la tua connessione a Internet. Nuovo tentativo…</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Sembra che Syncthing non sia in grado di elaborare il tuo comando. Se il problema persiste prova a ricaricare la pagina nel tuo navigatore oppure prova a riavviare Syncthing.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Le statistiche aggregate sono disponibili pubblicamente su %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">La configurazione è stata salvata ma non attivata. Devi riavviare Syncthing per attivare la nuova configurazione.</string>
     <string name="the_device_id_cannot_be_blank">L\'ID del dispositivo non può essere vuoto.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Trova l\'ID nella finestra di dialogo \"Modifica > Mostra ID\" dell\'altro dispositivo, poi inseriscilo qui. Gli spazi e i trattini sono opzionali (ignorati).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Trova l\'ID nella finestra di dialogo \"Modifica > Mostra ID\" dell\'altro dispositivo, poi inseriscilo qui. Gli spazi e i trattini sono opzionali (ignorati).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Quotidianamente il software invia le statistiche di utilizzo in forma criptata. Questi dati riguardano i sistemi operativi utilizzati, le dimensioni delle cartelle e le versioni del software. Se i dati riportati sono cambiati, verrà mostrata di nuovo questa finestra di dialogo.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">L\'ID del dispositivo inserito non sembra valido. Dovrebbe essere una stringa di 52 o 56 caratteri costituita da lettere e numeri, con spazi e trattini opzionali.</string>
@@ -204,6 +226,7 @@
     <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">L\'interfaccia di amministrazione di Syncthing è configurata in modo da permettere l\'accesso senza password.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">Verranno effettuati tentativi in automatico e verranno sincronizzati quando l\'errore sarà risolto.</string>
     <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Ciò potrebbe facilmente permettere agli hackers accesso alla lettura e modifica di qualunque file del tuo computer.</string>
+    <string name="this_device">Questo Dispositivo</string>
     <string name="this_is_a_major_version_upgrade">Questo è un aggiornamento di versione principale</string>
     <string name="trash_can_file_versioning">Controllo Versione con Cestino</string>
     <string name="unknown">Sconosciuto</string>
@@ -220,6 +243,7 @@
     <string name="version">Versione</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Le versioni vengono eliminate automaticamente se superano la durata massima o il numero di file permessi in un determinato intervallo temporale.</string>
     <string name="versions_path">Percorso Cartella Versioni</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Attenzione, questo percorso è una sottocartella di una cartella esistente \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">Anche nel nuovo dispositivo devi aggiungere l\'ID di questo, con la stessa procedura.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">Quando aggiungi una nuova cartella, ricordati che gli ID vengono utilizzati per collegare le cartelle nei dispositivi. Distinguono maiuscole e minuscole e devono corrispondere esattamente su tutti i dispositivi.</string>
     <string name="yes">Sì</string>

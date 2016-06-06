@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--AUTO GENERATED RESOURCE DO NOT EDIT!!!!-->
 <resources>
+    <string name="a_device_with_that_id_is_already_added">En enhet med det ID är redan tillagt.</string>
     <string name="a_negative_number_of_days_doesnt_make_sense">Negativt antal dagar är inte troligt.</string>
     <string name="a_new_major_version_may_not_be_compatible_with_previous_versions">En ny huvudversion kan eventuellt vara inkompatibel med tidigare versioner.</string>
     <string name="about">Om</string>
@@ -9,10 +10,12 @@
     <string name="add_device">Lägg till enhet</string>
     <string name="add_folder">Lägg till katalog</string>
     <string name="add_new_folder">Lägg till katalog?</string>
+    <string name="add_remote_device">Lägg till fjärrenhet</string>
     <string name="address">Adress</string>
     <string name="addresses">Adresser</string>
     <string name="advanced">Avancerat</string>
     <string name="advanced_configuration">Avancerad konfiguration</string>
+    <string name="advanced_settings">Avancerade inställningar</string>
     <string name="all_data">All data</string>
     <string name="allow_anonymous_usage_reporting">Tillåt anonym användarstatistik?</string>
     <string name="alphabetic">Alfabetisk</string>
@@ -30,11 +33,13 @@
     <string name="comment_when_used_at_the_start_of_a_line">Kommentar, vid början av en rad.</string>
     <string name="compression">Komprimering</string>
     <string name="connection_error">Anslutningsproblem</string>
+    <string name="connection_type">Anslutningstyp</string>
     <string name="copied_from_elsewhere">Kopierat utifrån</string>
     <string name="copied_from_original">Oförändrat</string>
+    <string name="copyright_20142016_the_following_contributors">Copyright © 2014-2016 följande bidragande:</string>
     <string name="copyright_2015_the_following_contributors">Copyright © 2015 följande medverkande:</string>
     <string name="cpu_utilization">CPU-användning</string>
-    <string name="danger">Danger!</string>
+    <string name="danger">Fara!</string>
     <string name="days">dagar</string>
     <string name="delete">Radera</string>
     <string name="deleted">Borttaget</string>
@@ -42,7 +47,9 @@
     <string name="device_id">Enhets-ID</string>
     <string name="device_identification">Enhetsidentifikation</string>
     <string name="device_name">Enhetsnamn</string>
+    <string name="device_name_device_at_address_wants_to_connect_add_new_device">Enhet \"%1$s\" (%2$s på %3$s) vill ansluta. Lägg till ny enhet?</string>
     <string name="device_wants_to_share_folder_folder">%1$s vill dela katalogen \"%2$s\".</string>
+    <string name="device_wants_to_share_folder_folderlabel_folder">%1$s vill dela katalogen \"%2$s\" (%3$s).</string>
     <string name="devices">Enheter</string>
     <string name="disconnected">Ej ansluten</string>
     <string name="discovery">Uppslagning</string>
@@ -54,6 +61,8 @@
     <string name="edit_device">Redigera enhet</string>
     <string name="edit_folder">Redigera katalog</string>
     <string name="editing">Redigerar</string>
+    <string name="enable_nat_traversal">Aktivera NAT traversering</string>
+    <string name="enable_relaying">Aktivera reläa</string>
     <string name="enable_upnp">Använd UPnP</string>
     <string name="enter_comma_separated_tcpipport_tcphostport_addresses_or_dynamic_to_perform_automatic_discovery_of_the_address">Ange kommaseparerade (\"tcp://ip:port\", \"tcp://host:port\")-adresser eller ordet \"dynamic\" för att använda automatisk uppslagning.</string>
     <string name="enter_ignore_patterns_one_per_line">Ange filmönster, ett per rad.</string>
@@ -68,13 +77,16 @@
     <string name="files_are_protected_from_changes_made_on_other_devices_but_changes_made_on_this_device_will_be_sent_to_the_rest_of_the_cluster">Filer skyddas från ändringar gjorda på andra enheter, men ändringar som görs på den här noden skickas till de andra klustermedlemmarna.</string>
     <string name="folder">Katalog</string>
     <string name="folder_id">Katalog-ID</string>
+    <string name="folder_label">Katalog etikett</string>
     <string name="folder_master">Huvudlagring</string>
     <string name="folder_path">Sökväg</string>
+    <string name="folder_type">Katalogtyp</string>
     <string name="folders">Kataloger</string>
     <string name="full_documentation">fullständig dokumentation</string>
     <string name="generate">Skapa</string>
     <string name="global_discovery">Global uppslagning</string>
     <string name="global_discovery_server">Global uppslagningsserver</string>
+    <string name="global_discovery_servers">Globala uppslagningsservrar</string>
     <string name="global_state">Global status</string>
     <string name="gui">GUI</string>
     <string name="gui_authentication_password">GUI-lösenord</string>
@@ -95,10 +107,12 @@
     <string name="last_file_received">Senast Mottagna Fil</string>
     <string name="last_seen">Senast online</string>
     <string name="later">Senare</string>
+    <string name="listeners">Lyssnare</string>
     <string name="local_discovery">Lokal uppslagning</string>
     <string name="local_state">Lokal status</string>
     <string name="local_state_total">Lokal status (Total)</string>
     <string name="major_upgrade">Stor uppgradering</string>
+    <string name="master">Huvud</string>
     <string name="maximum_age">Högsta åldersgräns</string>
     <string name="metadata_only">Endast metadata</string>
     <string name="minimum_free_disk_space">Minimum ledigt diskutrymme</string>
@@ -110,10 +124,12 @@
     <string name="newest_first">Nyast först</string>
     <string name="no">Nej</string>
     <string name="no_file_versioning">Ingen versionshantering</string>
+    <string name="normal">Normal</string>
     <string name="notice">Observera</string>
     <string name="off">Av</string>
     <string name="ok">OK</string>
     <string name="oldest_first">Äldst först</string>
+    <string name="optional_descriptive_label_for_the_folder_can_be_different_on_each_device">Valfri beskrivande etikett för katalogen. Kan vara olika på varje enhet.</string>
     <string name="options">Alternativ</string>
     <string name="out_of_sync">Osynkad</string>
     <string name="out_of_sync_items">Osynkade poster</string>
@@ -124,17 +140,20 @@
     <string name="pause">Paus</string>
     <string name="paused">Pausad</string>
     <string name="please_consult_the_release_notes_before_performing_a_major_upgrade">Läs igenom versionsnyheterna innan den stora uppgraderingen.</string>
-    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Please set a GUI Authentication User and Password in the Settings dialog.</string>
+    <string name="please_set_a_gui_authentication_user_and_password_in_the_settings_dialog">Ställ in ett grafiskt användarautentisering och lösenord i dialogrutan Inställningar.</string>
     <string name="please_wait">Var god vänta</string>
     <string name="preview">Förhandsgranska</string>
     <string name="preview_usage_report">Förhandsgranska statistik</string>
     <string name="quick_guide_to_supported_patterns">Snabb guide till filmönster som stöds</string>
     <string name="ram_utilization">Minnesanvändning</string>
     <string name="random">Slumpmässig</string>
+    <string name="relay_servers">Reläservrar</string>
     <string name="relayed_via">Vidarbefordras via</string>
     <string name="relays">Vidarbefordringar</string>
     <string name="release_notes">versionsnyheter</string>
+    <string name="remote_devices">Fjärrenheter</string>
     <string name="remove">Ta bort</string>
+    <string name="required_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Krävs identifierare för katalogen. Måste vara densamma på alla kluster enheter.</string>
     <string name="rescan">Uppdatera</string>
     <string name="rescan_all">Uppdatera alla</string>
     <string name="rescan_interval">Uppdateringsintervall</string>
@@ -144,7 +163,7 @@
     <string name="resume">Återuppta</string>
     <string name="reused">Återanvänt</string>
     <string name="save">Spara</string>
-    <string name="scan_time_remaining">Scan Time Remaining</string>
+    <string name="scan_time_remaining">Granska återstående tid</string>
     <string name="scanning">Uppdaterar</string>
     <string name="select_the_devices_to_share_this_folder_with">Ange enheterna att dela den här katalogen med.</string>
     <string name="select_the_folders_to_share_with_this_device">Välj kataloger att dela med den här enheten.</string>
@@ -157,6 +176,7 @@
     <string name="shared_with">Delad med</string>
     <string name="short_identifier_for_the_folder_must_be_the_same_on_all_cluster_devices">Kort identifieringssträng för katalogen. Måste vara samma på alla enheter i klustret.</string>
     <string name="show_id">Visa ID</string>
+    <string name="show_qr">Visa QR</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_advertised_to_other_devices_as_an_optional_default_name">Visas i stället för enhets-ID. Skickas till andra enheter som namn på denna enhet.</string>
     <string name="shown_instead_of_device_id_in_the_cluster_status_will_be_updated_to_the_name_the_device_advertises_if_left_empty">Visas i stället för enhets-ID. Sätts till namnet på den andra enheten vid första anslutning om det lämnas tomt.</string>
     <string name="shutdown">Stäng av</string>
@@ -178,9 +198,11 @@
     <string name="syncthing_is_upgrading">Syncthing uppgraderas.</string>
     <string name="syncthing_seems_to_be_down_or_there_is_a_problem_with_your_internet_connection_retrying">Syncthing verkar avstängd, eller finns det problem med din Internetanslutning. Försöker igen...</string>
     <string name="syncthing_seems_to_be_experiencing_a_problem_processing_your_request_please_refresh_the_page_or_restart_syncthing_if_the_problem_persists">Syncthing verkar ha drabbats av ett problem. Uppdatera sidan eller starta om Syncthing om problemet kvarstår.</string>
+    <string name="the_aggregated_statistics_are_publicly_available_at_the_url_below">The aggregated statistics are publicly available at the URL below.</string>
     <string name="the_aggregated_statistics_are_publicly_available_at_url">Sammanställd statistik finns publikt tillgänglig på %1$s.</string>
     <string name="the_configuration_has_been_saved_but_not_activated_syncthing_must_restart_to_activate_the_new_configuration">Konfigurationen har sparats men inte aktiverats. Syncthing måste startas om för att aktivera den nya konfigurationen.</string>
     <string name="the_device_id_cannot_be_blank">Enhets-ID kan inte vara tomt.</string>
+    <string name="the_device_id_to_enter_here_can_be_found_in_the_actions_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Enhets-ID som behövs här kan du hitta i \"Redigera > Visa ID\"-dialogen på den andra enheten. Mellanrum och bindestreck är valfria (ignoreras).</string>
     <string name="the_device_id_to_enter_here_can_be_found_in_the_edit_show_id_dialog_on_the_other_device_spaces_and_dashes_are_optional_ignored">Enhets-ID som behövs här kan du hitta i \"Redigera > Visa ID\"-dialogen på den andra enheten. Mellanrum och bindestreck är valfria (ignoreras).</string>
     <string name="the_encrypted_usage_report_is_sent_daily_it_is_used_to_track_common_platforms_folder_sizes_and_app_versions_if_the_reported_data_set_is_changed_you_will_be_prompted_with_this_dialog_again">Den krypterade användarstatistiken skickas dagligen. Den används för att spåra vanliga plattformar, katalogstorlekar och versioner. Om datan som rapporteras ändras så kommer du att bli tillfrågad igen.</string>
     <string name="the_entered_device_id_does_not_look_valid_it_should_be_a_52_or_56_character_string_consisting_of_letters_and_numbers_with_spaces_and_dashes_being_optional">Det inmatade enhets-ID:t verkar inte korrekt. Det ska vara en 52 eller 56 teckens sträng bestående av siffror och bokstäver, eventuellt med mellanrum och bindestreck.</string>
@@ -201,9 +223,10 @@
     <string name="the_path_cannot_be_blank">Ange en sökväg</string>
     <string name="the_rate_limit_must_be_a_nonnegative_number_0_no_limit">Frekvensgränsen måste vara ett icke-negativt tal (0: ingen gräns)</string>
     <string name="the_rescan_interval_must_be_a_nonnegative_number_of_seconds">Förnyelseintervallet måste vara ett positivt antal sekunder</string>
-    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">The Syncthing admin interface is configured to allow remote access without a password.</string>
+    <string name="the_syncthing_admin_interface_is_configured_to_allow_remote_access_without_a_password">Syncthing administratör gränssnittet är konfigurerat för att tillåta fjärrtillträde utan ett lösenord.</string>
     <string name="they_are_retried_automatically_and_will_be_synced_when_the_error_is_resolved">De omprövas automatiskt och kommer att synkroniseras när felet är löst.</string>
-    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">This can easily give hackers access to read and change any files on your computer.</string>
+    <string name="this_can_easily_give_hackers_access_to_read_and_change_any_files_on_your_computer">Detta kan lätt ge hackare tillgång till att läsa och ändra några filer på datorn.</string>
+    <string name="this_device">Enheten</string>
     <string name="this_is_a_major_version_upgrade">Det här är en stor uppgradering.</string>
     <string name="trash_can_file_versioning">Versionshantering på filer i papperskorgen</string>
     <string name="unknown">Okänt</string>
@@ -220,6 +243,7 @@
     <string name="version">Version</string>
     <string name="versions_are_automatically_deleted_if_they_are_older_than_the_maximum_age_or_exceed_the_number_of_files_allowed_in_an_interval">Versioner tas bort automatiskt när de är äldre än den maximala åldersgränsen eller överstiger frekvensen i sitt interval.</string>
     <string name="versions_path">Katalog för versioner</string>
+    <string name="warning_this_path_is_a_subdirectory_of_an_existing_folder_otherfolder">Varning, denna sökväg är en underkatalog till en befintlig katalog \"%1$s\".</string>
     <string name="when_adding_a_new_device_keep_in_mind_that_this_device_must_be_added_on_the_other_side_too">När du lägger till en ny enhet, kom ihåg att den här enheten måste läggas till på den andra enheten också.</string>
     <string name="when_adding_a_new_folder_keep_in_mind_that_the_folder_id_is_used_to_tie_folders_together_between_devices_they_are_case_sensitive_and_must_match_exactly_between_all_devices">När du lägger till ny katalog, tänk på att katalog-ID:t knyter ihop katalogen mellan olika noder. De måste vara exakt desamma mellan noder och stora eller små bokstäver har betydelse.</string>
     <string name="yes">Ja</string>
