@@ -110,7 +110,7 @@ dependencies {
     provided(group: 'com.google.dagger', name:'dagger-compiler', version: rootProject.ext.dagger2Version)
     compile (group: 'com.jakewharton.rxbinding', name:'rxbinding', version: rootProject.ext.rxBindingVersion)
     compile (group:'commons-io', name: 'commons-io', version: rootProject.ext.commonsIoVersion)
-    compile 'org.zeroturnaround:zt-zip:1.9-SNAPSHOT'
+    compile 'org.zeroturnaround:zt-zip:1.9'
     compile (group: 'ch.acra', name:'acra', version: rootProject.ext.acraVersion)
 
     compile project(':common-ui')
