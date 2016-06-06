@@ -17,6 +17,8 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+
 
 // Versioning
 def versionMajor = 0

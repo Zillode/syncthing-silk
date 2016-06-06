@@ -26,6 +26,17 @@ case "$1" in
         export GOARCH=arm
         export GOARM=7
         ;;
+    arm64)
+        TOOLCHAIN_ROOT="${MYDIR}"/golang/build/toolchains/arm64
+        TOOLCHAIN_PLATFORM=16
+        TOOLCHAIN_ARCH=arm
+        export CC_FOR_TARGET="${TOOLCHAIN_ROOT}"/bin/arm-linux-androideabi-gcc
+        export CXX_FOR_TARGET="${TOOLCHAIN_ROOT}"/bin/arm-linux-androideabi-g++
+        export CGO_ENABLED=1
+        export GOOS=linux
+        export GOARCH=arm64
+        export GOARM=8
+        ;;
     386)
         TOOLCHAIN_ROOT="${MYDIR}"/golang/build/toolchains/386
         TOOLCHAIN_PLATFORM=16
@@ -48,7 +59,7 @@ case "$1" in
         export GOARCH=amd64
         ;;
     *)
-        echo "Must specify either arm or 386 or amd64"
+        echo "Must specify either arm or arm64 or 386 or amd64"
         exit 1
 esac
 
