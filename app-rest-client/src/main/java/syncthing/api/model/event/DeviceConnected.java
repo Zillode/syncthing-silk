@@ -11,6 +11,8 @@ package syncthing.api.model.event;
 
 import org.joda.time.DateTime;
 
+import syncthing.api.model.ConnectionType;
+
 /**
  * Created by drew on 10/11/15.
  */
@@ -22,7 +24,9 @@ public class DeviceConnected extends Event<DeviceConnected.Data> {
     public static class Data {
         public String addr;
         public String id;
+        public String deviceName;
         public String clientName;
         public String clientVersion;
+        public ConnectionType type;
     }
 }

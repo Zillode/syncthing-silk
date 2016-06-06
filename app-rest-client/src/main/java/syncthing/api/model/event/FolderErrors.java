@@ -25,6 +25,7 @@ public class FolderErrors extends Event<FolderErrors.Data> {
     public static class Data {
         public List<Error> errors = Collections.emptyList();
         public String folder;
+        public String folderLabel;
     }
     public static class Error {
         public String error;

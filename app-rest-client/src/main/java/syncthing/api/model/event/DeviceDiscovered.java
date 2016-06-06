@@ -22,11 +22,5 @@ public class DeviceDiscovered extends Event<DeviceDiscovered.Data> {
     public static class Data {
         public String device;
         public String[] addrs;
-        public Relay[] relays;
-    }
-
-    public static class Relay {
-        public String url;
-        public int latency;
     }
 }

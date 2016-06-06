@@ -23,11 +23,13 @@ public class GUIConfig implements Serializable, Cloneable {
     public boolean useTLS;
     public String apiKey;
     public boolean insecureAdminAccess;
+    public String theme;
 
     public static GUIConfig withDefaults() {
         GUIConfig c = new GUIConfig();
         c.enabled = true;
         c.address = "127.0.0.1:8384";
+        c.theme = "default";
         return c;
     }
 

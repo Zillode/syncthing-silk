@@ -16,6 +16,6 @@ import java.io.Serializable;
  */
 public class Ignores implements Serializable {
     private static final long serialVersionUID = -9077298927333528483L;
+    public String[] expanded;
     public String[] ignore;
-    public String[] patterns;
 }

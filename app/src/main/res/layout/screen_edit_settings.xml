@@ -133,12 +133,12 @@
                     style="@style/session.edit.EditText.Number"/>
 
                 <CheckBox
-                    android:id="@+id/check_enable_upnp"
+                    android:id="@+id/check_enable_nat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/enable_upnp"
-                    android:checked="@{presenter.upnpEnabled}"
-                    app:checkedChanges="@{presenter.actionSetUpnpEnabled}"
+                    android:text="@string/enable_nat_traversal"
+                    android:checked="@{presenter.natEnabled}"
+                    app:checkedChanges="@{presenter.actionSetNatEnabled}"
                     style="@style/session.edit.Checkbox"/>
 
                 <CheckBox

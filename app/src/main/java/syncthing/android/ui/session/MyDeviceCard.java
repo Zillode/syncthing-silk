@@ -74,9 +74,8 @@ public class MyDeviceCard extends ExpandableCard {
     private boolean discoveryEnabled;
     private int discoveryFailures;
     private int discoveryMethods;
-    private boolean relaysEnabled;
-    private int relaysFailures;
-    private int relaysTotal;
+    private int listenersFailures;
+    private int listenersTotal;
 
     public MyDeviceCard(DeviceConfig device, ConnectionInfo connection, SystemInfo system, Version version) {
         this.device = device;
@@ -121,7 +120,7 @@ public class MyDeviceCard extends ExpandableCard {
     public void setSystemInfo(SystemInfo system) {
         if (system == null) {
             hasSystemInfo = false;
-            discoveryEnabled = relaysEnabled = false;
+            discoveryEnabled = false;
             notifyChange(syncthing.android.BR.hasSystemInfo);
             notifyChange(syncthing.android.BR.mem);
             notifyChange(syncthing.android.BR.cpuPercent);
@@ -131,9 +130,8 @@ public class MyDeviceCard extends ExpandableCard {
             notifyChange(syncthing.android.BR.discoveryEnabled);
             notifyChange(syncthing.android.BR.discoveryFailures);
             notifyChange(syncthing.android.BR.discoveryMethods);
-            notifyChange(syncthing.android.BR.relaysEnabled);
-            notifyChange(syncthing.android.BR.relaysFailures);
-            notifyChange(syncthing.android.BR.relaysTotal);
+            notifyChange(syncthing.android.BR.listenersFailures);
+            notifyChange(syncthing.android.BR.listenersTotal);
         } else {
             if (!hasSystemInfo) {
                 hasSystemInfo = true;
@@ -167,24 +165,20 @@ public class MyDeviceCard extends ExpandableCard {
                 notifyChange(syncthing.android.BR.discoveryFailures);
                 notifyChange(syncthing.android.BR.discoveryMethods);
             }
-            if (relaysEnabled != system.relaysEnabled) {
-                relaysEnabled = system.relaysEnabled;
-                notifyChange(syncthing.android.BR.relaysEnabled);
-            }
             int failed = 0, total = 0;
-            if (system.relayClientStatus != null) {
-                for (String r : system.relayClientStatus.keySet()) {
-                    if (!system.relayClientStatus.get(r)) {
+            if (system.connectionServiceStatus != null) {
+                for (String r : system.connectionServiceStatus.keySet()) {
+                    if (!system.connectionServiceStatus.get(r).error.isEmpty()) {
                         failed++;
                     }
                     total++;
                 }
             }
-            if (relaysFailures != failed || relaysTotal != total) {
-                relaysFailures = failed;
-                relaysTotal = total;
-                notifyChange(syncthing.android.BR.relaysFailures);
-                notifyChange(syncthing.android.BR.relaysTotal);
+            if (listenersFailures != failed || listenersTotal != total) {
+                listenersFailures = failed;
+                listenersTotal = total;
+                notifyChange(syncthing.android.BR.listenersFailures);
+                notifyChange(syncthing.android.BR.listenersTotal);
             }
         }
     }
@@ -280,18 +274,13 @@ public class MyDeviceCard extends ExpandableCard {
     }
 
     @Bindable
-    public boolean isRelaysEnabled() {
-        return relaysEnabled;
+    public int getListenersFailures() {
+        return listenersFailures;
     }
 
     @Bindable
-    public int getRelaysFailures() {
-        return relaysFailures;
-    }
-
-    @Bindable
-    public int getRelaysTotal() {
-        return relaysTotal;
+    public int getListenersTotal() {
+        return listenersTotal;
     }
 
 }

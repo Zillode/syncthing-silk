@@ -126,12 +126,6 @@ public class DeviceCard extends ExpandableCard {
                 paused = connection.paused;
                 notifyChange(syncthing.android.BR.paused);
             }
-            boolean rlyd = (connection.type == ConnectionType.RELAY_ACCEPT ||
-                    connection.type == ConnectionType.RELAY_DIAL);
-            if (relayed != rlyd) {
-                relayed = rlyd;
-                notifyChange(syncthing.android.BR.relayed);
-            }
         }
     }
 

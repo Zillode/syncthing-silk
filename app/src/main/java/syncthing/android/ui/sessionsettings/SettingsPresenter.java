@@ -220,18 +220,18 @@ public class SettingsPresenter extends EditPresenter<CoordinatorLayout> {
     };
 
     @Bindable
-    public boolean isUpnpEnabled() {
-        return options.upnpEnabled;
+    public boolean isNatEnabled() {
+        return options.natEnabled;
     }
 
-    public void setUpnpEnabled(boolean enabled) {
-        options.upnpEnabled = enabled;
+    public void setNatEnabled(boolean enabled) {
+        options.natEnabled = enabled;
     }
 
-    public final Action1<Boolean> actionSetUpnpEnabled = new Action1<Boolean>() {
+    public final Action1<Boolean> actionSetNatEnabled = new Action1<Boolean>() {
         @Override
         public void call(Boolean aBoolean) {
-            setUpnpEnabled(aBoolean);
+            setNatEnabled(aBoolean);
         }
     };
 
