@@ -29,6 +29,8 @@ public class Version {
         switch (os) {
             case "darwin":
                 return "Mac OS X";
+            case "dragonfly":
+                return "DragonFly BSD";
             case "freebsd":
                 return "FreeBSD";
             case "openbsd":
@@ -56,6 +58,12 @@ public class Version {
                 return "64 bit";
             case "arm":
                 return "ARM";
+            case "arm64":
+                return "AArch64";
+            case "ppc64":
+                return "PowerPC";
+            case "ppc64le":
+                return "PowerPC (LE)";
             default:
                 return arch;
         }
