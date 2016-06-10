@@ -31,8 +31,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import syncthing.android.R;
 
 /**
@@ -44,7 +44,7 @@ public class FolderPickerView extends RecyclerListCoordinator {
     @Inject FolderPickerPresenter mPresenter;
     @Inject FolderPickerViewAdapter mAdapter;
 
-    @InjectView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     public FolderPickerView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -57,7 +57,7 @@ public class FolderPickerView extends RecyclerListCoordinator {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mList.setHasFixedSize(true);
         mList.setLayoutManager(new LinearLayoutManager(getContext()));
         mList.setAdapter(mAdapter);

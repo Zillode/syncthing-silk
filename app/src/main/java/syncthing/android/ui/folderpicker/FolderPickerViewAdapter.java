@@ -28,8 +28,8 @@ import org.opensilk.common.ui.recycler.RecyclerListAdapter;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import syncthing.android.R;
 
 /**
@@ -92,10 +92,10 @@ public class FolderPickerViewAdapter extends RecyclerListAdapter<String, FolderP
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(android.R.id.text1) TextView title;
+        @BindView(android.R.id.text1) TextView title;
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

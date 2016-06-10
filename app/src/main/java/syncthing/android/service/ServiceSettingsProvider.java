@@ -44,13 +44,14 @@ public class ServiceSettingsProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         ServiceComponent cmp = DaggerService.getDaggerComponent(getContext());
-        cmp.inject(this);
+        //cmp.inject(this);
         return true;
     }
 
     @Nullable
     @Override
     public Bundle call(String method, String arg, Bundle extras) {
+        if (true) return null;
         if (StringUtils.equals("get_settings", method)) {
             if (arg == null) arg = "_NONE_";
             switch (arg) {

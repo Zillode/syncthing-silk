@@ -8,7 +8,7 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -19,6 +19,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        jackOptions {
+            enabled true
+        }
     }
     buildTypes {
         release {
@@ -30,11 +34,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     compile (group: 'com.google.dagger', name:'dagger', version: rootProject.ext.dagger2Version)
-    provided(group: 'com.google.dagger', name:'dagger-compiler', version: rootProject.ext.dagger2Version)
+    apt (group: 'com.google.dagger', name:'dagger-compiler', version: rootProject.ext.dagger2Version)
     compile (group:'io.reactivex', name: 'rxjava', version: rootProject.ext.rxJavaVersion)
     compile (group:'com.squareup.retrofit', name :'retrofit', version:rootProject.ext.retrofitVersion)
     compile (group:'com.squareup.retrofit', name: 'adapter-rxjava', version:rootProject.ext.retrofitVersion)

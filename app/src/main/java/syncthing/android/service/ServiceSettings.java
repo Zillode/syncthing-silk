@@ -162,6 +162,7 @@ public class ServiceSettings {
     }
 
     public boolean isEnabled() {
+        if (true) return true;
         Bundle reply = getCall(ENABLED, BundleHelper.b().putInt(0).get());
         return BundleHelper.getInt(reply) == 1;
     }

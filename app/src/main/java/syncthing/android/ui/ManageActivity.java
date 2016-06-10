@@ -26,7 +26,6 @@ import org.opensilk.common.ui.mortar.ToolbarOwnerDelegate;
 import org.opensilk.common.ui.mortarfragment.MortarFragment;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import mortar.MortarScope;
 import syncthing.android.AppComponent;
 import syncthing.android.R;

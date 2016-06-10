@@ -30,8 +30,8 @@ import org.opensilk.common.core.mortar.DaggerService;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import syncthing.android.R;
@@ -41,9 +41,9 @@ import syncthing.android.R;
  */
 public class ShowIdDialogView extends FrameLayout {
 
-    @InjectView(R.id.id) TextView deviceId;
-    @InjectView(R.id.qr_image) ImageView qrImage;
-    @InjectView(R.id.loading_progress) ProgressBar progress;
+    @BindView(R.id.id) TextView deviceId;
+    @BindView(R.id.qr_image) ImageView qrImage;
+    @BindView(R.id.loading_progress) ProgressBar progress;
 
     @Inject SessionPresenter mPresenter;
 
@@ -60,7 +60,7 @@ public class ShowIdDialogView extends FrameLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         if (isInEditMode()) {
             return;
         }

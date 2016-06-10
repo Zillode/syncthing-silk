@@ -30,8 +30,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import syncthing.android.R;
 import syncthing.android.ui.common.ExpandableView;
@@ -44,7 +44,7 @@ public class SessionScreenView extends RecyclerListCoordinator implements ISessi
     @Inject SessionPresenter mPresenter;
     @Inject ToolbarOwner mToolbarOwner;
 
-    @InjectView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
 
     SessionRecyclerAdapter mListAdapter;
     boolean toolbarAttached;
@@ -60,7 +60,7 @@ public class SessionScreenView extends RecyclerListCoordinator implements ISessi
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mListAdapter = new SessionRecyclerAdapter(mPresenter);
         mList.setLayoutManager(new LinearLayoutManager(getContext()));
         mList.setAdapter(mListAdapter);

@@ -25,8 +25,8 @@ import org.opensilk.common.core.mortar.DaggerService;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import syncthing.android.R;
 
 public class WelcomeScreenView extends RelativeLayout {
@@ -34,7 +34,7 @@ public class WelcomeScreenView extends RelativeLayout {
     @Inject WelcomePresenter presenter;
     Context context;
 
-    @InjectView(R.id.pager_view) WelcomeScreenPagerView pageView;
+    @BindView(R.id.pager_view) WelcomeScreenPagerView pageView;
 
     public WelcomeScreenView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,7 +48,7 @@ public class WelcomeScreenView extends RelativeLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         if (!isInEditMode()) {
-            ButterKnife.inject(this);
+            ButterKnife.bind(this);
             presenter.takeView(this);
         }
     }

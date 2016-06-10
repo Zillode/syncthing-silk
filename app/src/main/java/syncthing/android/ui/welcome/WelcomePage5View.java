@@ -30,8 +30,8 @@ import org.opensilk.common.core.mortar.DaggerService;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import rx.Subscriber;
 import syncthing.android.R;
@@ -44,11 +44,11 @@ public class WelcomePage5View extends RelativeLayout {
 
     @Inject WelcomePresenter mPresenter;
 
-    @InjectView(R.id.btn1) Button btn1;
-    @InjectView(R.id.btn2) Button btn2;
-    @InjectView(R.id.btn_bar) ViewGroup btnBar;
-    @InjectView(R.id.welcomePLText) TextView text;
-    @InjectView(R.id.welcomePLBanner) ImageView logo;
+    @BindView(R.id.btn1) Button btn1;
+    @BindView(R.id.btn2) Button btn2;
+    @BindView(R.id.btn_bar) ViewGroup btnBar;
+    @BindView(R.id.welcomePLText) TextView text;
+    @BindView(R.id.welcomePLBanner) ImageView logo;
 
     public WelcomePage5View(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -61,7 +61,7 @@ public class WelcomePage5View extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @Override

@@ -41,8 +41,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.Optional;
 import mortar.MortarScope;
 import syncthing.android.AppComponent;
@@ -69,8 +69,8 @@ public class LauncherActivity extends SyncthingActivity implements
     ActionBarDrawerToggle mDrawerToggle;
     protected DrawerOwnerDelegate<LauncherActivity> mDrawerOwnerDelegate;
 
-    @InjectView(R.id.drawer_layout) @Optional DrawerLayout mDrawerLayout;
-    @InjectView(R.id.navigation) NavigationView mNavigation;
+    @BindView(R.id.drawer_layout) DrawerLayout mDrawerLayout;
+    @BindView(R.id.navigation) NavigationView mNavigation;
 
     @Override
     protected void onCreateScope(MortarScope.Builder builder) {
@@ -88,7 +88,7 @@ public class LauncherActivity extends SyncthingActivity implements
         Timber.d("-> onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
 
         if (mDrawerLayout != null) {
